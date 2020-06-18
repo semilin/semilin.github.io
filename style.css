@@ -1,3 +1,10 @@
 body {
     background-color: #292a2e;
 }
+
+h1 {
+    color: #a9d9ab;
+    border: 4px solid #a9d9ab;
+    border-color: #a9d9ab;
+    border-radius: 6px;
+}
