@@ -13,12 +13,21 @@ h1 {
   text-align: center;
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
 p {
     margin: 6px 40% 0px 80px;
     color: white;
     font-size: 26px;
     font-family: 'Roboto', sans-serif;
     line-height: 1.8;
+}
+
+p a {
+    text-decoration: underline;
 }
 
 #navbar {
