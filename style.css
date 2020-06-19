@@ -1,11 +1,63 @@
 body {
-    background-color: #292a2e;
+  background-color: #292a2e;
 }
 
 h1 {
-    background-color: #a9d9ab;
-    border: 4px solid #a9d9ab;
-    border-color: #a9d9ab;
-    border-radius: 6px;
-    padding: 2% 30px 1% 20px
+  background-color: #a9f9cb;
+  border: 4px solid #a9f9cb;
+  border-color: #a9f9cb;
+  border-radius: 6px;
+  margin: 2% 80% 1% 40px;
+  padding: 8px 6px 8px 12px;
+  font-family: 'Titillium Web', sans-serif;
+  text-align: center;
+}
+
+p {
+    margin: 6px 40% 0px 80px;
+    color: white;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+}
+
+#navbar {
+    background-color: #555;
+    margin: -8px;
+    list-style-type: none;
+    padding: 0px 8px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+li {
+    float: left;
+}
+
+li {
+    display: block;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    color: #fff;
+}
+
+li:hover {
+    background-color:#333;
+    color: #fff;
+}
+
+.active {
+    background-color: #8da4c9;
+}
+
+.active:hover {
+    background-color: #8da4c9;
 }
