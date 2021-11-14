@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Semimak</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Semimak</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgcb5853e">Reflecting on Semimak, 3 months later</a>
+<ul>
+<li><a href="#orgbd4504d">Problems</a></li>
+<li><a href="#org7befe1d">Successes</a></li>
+<li><a href="#org38bd983">Takeaways</a></li>
+</ul>
+</li>
+<li><a href="#org64af1a0">Development</a>
+<ul>
+<li><a href="#org583ebf0">Finger Speed</a></li>
+<li><a href="#org5be80e8">Skipgrams</a></li>
+<li><a href="#org45bc51d">Distance weighting</a></li>
+<li><a href="#orgc19ecab">Finger weighting</a></li>
+<li><a href="#org685009a">Scoring</a></li>
+</ul>
+</li>
+<li><a href="#orgc1f3c6f">Download</a></li>
+</ul>
+</div>
+</div>
+<p>
+The Semimak layout is designed to have low finger movement rate -
+decreasing the overall speed at which your fingers must travel to type
+on average. This doesn’t only mean to optimize for reducing
+same-finger bigrams (e.g <code>ed</code> on QWERTY), but disjointeds as well
+(e.g the <code>m_y</code> in <code>may</code> on QWERTY). Semimak was the pioneer of DSFB
+and weighted finger dexterity.
+</p>
+
+<div id="outline-container-orgcb5853e" class="outline-2">
+<h2 id="orgcb5853e">Reflecting on Semimak, 3 months later</h2>
+<div class="outline-text-2" id="text-orgcb5853e">
+<p>
+On July 1st, 12:00 P.M PDT, Semimak was released. <a href="https:github.com/notgate">NotGate</a> and I held
+a tournament with an $850 prize pool, and over 200 people
+participated in it (including me, just for fun). I got a lot of
+feedback from this! 
+</p>
+</div>
+
+<div id="outline-container-orgbd4504d" class="outline-3">
+<h3 id="orgbd4504d">Problems</h3>
+<div class="outline-text-3" id="text-orgbd4504d">
+</div>
+<ul class="org-ul">
+<li><a id="orgb0e56d7"></a>Right Index Finger<br />
+<div class="outline-text-5" id="text-orgb0e56d7">
+<p>
+Despite the relatively low usage of the right index finger, some
+people had difficulty with it. It is the finger with the highest
+unweighted movement, but that's difficult to avoid, considering
+the index fingers have double the responsibility of a normal
+finger. 
+</p>
+</div>
+</li>
+
+<li><a id="org58f2f1f"></a>Ring Finger Movements<br />
+<div class="outline-text-5" id="text-org58f2f1f">
+<p>
+This seemed to be the biggest issue people had with the layout
+overall. <code>lr'</code> and <code>oa.</code> columns will cause a lot of movement,
+and the ring fingers are either the slowest or second slowest
+fingers for people.
+</p>
+
+<p>
+This highlights a very interesting effect of
+relative dexterity. I personally never had any issue with it,
+which is unsurprising considering I made the layout adapted to my
+own finger speed. I believed at the time that people could adapt
+to comfort with this, like I was able to with my pinkies.
+However, although almost everyone was able to adapt comfortably
+to the pinky movement, a not insignificant amount of people
+struggled with the ring fingers.
+</p>
+
+<p>
+I now believe that I am simply lucky to have more dexterous ring
+fingers than average. This would have been difficult for me to
+know at the time, since no layouts that I had known of at the
+time had really pushed the limits on the ring
+fingers. Regardless, this was my biggest oversight with Semimak.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org320c794"></a>'r and 'll<br />
+<div class="outline-text-6" id="text-org320c794">
+<p>
+This is one of the more specific egregious problems with
+Semimak. Words like <code>you're</code>, <code>you'll</code>, and <code>I'll</code> are abyssmal
+on the layout because they include bad SFBs on the left ring
+finger. Though they can pretty easily be alt-fingered, I still
+found them quite problematic. Because of this, I created my own
+mod, <b>Semimak JQ</b> about 2 months after its original release.
+</p>
+
+<div class="layoutblock" id="org94824bc">
+<p>
+f l h v z  ' w u o y
+</p>
+
+<p>
+s r n t k  c d e a i
+</p>
+
+<p>
+x j b m q  p g , . /
+</p>
+
+</div>
+
+<p>
+It only makes two swaps, a 3 key cycle, so it is quite easy to
+learn from the original layout. After about a month of using it
+full-time, I can confidently say that it's pretty much
+objectively better than the reference layout, at least for me.
+</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org7befe1d" class="outline-3">
+<h3 id="org7befe1d">Successes</h3>
+<div class="outline-text-3" id="text-org7befe1d">
+<p>
+By the end of the one month tournament, over 5 people had gotten above 100
+wpm with the layout on a very difficult typing test - top 10k English words,
+random punctuation, and 2 minutes. This is really impressive!
+</p>
+
+<p>
+However, the more interesting thing is to watch their handcams
+(for example, <a href="https:youtu.be/Hu1whMOKR2M?t=34">Octahedron</a>'s); the fingers look just as low movement
+as the layout set out to be. This is a great success, because it
+validates my theory of finger movement. This feels accurate for me
+as well, even at over 160 wpm on Semimak, my fingers feel like
+they are moving very slowly, especially when compared to other alt
+layouts.
+</p>
+
+<p>
+Today, there are still quite a few using Semimak, several of which
+can type over 160 wpm on a basic 60 second test. For the people
+who Semimak works for, it seems to work really well.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org38bd983" class="outline-3">
+<h3 id="org38bd983">Takeaways</h3>
+<div class="outline-text-3" id="text-org38bd983">
+<p>
+Overall, Semimak was a very novel layout. It was the first of its
+kind<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, and because of that was extremely different from most
+layouts at the time, and was overall a risky move.
+</p>
+
+<p>
+Semimak did have its shortcomings, and it isn't for everyone. But I
+think it's fair enough to say that it did spark a new paradigm for
+new layouts to be made in the style of. The design behind Semimak
+has been an inspiration for many new layouts created since.
+</p>
+
+<p>
+So, though I don't think that everyone should learn Semimak, it is
+100% a great success to me. And I could not have done it without
+the wonderful, welcoming, and unfathomably nerdy layout community,
+who encouraged and inspired me immensely. Thank you all!
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org64af1a0" class="outline-2">
+<h2 id="org64af1a0">Development</h2>
+<div class="outline-text-2" id="text-org64af1a0">
+<p>
+I created my own analyzer, <a href="genkey.html">genkey</a> to put my ideas into effect. At
+the time, it was only made for myself, and was difficult to
+use. However, many people have used it since then, creating their
+own layouts with it, and it has been massively improved since its
+creation. If you're interested in analyzing layouts, or creating
+your own, give it a shot!
+</p>
+</div>
+
+<div id="outline-container-org583ebf0" class="outline-3">
+<h3 id="org583ebf0">Finger Speed</h3>
+<div class="outline-text-3" id="text-org583ebf0">
+<p>
+Most layout analyzers at the moment report an SFB percentage - how
+many times you use the same finger to hit two keys in a row. But I
+found this somewhat superficial - not all SFBs are equally bad. They
+can be heavily influenced by what finger is being used and how much
+distance is traveled in the SFB. In addition, the statistic can be
+generalized more. Why do the two keys in the bigram need to be
+concurrent to be significant?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5be80e8" class="outline-3">
+<h3 id="org5be80e8">Skipgrams</h3>
+<div class="outline-text-3" id="text-org5be80e8">
+<p>
+Instead of only punishing same-finger bigrams weighted by finger
+and distance, I had the idea to also punish same-finger
+skipgrams. I weighted this exponentially - separated by 0 keys
+(normal bigram) is a weight of 1, separated by 1 is half as bad,
+separated by 2 is a quarter, and so on. These weights are
+arbitrary, but they were inspired both by the experiences of both
+myself and typists much faster than me.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org45bc51d" class="outline-3">
+<h3 id="org45bc51d">Distance weighting</h3>
+<div class="outline-text-3" id="text-org45bc51d">
+<p>
+I weighted the distance between keys exponentially, as I think a
+distance of 2 units is much worse than a distance of 1
+unit. Layouts like Workman and Colemak DH have shown the discomfort
+that can be cause with lateral index movement - because of this,
+lateral movement was treated worse in my analyzer.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc19ecab" class="outline-3">
+<h3 id="orgc19ecab">Finger weighting</h3>
+<div class="outline-text-3" id="text-orgc19ecab">
+<p>
+I used a basic script that <a href="https:github.com/notgate">NotGate</a> wrote to test how quickly I can move
+each of my fingers. For example, to see how dexterous my middle
+finger is, I would type eded over and over on QWERTY, and see how
+fast my keys per second was. This data was then used to weight how
+bad fast distance is on each finger.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org685009a" class="outline-3">
+<h3 id="org685009a">Scoring</h3>
+<div class="outline-text-3" id="text-org685009a">
+<p>
+The layout was scored by genkey largely with the weighted finger
+movement speed metric. There was also some reward for rolling, and
+penalty for redirects.
+</p>
+
+<p>
+However, what the generator created had an extremely high redirect
+rate, and so I swapped the columns around at the end to increase
+alternation. Though I am no alternation lover, the redirect rate
+would have really been <i>way</i> too much.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc1f3c6f" class="outline-2">
+<h2 id="orgc1f3c6f">Download</h2>
+<div class="outline-text-2" id="text-orgc1f3c6f">
+<p>
+Downloads for Windows native and EPKL, MacOS and Linux are available in <a href="https:github.com/semilin/semimak/releases">the Github Release page</a>!
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Yes, the whorf layout was technically released first, but it was
+created by NotGate, and we mutually shared many ideas with each
+other. The original DSFB idea was mine. In addition, Semimak was long
+in development by the time that whorf was released. 
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
+</div>
+</body>
+</html>

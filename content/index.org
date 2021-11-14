@@ -1,0 +1,44 @@
+#+options: toc:nil
+#+TITLE: About Me
+Hi, I'm semi. I'm a programmer who mostly works in keyboard layout
+analysis and creation.
+** Stuff I have done
+*** [[file:semimak.org][Semimak]]
+    Semimak is a keyboard layout designed primarily for high comfort at
+    high typing speeds. In July 2021, [[https:github.com/notgate][NotGate]] and I held a one month
+    long tournament to learn it with an $835 prize pool, which over 200
+    people participated in.
+*** genkey
+    [[file:genkey/index.org][genkey]] is a tool for keyboard layout analysis and generation that I
+    created to make Semimak. It's multi-threaded and pretty powerful;
+    on my laptop, it can analyze some simple stats at a rate of 1
+    million layouts per second. 
+*** klcord
+    [[https:github.com/semilin/klcord][klcord]] is a basic Discord bot for getting keyboard layout
+    information, because there are too many of them and we can't keep
+    track of them or where to find them.
+
+    Usage: =!layout layoutname=
+*** More in the future
+    I have a lot of ideas. Sometimes I forget them, or am too bad to
+    make them. Eventually, some of them will get made, so look forward
+    to that.
+** Stuff I use
+   This changes worryingly frequently so it may not be up to date. 
+**** OS
+     Void Linux.
+**** Window Manager
+     BSPWM.
+**** Editor
+     Emacs, my own config.
+**** Keyboard
+     BoardSource Microdox.
+**** Layout
+     Semimak JQ, my personal mod of Semimak.
+     In the past, I have used (higher = more recent):
+     + Semimak
+     + ISRT
+     + Colemak DH
+** Contact Information
+   + Discord: =semi#5753=
+   + Matrix: =@semilin0:matrix.org=
