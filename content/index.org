@@ -5,7 +5,7 @@ analysis and creation.
 ** Stuff I have done
 *** [[file:semimak.org][Semimak]]
     Semimak is a keyboard layout designed primarily for high comfort at
-    high typing speeds. In July 2021, [[https:https://github.com/notgate][NotGate]] and I held a one month
+    high typing speeds. In July 2021, [[https://github.com/notgate][NotGate]] and I held a one month
     long tournament to learn it with an $835 prize pool, which over 200
     people participated in.
 *** genkey
