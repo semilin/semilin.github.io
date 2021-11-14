@@ -14,7 +14,7 @@ analysis and creation.
     on my laptop, it can analyze some simple stats at a rate of 1
     million layouts per second. 
 *** klcord
-    [[https:github.com/semilin/klcord][klcord]] is a basic Discord bot for getting keyboard layout
+    [[https://github.com/semilin/klcord][klcord]] is a basic Discord bot for getting keyboard layout
     information, because there are too many of them and we can't keep
     track of them or where to find them.
 

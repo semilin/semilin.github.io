@@ -5,7 +5,7 @@ layouts. It features detailed analysis output, generation,
 customizable weighting, individual layout improvement, heatmap output,
 interactive analysis, and much more!
 
-+ [[https:github.com/semilin/genkey][Source]]
++ [[https://github.com/semilin/genkey][Source]]
 + [[file:docs.org][Documentation]]
 
 [[./analysis.png]]
@@ -24,8 +24,8 @@ interactive analysis, and much more!
    2. Unzip the file.
    3. You're ready to go!
 ** From Source - Latest
-   1. Make sure that you have the [[https:golang.org/][Go programming language]]
-      installed. For Windows or Mac, you can get it at [[https:golang.org/dl/][the official
+   1. Make sure that you have the [[https://golang.org/][Go programming language]]
+      installed. For Windows or Mac, you can get it at [[https://golang.org/dl/][the official
       downloads page]]. For Linux, you should get it from your
       distribution's package manager, as "go" or "golang".
    2. Make sure that you have git installed. Though you /can/ just

@@ -42,7 +42,7 @@
   The final block defines what finger is used to hit each key. Each
   finger, not including thumbs, is a digit from 0 to 7. Left pinky is
   0, right pinky is 7, and everything in between follows the order you
-  would expect. Thumb keys are not supported in genkey, but [[https:github.com/apsu/genkey][Apsu's
+  would expect. Thumb keys are not supported in genkey, but [[https://github.com/apsu/genkey][Apsu's
   fork]] does add experimental support.
 
 ** _generate

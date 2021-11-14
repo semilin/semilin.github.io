@@ -8,7 +8,7 @@ same-finger bigrams (e.g =ed= on QWERTY), but disjointeds as well
 and weighted finger dexterity.
 
 * Reflecting on Semimak, 3 months later
-  On July 1st, 12:00 P.M PDT, Semimak was released. [[https:github.com/notgate][NotGate]] and I held
+  On July 1st, 12:00 P.M PDT, Semimak was released. [[https://github.com/notgate][NotGate]] and I held
   a tournament with an $850 prize pool, and over 200 people
   participated in it (including me, just for fun). I got a lot of
   feedback from this! 
@@ -70,7 +70,7 @@ and weighted finger dexterity.
    random punctuation, and 2 minutes. This is really impressive!
     
    However, the more interesting thing is to watch their handcams
-   (for example, [[https:youtu.be/Hu1whMOKR2M?t=34][Octahedron]]'s); the fingers look just as low movement
+   (for example, [[https://youtu.be/Hu1whMOKR2M?t=34][Octahedron]]'s); the fingers look just as low movement
    as the layout set out to be. This is a great success, because it
    validates my theory of finger movement. This feels accurate for me
    as well, even at over 160 wpm on Semimak, my fingers feel like
@@ -97,7 +97,7 @@ and weighted finger dexterity.
    who encouraged and inspired me immensely. Thank you all!
     
 * Development
-  I created my own analyzer, [[file:genkey.org][genkey]] to put my ideas into effect. At
+  I created my own analyzer, [[file:genkey/index.org][genkey]] to put my ideas into effect. At
   the time, it was only made for myself, and was difficult to
   use. However, many people have used it since then, creating their
   own layouts with it, and it has been massively improved since its
@@ -130,7 +130,7 @@ and weighted finger dexterity.
    lateral movement was treated worse in my analyzer.
 
 ** Finger weighting
-   I used a basic script that [[https:github.com/notgate][NotGate]] wrote to test how quickly I can move
+   I used a basic script that [[https://github.com/notgate][NotGate]] wrote to test how quickly I can move
    each of my fingers. For example, to see how dexterous my middle
    finger is, I would type eded over and over on QWERTY, and see how
    fast my keys per second was. This data was then used to weight how
@@ -147,7 +147,8 @@ and weighted finger dexterity.
    would have really been /way/ too much.
 
 * Download
-  Downloads for Windows native and EPKL, MacOS and Linux are available in [[https:github.com/semilin/semimak/releases][the Github Release page]]!
+  Downloads for Windows native and EPKL, MacOS and Linux are available
+  in [[https://github.com/semilin/semimak/releases][the Github Release page]]!
 
 * Footnotes
 
