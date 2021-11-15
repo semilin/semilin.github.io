@@ -1,5 +1,7 @@
 #+TITLE:Semimak
 
+[[file:semimak.png]]
+
 The Semimak layout is designed to have low finger movement rate -
 decreasing the overall speed at which your fingers must travel to type
 on average. This doesn’t only mean to optimize for reducing
