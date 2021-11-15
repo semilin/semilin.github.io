@@ -40,5 +40,8 @@ analysis and creation.
      + ISRT
      + Colemak DH
 ** Contact Information
-   + Discord: =semi#5753=
+   + Email: [[mailto:semilinares@pm.me][semilinares@pm.me]]
    + Matrix: =@semilin0:matrix.org=
+   + Discord: =semi#5753=
+   + Session: =05d026a337fe782d2a0ef5fe172fa5634f0291ed2bdf0d98025e11d5542ee2c613=
+
