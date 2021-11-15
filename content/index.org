@@ -8,11 +8,11 @@ analysis and creation.
     high typing speeds. In July 2021, [[https://github.com/notgate][NotGate]] and I held a one month
     long tournament to learn it with an $835 prize pool, which over 200
     people participated in.
-*** genkey
-    [[file:genkey/index.org][genkey]] is a tool for keyboard layout analysis and generation that I
-    created to make Semimak. It's multi-threaded and pretty powerful;
-    on my laptop, it can analyze some simple stats at a rate of 1
-    million layouts per second. 
+*** [[./genkey/index.html][genkey]]
+    genkey is a tool for keyboard layout analysis and generation that
+    I created to make Semimak. It's multi-threaded and pretty
+    powerful; on my laptop, it can analyze some simple stats at a rate
+    of 1 million layouts per second.
 *** klcord
     [[https://github.com/semilin/klcord][klcord]] is a basic Discord bot for getting keyboard layout
     information, because there are too many of them and we can't keep
