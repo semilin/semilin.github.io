@@ -16,28 +16,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org980b0c7">Reflecting on Semimak, 3 months later</a>
+<li><a href="#orgb3298e6">Reflecting on Semimak, 3 months later</a>
 <ul>
-<li><a href="#org83a8fe2">Problems</a></li>
-<li><a href="#orga19de95">Successes</a></li>
-<li><a href="#org5c751ef">Takeaways</a></li>
+<li><a href="#org0e746fb">Problems</a></li>
+<li><a href="#orge8728d4">Successes</a></li>
+<li><a href="#org822d301">Takeaways</a></li>
 </ul>
 </li>
-<li><a href="#org74bd5e4">Development</a>
+<li><a href="#orgaf58784">Development</a>
 <ul>
-<li><a href="#orgee3562f">Finger Speed</a></li>
-<li><a href="#org1e59506">Skipgrams</a></li>
-<li><a href="#org2f976a3">Distance weighting</a></li>
-<li><a href="#org6023bf7">Finger weighting</a></li>
-<li><a href="#orgeaffc08">Scoring</a></li>
+<li><a href="#org8cab048">Finger Speed</a></li>
+<li><a href="#org723765e">Skipgrams</a></li>
+<li><a href="#org7aeee38">Distance weighting</a></li>
+<li><a href="#orgb1cc038">Finger weighting</a></li>
+<li><a href="#org313fd04">Scoring</a></li>
 </ul>
 </li>
-<li><a href="#orgc7f9743">Download</a></li>
+<li><a href="#org191ad45">Download</a></li>
 </ul>
 </div>
 </div>
 
-<div id="org1cd567c" class="figure">
+<div id="orgba4695d" class="figure">
 <p><img src="semimak.png" alt="semimak.png" />
 </p>
 </div>
@@ -51,9 +51,9 @@ same-finger bigrams (e.g <code>ed</code> on QWERTY), but disjointeds as well
 and weighted finger dexterity.
 </p>
 
-<div id="outline-container-org980b0c7" class="outline-2">
-<h2 id="org980b0c7">Reflecting on Semimak, 3 months later</h2>
-<div class="outline-text-2" id="text-org980b0c7">
+<div id="outline-container-orgb3298e6" class="outline-2">
+<h2 id="orgb3298e6">Reflecting on Semimak, 3 months later</h2>
+<div class="outline-text-2" id="text-orgb3298e6">
 <p>
 On July 1st, 12:00 P.M PDT, Semimak was released. <a href="https://github.com/notgate">NotGate</a> and I held
 a tournament with an $850 prize pool, and over 200 people
@@ -62,13 +62,13 @@ feedback from this!
 </p>
 </div>
 
-<div id="outline-container-org83a8fe2" class="outline-3">
-<h3 id="org83a8fe2">Problems</h3>
-<div class="outline-text-3" id="text-org83a8fe2">
+<div id="outline-container-org0e746fb" class="outline-3">
+<h3 id="org0e746fb">Problems</h3>
+<div class="outline-text-3" id="text-org0e746fb">
 </div>
 <ul class="org-ul">
-<li><a id="orgc5664b5"></a>Right Index Finger<br />
-<div class="outline-text-5" id="text-orgc5664b5">
+<li><a id="org18d82b8"></a>Right Index Finger<br />
+<div class="outline-text-5" id="text-org18d82b8">
 <p>
 Despite the relatively low usage of the right index finger, some
 people had difficulty with it. It is the finger with the highest
@@ -79,8 +79,8 @@ finger.
 </div>
 </li>
 
-<li><a id="org7364514"></a>Ring Finger Movements<br />
-<div class="outline-text-5" id="text-org7364514">
+<li><a id="orgf214e92"></a>Ring Finger Movements<br />
+<div class="outline-text-5" id="text-orgf214e92">
 <p>
 This seemed to be the biggest issue people had with the layout
 overall. <code>lr'</code> and <code>oa.</code> columns will cause a lot of movement,
@@ -109,8 +109,8 @@ fingers. Regardless, this was my biggest oversight with Semimak.
 </div>
 
 <ul class="org-ul">
-<li><a id="orge5e8e0a"></a>'r and 'll<br />
-<div class="outline-text-6" id="text-orge5e8e0a">
+<li><a id="org5086975"></a>'r and 'll<br />
+<div class="outline-text-6" id="text-org5086975">
 <p>
 This is one of the more specific egregious problems with
 Semimak. Words like <code>you're</code>, <code>you'll</code>, and <code>I'll</code> are abyssmal
@@ -120,7 +120,7 @@ found them quite problematic. Because of this, I created my own
 mod, <b>Semimak JQ</b> about 2 months after its original release.
 </p>
 
-<div class="layoutblock" id="org04a3152">
+<div class="layoutblock" id="org6d775a9">
 <p>
 f l h v z  ' w u o y
 </p>
@@ -148,9 +148,9 @@ objectively better than the reference layout, at least for me.
 </ul>
 </div>
 
-<div id="outline-container-orga19de95" class="outline-3">
-<h3 id="orga19de95">Successes</h3>
-<div class="outline-text-3" id="text-orga19de95">
+<div id="outline-container-orge8728d4" class="outline-3">
+<h3 id="orge8728d4">Successes</h3>
+<div class="outline-text-3" id="text-orge8728d4">
 <p>
 By the end of the one month tournament, over 5 people had gotten above 100
 wpm with the layout on a very difficult typing test - top 10k English words,
@@ -175,9 +175,9 @@ who Semimak works for, it seems to work really well.
 </div>
 </div>
 
-<div id="outline-container-org5c751ef" class="outline-3">
-<h3 id="org5c751ef">Takeaways</h3>
-<div class="outline-text-3" id="text-org5c751ef">
+<div id="outline-container-org822d301" class="outline-3">
+<h3 id="org822d301">Takeaways</h3>
+<div class="outline-text-3" id="text-org822d301">
 <p>
 Overall, Semimak was a very novel layout. It was the first of its
 kind<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, and because of that was extremely different from most
@@ -201,9 +201,9 @@ who encouraged and inspired me immensely. Thank you all!
 </div>
 </div>
 
-<div id="outline-container-org74bd5e4" class="outline-2">
-<h2 id="org74bd5e4">Development</h2>
-<div class="outline-text-2" id="text-org74bd5e4">
+<div id="outline-container-orgaf58784" class="outline-2">
+<h2 id="orgaf58784">Development</h2>
+<div class="outline-text-2" id="text-orgaf58784">
 <p>
 I created my own analyzer, <a href="genkey/index.html">genkey</a> to put my ideas into effect. At
 the time, it was only made for myself, and was difficult to
@@ -214,9 +214,9 @@ your own, give it a shot!
 </p>
 </div>
 
-<div id="outline-container-orgee3562f" class="outline-3">
-<h3 id="orgee3562f">Finger Speed</h3>
-<div class="outline-text-3" id="text-orgee3562f">
+<div id="outline-container-org8cab048" class="outline-3">
+<h3 id="org8cab048">Finger Speed</h3>
+<div class="outline-text-3" id="text-org8cab048">
 <p>
 Most layout analyzers at the moment report an SFB percentage - how
 many times you use the same finger to hit two keys in a row. But I
@@ -229,9 +229,9 @@ concurrent to be significant?
 </div>
 </div>
 
-<div id="outline-container-org1e59506" class="outline-3">
-<h3 id="org1e59506">Skipgrams</h3>
-<div class="outline-text-3" id="text-org1e59506">
+<div id="outline-container-org723765e" class="outline-3">
+<h3 id="org723765e">Skipgrams</h3>
+<div class="outline-text-3" id="text-org723765e">
 <p>
 Instead of only punishing same-finger bigrams weighted by finger
 and distance, I had the idea to also punish same-finger
@@ -244,9 +244,9 @@ myself and typists much faster than me.
 </div>
 </div>
 
-<div id="outline-container-org2f976a3" class="outline-3">
-<h3 id="org2f976a3">Distance weighting</h3>
-<div class="outline-text-3" id="text-org2f976a3">
+<div id="outline-container-org7aeee38" class="outline-3">
+<h3 id="org7aeee38">Distance weighting</h3>
+<div class="outline-text-3" id="text-org7aeee38">
 <p>
 I weighted the distance between keys exponentially, as I think a
 distance of 2 units is much worse than a distance of 1
@@ -257,9 +257,9 @@ lateral movement was treated worse in my analyzer.
 </div>
 </div>
 
-<div id="outline-container-org6023bf7" class="outline-3">
-<h3 id="org6023bf7">Finger weighting</h3>
-<div class="outline-text-3" id="text-org6023bf7">
+<div id="outline-container-orgb1cc038" class="outline-3">
+<h3 id="orgb1cc038">Finger weighting</h3>
+<div class="outline-text-3" id="text-orgb1cc038">
 <p>
 I used a basic script that <a href="https://github.com/notgate">NotGate</a> wrote to test how quickly I can move
 each of my fingers. For example, to see how dexterous my middle
@@ -270,9 +270,9 @@ bad fast distance is on each finger.
 </div>
 </div>
 
-<div id="outline-container-orgeaffc08" class="outline-3">
-<h3 id="orgeaffc08">Scoring</h3>
-<div class="outline-text-3" id="text-orgeaffc08">
+<div id="outline-container-org313fd04" class="outline-3">
+<h3 id="org313fd04">Scoring</h3>
+<div class="outline-text-3" id="text-org313fd04">
 <p>
 The layout was scored by genkey largely with the weighted finger
 movement speed metric. There was also some reward for rolling, and
@@ -289,9 +289,9 @@ would have really been <i>way</i> too much.
 </div>
 </div>
 
-<div id="outline-container-orgc7f9743" class="outline-2">
-<h2 id="orgc7f9743">Download</h2>
-<div class="outline-text-2" id="text-orgc7f9743">
+<div id="outline-container-org191ad45" class="outline-2">
+<h2 id="org191ad45">Download</h2>
+<div class="outline-text-2" id="text-org191ad45">
 <p>
 Downloads for Windows native and EPKL, MacOS and Linux are available
 in <a href="https://github.com/semilin/semimak/releases">the Github Release page</a>!

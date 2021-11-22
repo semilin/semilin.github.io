@@ -26,22 +26,22 @@ analysis and creation.
 ** Stuff I use
    This changes worryingly frequently so it may not be up to date. 
 **** OS
-     Void Linux ([[https://github.com/semilin/dots][dots]]).
+     [[https://voidlinux.org/][Void Linux]] ([[https://github.com/semilin/dots][dots]]).
 **** Window Manager
-     BSPWM ([[https://github.com/semilin/dots/blob/main/bspwm/bspwmrc][config]]).
+     [[https://github.com/baskerville/bspwm][BSPWM]] ([[https://github.com/semilin/dots/blob/main/bspwm/bspwmrc][config]]).
 **** Editor
-     Emacs ([[https://github.com/semilin/dotemacs][config]]).
+     [[https://www.gnu.org/software/emacs/][Emacs]] ([[https://github.com/semilin/dotemacs][config]]).
 **** Keyboard
-     BoardSource Microdox.
+     [[https://boardsource.xyz/store/5f2e7e4a2902de7151494f92][BoardSource Microdox]].
 **** Layout
-     Semimak JQ, my personal mod of Semimak.
+     [[file:semimak/index.org::*'r and 'll][Semimak JQ]], my personal mod of Semimak.
      In the past, I have used (higher = more recent):
      + Semimak
-     + ISRT
-     + Colemak DH
+     + [[https://notgate.github.io/layout/][ISRT]]
+     + [[https://colemakmods.github.io/mod-dh/][Colemak DH]]
 ** Contact Information
    + Email: [[mailto:semilinares@pm.me][semilinares@pm.me]]
-   + Matrix: =@semilin0:matrix.org=
+   + [[https://matrix.org/][Matrix]]: =@semilin0:matrix.org=
    + Discord: =semi#5753=
-   + Session: =05d026a337fe782d2a0ef5fe172fa5634f0291ed2bdf0d98025e11d5542ee2c613=
+   + [[https://getsession.org/][Session]]: =05d026a337fe782d2a0ef5fe172fa5634f0291ed2bdf0d98025e11d5542ee2c613=
 
