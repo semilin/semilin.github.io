@@ -26,11 +26,11 @@ analysis and creation.
 ** Stuff I use
    This changes worryingly frequently so it may not be up to date. 
 **** OS
-     Void Linux.
+     Void Linux ([[https://github.com/semilin/dots][dots]]).
 **** Window Manager
-     BSPWM.
+     BSPWM ([[https://github.com/semilin/dots/blob/main/bspwm/bspwmrc][config]]).
 **** Editor
-     Emacs, my own config.
+     Emacs ([[https://github.com/semilin/dotemacs][config]]).
 **** Keyboard
      BoardSource Microdox.
 **** Layout
