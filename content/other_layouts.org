@@ -50,7 +50,7 @@ for the [[https://bit.ly/keyboard-layouts-doc][Keyboard Layouts Doc]], so here's
    #+end_src
    I made Foalmak for the Colemak Discord's "April's Foal" day
    in 2021. It says "foals neigh" on the homerow. Pretty funny. It's
-   even in [[https:github.com/DreymaR/BigBagKbdTrixPKL/tree/master/Layouts/Foalmak][EPKL]].
+   even in [[https://github.com/DreymaR/BigBagKbdTrixPKL/tree/master/Layouts/Foalmak][EPKL]].
 ** Vitrimak
    Staggered
    #+begin_src 
