@@ -31,10 +31,6 @@
         --preformatted: #CCC;
         --disabled: #111;
     }
-    img,
-    video {
-        opacity: 0.6;
-    }
 }
 html {
     font-family: var(--sans-font);
