@@ -3,7 +3,7 @@
 I've made some other layouts besides [[./semimak/index.org][Semimak]]. Some of them are pretty
 neat, but they haven't been very public besides floating around
 Discord. Mostly, the great ec0vid wanted to have an official reference
-for the [[https:bit.ly/keyboard-layouts-doc][Keyboard Layouts Doc]], so here's that.
+for the [[https://bit.ly/keyboard-layouts-doc][Keyboard Layouts Doc]], so here's that.
 * Rolll
   #+begin_src 
     y o u w b  x k c l v

@@ -42,42 +42,42 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9dd7dc2">Basic Usage</a></li>
-<li><a href="#orge063382">Layouts</a>
+<li><a href="#org9e8f46f">Basic Usage</a></li>
+<li><a href="#orgc4dc82e">Layouts</a>
 <ul>
-<li><a href="#orgf4b476e">_generate</a></li>
+<li><a href="#org92a03ef">_generate</a></li>
 </ul>
 </li>
-<li><a href="#org57faa04">Weighting</a>
+<li><a href="#org83e0c87">Weighting</a>
 <ul>
-<li><a href="#org2fcae73">Distance</a></li>
-<li><a href="#org1da7064">Finger Speed</a></li>
-<li><a href="#orgf2f43a3">Index Balance</a></li>
-<li><a href="#org64c903b">LSB</a></li>
-<li><a href="#org8b98e6f">Trigrams</a>
+<li><a href="#org4ce331c">Distance</a></li>
+<li><a href="#orgd436242">Finger Speed</a></li>
+<li><a href="#org9768abc">Index Balance</a></li>
+<li><a href="#org914ed79">LSB</a></li>
+<li><a href="#orgd71caa0">Trigrams</a>
 <ul>
-<li><a href="#orgb02cf8a">Rolls</a></li>
-<li><a href="#orgb709ca7">Alternation</a></li>
-<li><a href="#org90785f5">Redirects</a></li>
-<li><a href="#org77ce43a">Onehands</a></li>
+<li><a href="#orgbb62a71">Rolls</a></li>
+<li><a href="#org197fa2a">Alternation</a></li>
+<li><a href="#orgbee8105">Redirects</a></li>
+<li><a href="#org27d5071">Onehands</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgc322867">Commands</a>
+<li><a href="#org34571c0">Commands</a>
 <ul>
-<li><a href="#orgf2e30c7">Load</a></li>
-<li><a href="#org3e5663d">Rank</a></li>
-<li><a href="#org26c929f">Analyze</a></li>
-<li><a href="#org0bb0261">Generate</a></li>
-<li><a href="#org1ecf195">Improve</a></li>
-<li><a href="#org82a996c">Interactive</a>
+<li><a href="#org34de6a5">Load</a></li>
+<li><a href="#orgab1fe81">Rank</a></li>
+<li><a href="#org5bb2ab2">Analyze</a></li>
+<li><a href="#org85fd3a9">Generate</a></li>
+<li><a href="#orgca4d5df">Improve</a></li>
+<li><a href="#org390d65f">Interactive</a>
 <ul>
-<li><a href="#orgc7e31cd">Swap</a></li>
-<li><a href="#orgb166497">Column Swap</a></li>
-<li><a href="#org508b909">Suggest</a></li>
-<li><a href="#orge047558">Save</a></li>
-<li><a href="#orga133834">Quit</a></li>
+<li><a href="#org999e761">Swap</a></li>
+<li><a href="#org27b3e29">Column Swap</a></li>
+<li><a href="#orgeea4807">Suggest</a></li>
+<li><a href="#orgcbd37ac">Save</a></li>
+<li><a href="#org8a0f254">Quit</a></li>
 </ul>
 </li>
 </ul>
@@ -86,9 +86,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9dd7dc2" class="outline-2">
-<h2 id="org9dd7dc2">Basic Usage</h2>
-<div class="outline-text-2" id="text-org9dd7dc2">
+<div id="outline-container-org9e8f46f" class="outline-2">
+<h2 id="org9e8f46f">Basic Usage</h2>
+<div class="outline-text-2" id="text-org9e8f46f">
 <p>
 Genkey is a command line tool. This means that you perform actions
 by running the binary through the terminal.
@@ -112,9 +112,9 @@ The general format of commands looks like this:
 </div>
 </div>
 
-<div id="outline-container-orge063382" class="outline-2">
-<h2 id="orge063382">Layouts</h2>
-<div class="outline-text-2" id="text-orge063382">
+<div id="outline-container-orgc4dc82e" class="outline-2">
+<h2 id="orgc4dc82e">Layouts</h2>
+<div class="outline-text-2" id="text-orgc4dc82e">
 <p>
 Layouts are stored as basic text files in the <code>layouts</code>
 subdirectory. Here is an example of its format, using the
@@ -152,9 +152,9 @@ fork</a> does add experimental support.
 </p>
 </div>
 
-<div id="outline-container-orgf4b476e" class="outline-3">
-<h3 id="orgf4b476e">_generate</h3>
-<div class="outline-text-3" id="text-orgf4b476e">
+<div id="outline-container-org92a03ef" class="outline-3">
+<h3 id="org92a03ef">_generate</h3>
+<div class="outline-text-3" id="text-org92a03ef">
 <p>
 The <code>_generate</code> layout file is used to define the fingermap for
 layouts created with the generate function. In addition, the main
@@ -165,9 +165,9 @@ keys are labeled with <code>*</code>, and pinned keys are labeled with <code>X</
 </div>
 </div>
 
-<div id="outline-container-org57faa04" class="outline-2">
-<h2 id="org57faa04">Weighting</h2>
-<div class="outline-text-2" id="text-org57faa04">
+<div id="outline-container-org83e0c87" class="outline-2">
+<h2 id="org83e0c87">Weighting</h2>
+<div class="outline-text-2" id="text-org83e0c87">
 <p>
 The weights that determine how layouts are scored is configured in
 <code>weights.hjson</code>. Though the base weights are made to be an okay
@@ -188,9 +188,9 @@ is great, but that doesn't mean it's actually better.
 Note: higher score is worse, lower score is better.
 </p>
 </div>
-<div id="outline-container-org2fcae73" class="outline-3">
-<h3 id="org2fcae73">Distance</h3>
-<div class="outline-text-3" id="text-org2fcae73">
+<div id="outline-container-org4ce331c" class="outline-3">
+<h3 id="org4ce331c">Distance</h3>
+<div class="outline-text-3" id="text-org4ce331c">
 <p>
 This is the way to calculate distance between any two given keys
 on a layout.
@@ -211,9 +211,9 @@ treat distance exponentially.
 </p>
 </div>
 </div>
-<div id="outline-container-org1da7064" class="outline-3">
-<h3 id="org1da7064">Finger Speed</h3>
-<div class="outline-text-3" id="text-org1da7064">
+<div id="outline-container-orgd436242" class="outline-3">
+<h3 id="orgd436242">Finger Speed</h3>
+<div class="outline-text-3" id="text-orgd436242">
 <p>
 At a high level, finger speed is basically just looking at bigrams
 and skipgrams with an adaptation of the rate equation:
@@ -224,7 +224,7 @@ r=\frac{d}{n}
 
 <p>
 \(d\) is the distance between the two keys (see
-<a href="#org2fcae73">Distance</a>). \(n\) is the 'length' of the skip-gram, or how the
+<a href="#org4ce331c">Distance</a>). \(n\) is the 'length' of the skip-gram, or how the
 distance between characters in the sequence. For a bigram, \(n\)
 is 1. For a skip-1-gram, (e.g. <code>t_e</code> in <code>the</code>) \(n\) is 2.
 </p>
@@ -278,9 +278,9 @@ useful metric, but take it with a grain of salt.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf2f43a3" class="outline-3">
-<h3 id="orgf2f43a3">Index Balance</h3>
-<div class="outline-text-3" id="text-orgf2f43a3">
+<div id="outline-container-org9768abc" class="outline-3">
+<h3 id="org9768abc">Index Balance</h3>
+<div class="outline-text-3" id="text-org9768abc">
 <p>
 This is a very simple metric that punishes one index finger being
 used much more than the other. It's just the expression \(|l-r|\)
@@ -290,9 +290,9 @@ score.
 </p>
 </div>
 </div>
-<div id="outline-container-org64c903b" class="outline-3">
-<h3 id="org64c903b">LSB</h3>
-<div class="outline-text-3" id="text-org64c903b">
+<div id="outline-container-org914ed79" class="outline-3">
+<h3 id="org914ed79">LSB</h3>
+<div class="outline-text-3" id="text-org914ed79">
 <p>
 LSB stands for Lateral Stretch Bigram. It refers to any adjacent
 finger bigram where \(\Delta x \ge 2\). This typically is used to
@@ -303,9 +303,9 @@ score.
 </p>
 </div>
 </div>
-<div id="outline-container-org8b98e6f" class="outline-3">
-<h3 id="org8b98e6f">Trigrams</h3>
-<div class="outline-text-3" id="text-org8b98e6f">
+<div id="outline-container-orgd71caa0" class="outline-3">
+<h3 id="orgd71caa0">Trigrams</h3>
+<div class="outline-text-3" id="text-orgd71caa0">
 <p>
 Genkey uses trigrams to calculate rolls, alternation, redirects,
 and onehand rolls.
@@ -320,9 +320,9 @@ can set the value to 0. Otherwise, setting the value to -1 disables
 the calculation.
 </p>
 </div>
-<div id="outline-container-orgb02cf8a" class="outline-4">
-<h4 id="orgb02cf8a">Rolls</h4>
-<div class="outline-text-4" id="text-orgb02cf8a">
+<div id="outline-container-orgbb62a71" class="outline-4">
+<h4 id="orgbb62a71">Rolls</h4>
+<div class="outline-text-4" id="text-orgbb62a71">
 <p>
 Rolls are defined as 2 (not-same-finger) keys typed on one hand,
 following or preceding 1 key pressed on the other. An inward roll
@@ -332,9 +332,9 @@ rolls are generally desired, they subtract from the score.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb709ca7" class="outline-4">
-<h4 id="orgb709ca7">Alternation</h4>
-<div class="outline-text-4" id="text-orgb709ca7">
+<div id="outline-container-org197fa2a" class="outline-4">
+<h4 id="org197fa2a">Alternation</h4>
+<div class="outline-text-4" id="text-org197fa2a">
 <p>
 Alternates are defined as trigrams where each key in the sequence
 switches hands. Since alternation is generally desired, it
@@ -342,9 +342,9 @@ subtracts from the score.
 </p>
 </div>
 </div>
-<div id="outline-container-org90785f5" class="outline-4">
-<h4 id="org90785f5">Redirects</h4>
-<div class="outline-text-4" id="text-org90785f5">
+<div id="outline-container-orgbee8105" class="outline-4">
+<h4 id="orgbee8105">Redirects</h4>
+<div class="outline-text-4" id="text-orgbee8105">
 <p>
 Redirects are defined as trigrams where all keys are on the same
 hand, but they do not all follow the same direction. For example,
@@ -354,9 +354,9 @@ are generally undesired, they add to the score.
 </p>
 </div>
 </div>
-<div id="outline-container-org77ce43a" class="outline-4">
-<h4 id="org77ce43a">Onehands</h4>
-<div class="outline-text-4" id="text-org77ce43a">
+<div id="outline-container-org27d5071" class="outline-4">
+<h4 id="org27d5071">Onehands</h4>
+<div class="outline-text-4" id="text-org27d5071">
 <p>
 Onehand rolls are defined as trigrams where all keys are on the
 same, and they all follow the same direction. For example, <code>sdf</code>
@@ -367,13 +367,13 @@ desired, they subtract from the score.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc322867" class="outline-2">
-<h2 id="orgc322867">Commands</h2>
-<div class="outline-text-2" id="text-orgc322867">
+<div id="outline-container-org34571c0" class="outline-2">
+<h2 id="org34571c0">Commands</h2>
+<div class="outline-text-2" id="text-org34571c0">
 </div>
-<div id="outline-container-orgf2e30c7" class="outline-3">
-<h3 id="orgf2e30c7">Load</h3>
-<div class="outline-text-3" id="text-orgf2e30c7">
+<div id="outline-container-org34de6a5" class="outline-3">
+<h3 id="org34de6a5">Load</h3>
+<div class="outline-text-3" id="text-org34de6a5">
 <p>
 Usage: <code>./genkey load FILEPATH</code>
 </p>
@@ -386,9 +386,9 @@ other functions of the program.
 </p>
 </div>
 </div>
-<div id="outline-container-org3e5663d" class="outline-3">
-<h3 id="org3e5663d">Rank</h3>
-<div class="outline-text-3" id="text-org3e5663d">
+<div id="outline-container-orgab1fe81" class="outline-3">
+<h3 id="orgab1fe81">Rank</h3>
+<div class="outline-text-3" id="text-orgab1fe81">
 <p>
 Usage: <code>./genkey r</code>
 </p>
@@ -398,9 +398,9 @@ Outputs a ranked list of layouts next to their scores.
 </p>
 </div>
 </div>
-<div id="outline-container-org26c929f" class="outline-3">
-<h3 id="org26c929f">Analyze</h3>
-<div class="outline-text-3" id="text-org26c929f">
+<div id="outline-container-org5bb2ab2" class="outline-3">
+<h3 id="org5bb2ab2">Analyze</h3>
+<div class="outline-text-3" id="text-org5bb2ab2">
 <p>
 Usage: <code>./genkey a LAYOUT</code>
 </p>
@@ -410,9 +410,9 @@ Outputs detailed analysis of a layout.
 </p>
 </div>
 </div>
-<div id="outline-container-org0bb0261" class="outline-3">
-<h3 id="org0bb0261">Generate</h3>
-<div class="outline-text-3" id="text-org0bb0261">
+<div id="outline-container-org85fd3a9" class="outline-3">
+<h3 id="org85fd3a9">Generate</h3>
+<div class="outline-text-3" id="text-org85fd3a9">
 <p>
 Usage: <code>./genkey g</code>
 </p>
@@ -425,22 +425,22 @@ probably most dependent on your CPU's multicore efficiency.
 </p>
 </div>
 </div>
-<div id="outline-container-org1ecf195" class="outline-3">
-<h3 id="org1ecf195">Improve</h3>
-<div class="outline-text-3" id="text-org1ecf195">
+<div id="outline-container-orgca4d5df" class="outline-3">
+<h3 id="orgca4d5df">Improve</h3>
+<div class="outline-text-3" id="text-orgca4d5df">
 <p>
 Usage: <code>./genkey improve LAYOUT</code>
 </p>
 
 <p>
 Attempts to optimize the score of the given layout, without moving
-the pinned keys (see <a href="#orgf4b476e">_generate</a>).
+the pinned keys (see <a href="#org92a03ef">_generate</a>).
 </p>
 </div>
 </div>
-<div id="outline-container-org82a996c" class="outline-3">
-<h3 id="org82a996c">Interactive</h3>
-<div class="outline-text-3" id="text-org82a996c">
+<div id="outline-container-org390d65f" class="outline-3">
+<h3 id="org390d65f">Interactive</h3>
+<div class="outline-text-3" id="text-org390d65f">
 <p>
 Usage: <code>./genkey i LAYOUT</code>
 </p>
@@ -452,9 +452,9 @@ effects in real-time. It's a fast and dynamic way to approach
 layout creation.
 </p>
 </div>
-<div id="outline-container-orgc7e31cd" class="outline-4">
-<h4 id="orgc7e31cd">Swap</h4>
-<div class="outline-text-4" id="text-orgc7e31cd">
+<div id="outline-container-org999e761" class="outline-4">
+<h4 id="org999e761">Swap</h4>
+<div class="outline-text-4" id="text-org999e761">
 <p>
 Usage: <code>s key1 key2</code>
 </p>
@@ -468,9 +468,9 @@ Example: <code>s a b</code>
 </p>
 </div>
 </div>
-<div id="outline-container-orgb166497" class="outline-4">
-<h4 id="orgb166497">Column Swap</h4>
-<div class="outline-text-4" id="text-orgb166497">
+<div id="outline-container-org27b3e29" class="outline-4">
+<h4 id="org27b3e29">Column Swap</h4>
+<div class="outline-text-4" id="text-org27b3e29">
 <p>
 Usage: <code>cs key1 key2</code> or <code>cs col1 col2</code>
 </p>
@@ -490,9 +490,9 @@ Examples:
 </ul>
 </div>
 </div>
-<div id="outline-container-org508b909" class="outline-4">
-<h4 id="org508b909">Suggest</h4>
-<div class="outline-text-4" id="text-org508b909">
+<div id="outline-container-orgeea4807" class="outline-4">
+<h4 id="orgeea4807">Suggest</h4>
+<div class="outline-text-4" id="text-orgeea4807">
 <p>
 Usage: <code>g</code>
 </p>
@@ -504,9 +504,9 @@ immediately result in, and what score it can lead to.
 </p>
 </div>
 </div>
-<div id="outline-container-orge047558" class="outline-4">
-<h4 id="orge047558">Save</h4>
-<div class="outline-text-4" id="text-orge047558">
+<div id="outline-container-orgcbd37ac" class="outline-4">
+<h4 id="orgcbd37ac">Save</h4>
+<div class="outline-text-4" id="text-orgcbd37ac">
 <p>
 Usage: <code>save</code>
 </p>
@@ -517,9 +517,9 @@ already taken, you'll be asked if you want to overwrite it.
 </p>
 </div>
 </div>
-<div id="outline-container-orga133834" class="outline-4">
-<h4 id="orga133834">Quit</h4>
-<div class="outline-text-4" id="text-orga133834">
+<div id="outline-container-org8a0f254" class="outline-4">
+<h4 id="org8a0f254">Quit</h4>
+<div class="outline-text-4" id="text-org8a0f254">
 <p>
 Usage: <code>q</code>
 </p>
