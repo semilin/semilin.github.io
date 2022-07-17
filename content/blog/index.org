@@ -1,0 +1,5 @@
+#+TITLE: Blog or something
+#+OPTIONS: toc:nil
+* 2022
+** July
+   - [[./hitting_200wpm.org][200 wpm - the final reflection on Semimak]]
