@@ -19,6 +19,8 @@ analysis and creation.
     track of them or where to find them.
 
     Usage: =!layout layoutname=
+*** Blog
+    I have [[./blog/index.org][a blog where I talk about keyboard layouts and such]].
 *** More in the future
     I have a lot of ideas. Sometimes I forget them, or am too bad to
     make them. Eventually, some of them will get made, so look forward
