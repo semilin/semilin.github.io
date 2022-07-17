@@ -1,5 +1,6 @@
-#+TITLE: Blog or something
+#+TITLE: semi's very cool blog (real)
 #+OPTIONS: toc:nil
+I talk about keyboard layouts or something (what a nerd!!)
 * 2022
 ** July
    - [[./hitting_200wpm.org][200 wpm - the final reflection on Semimak]]
