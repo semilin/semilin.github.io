@@ -1,7 +1,7 @@
 #+TITLE: 200 wpm - final reflection on Semimak
 #+DATE: July 16 2022
 
-[[../media/200wpm.png]]
+[[../../media/200wpm.png]]
 
 In less than a year of using Semimak, I hit 200 words per minute on it. On my previous layouts the highest I had gotten was 160 wpm, so this is a big achievement for me. It also means that I'm the first and only person to have achieved 200 wpm on their own layout!.[fn:1] Given this milestone, I thought I should write a little bit about my experience getting here and my final thoughts on the layout.
 

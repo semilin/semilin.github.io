@@ -1,0 +1,71 @@
+#+TITLE: Other Layouts
+
+I've made some other layouts besides [[./semimak/index.org][Semimak]]. Some of them are pretty
+neat, but they haven't been very public besides floating around
+Discord. Mostly, the great ec0vid wanted to have an official reference
+for the [[https://bit.ly/keyboard-layouts-doc][Keyboard Layouts Doc]], so here's that.
+* Rolll
+  #+begin_src 
+    y o u w b  x k c l v
+    i a e n p  d h s r t
+    j / , . q  f m g ' z
+  #+end_src
+  I made Rolll after Semimak. It's called Rolll because it's basically
+  Semimak but it has more rolls, particularly inward rolls. It also
+  has less redirects. There's not much more to it other than that. If
+  you mirror the layout, it's pretty similar to Semimak. The main
+  possible issue for people would be the =vtz= right pinky. And of
+  course, some of the same problems as Semimak, like the =lr'= ring
+  and the =e,= SFB.
+
+  In terms of how good it is overall, it's better than Semimak in
+  terms of the relationships between different fingers; the
+  roll/redirect ratio is quite good. It utilizes the index fingers
+  more, which most people would probably like. However, it does have
+  worse same-finger statistics than Semimak.
+* Hyperroll
+  #+begin_src 
+    p c l m v  x u o y f
+    n s r t d  . a e i h
+    b g ' w z  / , q j k
+  #+end_src
+  Like Rolll, this one has a lot of rolls, except it has very few
+  outward rolls and redirects. Hyperroll actually looks pretty nice
+  overall, but the pinky movement might be a bit much for most people.
+* Flaw
+  #+begin_src 
+    f l a w p  z k u r /
+    h s o y c  m t e n i
+    b j ' g v  q d . x ,
+  #+end_src
+  Flaw is just a layout I stumbled across while making Semimak. It's
+  funny because it says "flaw" on the top. That's pretty much where
+  the interesting stuff about it ends.
+* Less serious layouts
+** Foalmak
+   #+begin_src 
+     b x , w v  z / u t k
+     f o a l s  n e i g h
+     p ' . m c  q j y d r 
+   #+end_src
+   I made Foalmak for the Colemak Discord's "April's Foal" day
+   in 2021. It says "foals neigh" on the homerow. Pretty funny. It's
+   even in [[https://github.com/DreymaR/BigBagKbdTrixPKL/tree/master/Layouts/Foalmak][EPKL]].
+** Vitrimak
+   Staggered
+   #+begin_src 
+     t k v u m  i a j b r
+      w x / f p  d g q , s
+       h . ' c o  l n z y e 
+   #+end_src
+
+   Ortho
+   #+begin_src 
+     t y q o c  a i v . e
+     w , x p m  g d / j s
+     h b z u f  n l ' k r
+   #+end_src
+
+   Vitrimak is an attempt at making the "worst" keyboard layout,
+   similar to CarpalX's TNWMLC layout. It only used finger speed as a
+   metric. It's not bad at being bad.
