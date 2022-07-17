@@ -3,7 +3,7 @@
 
 [[../media/200wpm.png]]
 
-In less than a year of using Semimak, I hit 200 words per minute on it. On my previous layouts the highest I had gotten was 160 wpm, so this is a big achievement for me. It also means that I'm the first and only person to have achieved 200 wpm on their own layout!.[fn:1] Given this milestone, I thought I should write a little bit about my experience getting here and my final thoughts on the layout.
+In less than a year of using Semimak, I hit 200 words per minute on it. On my previous layouts the highest I had gotten was 160 wpm, so this is a big achievement for me. It also means that I'm the first and only person to have achieved 200 wpm on their own layout![fn:1] Given this milestone, I thought I should write a little bit about my experience getting here and my final thoughts on the layout.
 
 Semimak is a great layout... well, for me at least! This definitely makes sense, given it was designed around problems that I identified with /my experience/ in other layouts, and it was closely modeled around my personal finger dexterity. If there is anything we should be able to agree on in keyboard layouts, it's that what is "good" is entirely subjective. People have different hands. They have different ideas of what is comfortable, and different physical limits. My ring and pinky fingers are more capable than many, while my middle fingers can be considered pretty slow. Therefore, it's likely that my layout won't be the best experience for a lot of people, despite being great for me!
 
