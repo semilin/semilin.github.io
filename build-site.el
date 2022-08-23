@@ -15,7 +15,7 @@
 	     :base-directory "./content"
 	     :publishing-directory "./docs"
 	     :publishing-function 'org-html-publish-to-html
-	     :preamble "<header><nav><a href=\"/\">Home</a></nav></header>"
+	     :preamble "<a href=\"/\">Home</a> <a href=\"/blog/\">Blog</a>"
 	     :with-author nil
 	     :with-creator t
 	     :with-toc t

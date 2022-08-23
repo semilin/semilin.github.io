@@ -1,0 +1,68 @@
+#+TITLE: layout terminology
+
+Keyboard layouts are weird and we use weird words to describe
+them. Here I explain some of these words. Enjoy.
+
+* Table of Contents :toc:
+- [[#ngrams][Ngrams]]
+  - [[#bigrams-trigrams][Bigrams, trigrams]]
+  - [[#skipgrams][Skipgrams]]
+- [[#fingers][Fingers]]
+  - [[#traditional-fingering][Traditional fingering]]
+  - [[#angle-fingering--angle-cheat][Angle fingering / "angle cheat"]]
+- [[#metrics][Metrics]]
+  - [[#same-finger-bigram-sfb][Same Finger Bigram (SFB)]]
+  - [[#same-finger-skipgram-sfs][Same Finger Skipgram (SFS)]]
+  - [[#disjointed-same-finger-bigram-dsfb][Disjointed Same Finger Bigram (DSFB)]]
+  - [[#roll][Roll]]
+  - [[#alternation][Alternation]]
+  - [[#redirect][Redirect]]
+- [[#keyboards][Keyboards]]
+  - [[#row-stagger][Row stagger]]
+  - [[#ortholinear][Ortholinear]]
+  - [[#columnar-stagger][Columnar stagger]]
+  - [[#split][Split]]
+
+* Ngrams
+  These are standard words that don't have anything to do with layouts
+  in particular, but they're essential vocabulary.
+** Bigrams, trigrams
+   A bigram is a sequence of two consecutive characters or keys, like "ab". A
+   trigram is a sequence of three consecutive characters or keys, like
+   "abc".
+** Skipgrams
+   A skipgram is a sequence of two characters or keys that are NOT
+   consecutive. They may be any distance apart, but we typically
+   analyze ones that have a distance of 1 or 2 characters. An example
+   is the =y_s= in "yes". 
+* Fingers
+** Traditional fingering
+   
+** Angle fingering / "angle cheat"
+* Metrics
+** Same Finger Bigram (SFB)
+   A bigram where the same finger is used to hit both keys. The most
+   common instance of this is =ed= on qwerty, as both =e= and =d= are
+   typically typed with LM.
+
+   This is one of the most important metrics, because they're almost
+   universally agreed upon to be largely detrimental.
+** Same Finger Skipgram (SFS)
+   A skipgram where the same finger is used to hit both keys. These
+   are far less important than [[*Same Finger Bigram (SFB)][SFBs]], but get more important at higher
+   typing speeds, or at greater distances. A good example is the =m_y=
+   in "may" on qwerty. Since =m= and =y= are typically both typed with
+   RI, there is a large jump that needs to be made; at high typing
+   speeds, this is very noticeable.
+** Disjointed Same Finger Bigram (DSFB)
+   Equivalent to [[#same-finger-skipgram-sfs][Same Finger Skipgram (SFS)]]. I don't recommend using
+   this term, as "skipgram" is already a standard term for this sort of
+   thing.
+** Roll
+** Alternation
+** Redirect
+* Keyboards
+** Row stagger
+** Ortholinear
+** Columnar stagger
+** Split
