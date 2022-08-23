@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>layout terminology</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">layout terminology</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org2f13eaf">Ngrams</a>
+<ul>
+<li><a href="#org4c6aa43">Bigrams, trigrams</a></li>
+<li><a href="#org14446f8">Skipgrams</a></li>
+</ul>
+</li>
+<li><a href="#org78cc5ac">Fingers</a>
+<ul>
+<li><a href="#orgb787908">Traditional fingering</a></li>
+<li><a href="#org527e81c">Angle fingering / "angle cheat"</a></li>
+</ul>
+</li>
+<li><a href="#org44d0783">Metrics</a>
+<ul>
+<li><a href="#org6efaeb4">Same Finger Bigram (SFB)</a></li>
+<li><a href="#org8f3d212">Same Finger Skipgram (SFS)</a></li>
+<li><a href="#orge532701">Disjointed Same Finger Bigram (DSFB)</a></li>
+<li><a href="#org4fdcf08">Roll</a></li>
+<li><a href="#orgdff6c87">Alternation</a></li>
+<li><a href="#orga9f71bc">Redirect</a></li>
+</ul>
+</li>
+<li><a href="#org4cb1933">Keyboards</a>
+<ul>
+<li><a href="#org74854fa">Row stagger</a></li>
+<li><a href="#org2d2f748">Ortholinear</a></li>
+<li><a href="#org5c9236d">Columnar stagger</a></li>
+<li><a href="#org35e587e">Split</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Keyboard layouts are weird and we use weird words to describe
+them. Here I explain some of these words. Enjoy.
+</p>
+
+<div id="outline-container-org2f13eaf" class="outline-2">
+<h2 id="org2f13eaf">Ngrams</h2>
+<div class="outline-text-2" id="text-org2f13eaf">
+<p>
+These are standard words that don't have anything to do with layouts
+in particular, but they're essential vocabulary.
+</p>
+</div>
+<div id="outline-container-org4c6aa43" class="outline-3">
+<h3 id="org4c6aa43">Bigrams, trigrams</h3>
+<div class="outline-text-3" id="text-org4c6aa43">
+<p>
+A bigram is a sequence of two consecutive characters or keys, like "ab". A
+trigram is a sequence of three consecutive characters or keys, like
+"abc".
+</p>
+</div>
+</div>
+<div id="outline-container-org14446f8" class="outline-3">
+<h3 id="org14446f8">Skipgrams</h3>
+<div class="outline-text-3" id="text-org14446f8">
+<p>
+A skipgram is a sequence of two characters or keys that are NOT
+consecutive. They may be any distance apart, but we typically
+analyze ones that have a distance of 1 or 2 characters. An example
+is the <code>y_s</code> in "yes". 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org78cc5ac" class="outline-2">
+<h2 id="org78cc5ac">Fingers</h2>
+<div class="outline-text-2" id="text-org78cc5ac">
+</div>
+<div id="outline-container-orgb787908" class="outline-3">
+<h3 id="orgb787908">Traditional fingering</h3>
+</div>
+
+<div id="outline-container-org527e81c" class="outline-3">
+<h3 id="org527e81c">Angle fingering / "angle cheat"</h3>
+</div>
+</div>
+<div id="outline-container-org44d0783" class="outline-2">
+<h2 id="org44d0783">Metrics</h2>
+<div class="outline-text-2" id="text-org44d0783">
+</div>
+<div id="outline-container-org6efaeb4" class="outline-3">
+<h3 id="org6efaeb4">Same Finger Bigram (SFB)</h3>
+<div class="outline-text-3" id="text-org6efaeb4">
+<p>
+A bigram where the same finger is used to hit both keys. The most
+common instance of this is <code>ed</code> on qwerty, as both <code>e</code> and <code>d</code> are
+typically typed with LM.
+</p>
+
+<p>
+This is one of the most important metrics, because they're almost
+universally agreed upon to be largely detrimental.
+</p>
+</div>
+</div>
+<div id="outline-container-org8f3d212" class="outline-3">
+<h3 id="org8f3d212">Same Finger Skipgram (SFS)</h3>
+<div class="outline-text-3" id="text-org8f3d212">
+<p>
+A skipgram where the same finger is used to hit both keys. These
+are far less important than <a href="#org6efaeb4">SFBs</a>, but get more important at higher
+typing speeds, or at greater distances. A good example is the <code>m_y</code>
+in "may" on qwerty. Since <code>m</code> and <code>y</code> are typically both typed with
+RI, there is a large jump that needs to be made; at high typing
+speeds, this is very noticeable.
+</p>
+</div>
+</div>
+<div id="outline-container-orge532701" class="outline-3">
+<h3 id="orge532701">Disjointed Same Finger Bigram (DSFB)</h3>
+<div class="outline-text-3" id="text-orge532701">
+<p>
+Equivalent to <a href="#org8f3d212">SFS</a>. I don't recommend using this term, as "skipgram"
+is already a standard term for this sort of thing.
+</p>
+</div>
+</div>
+<div id="outline-container-org4fdcf08" class="outline-3">
+<h3 id="org4fdcf08">Roll</h3>
+</div>
+<div id="outline-container-orgdff6c87" class="outline-3">
+<h3 id="orgdff6c87">Alternation</h3>
+</div>
+<div id="outline-container-orga9f71bc" class="outline-3">
+<h3 id="orga9f71bc">Redirect</h3>
+</div>
+</div>
+<div id="outline-container-org4cb1933" class="outline-2">
+<h2 id="org4cb1933">Keyboards</h2>
+<div class="outline-text-2" id="text-org4cb1933">
+</div>
+<div id="outline-container-org74854fa" class="outline-3">
+<h3 id="org74854fa">Row stagger</h3>
+</div>
+<div id="outline-container-org2d2f748" class="outline-3">
+<h3 id="org2d2f748">Ortholinear</h3>
+</div>
+<div id="outline-container-org5c9236d" class="outline-3">
+<h3 id="org5c9236d">Columnar stagger</h3>
+</div>
+<div id="outline-container-org35e587e" class="outline-3">
+<h3 id="org35e587e">Split</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.1 (<a href="https://orgmode.org">Org</a> mode 9.5.2)</p>
+</div>
+</body>
+</html>

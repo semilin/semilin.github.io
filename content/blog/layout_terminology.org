@@ -1,27 +1,8 @@
 #+TITLE: layout terminology
+#+OPTIONS: TOC: 2
 
 Keyboard layouts are weird and we use weird words to describe
 them. Here I explain some of these words. Enjoy.
-
-* Table of Contents :toc:
-- [[#ngrams][Ngrams]]
-  - [[#bigrams-trigrams][Bigrams, trigrams]]
-  - [[#skipgrams][Skipgrams]]
-- [[#fingers][Fingers]]
-  - [[#traditional-fingering][Traditional fingering]]
-  - [[#angle-fingering--angle-cheat][Angle fingering / "angle cheat"]]
-- [[#metrics][Metrics]]
-  - [[#same-finger-bigram-sfb][Same Finger Bigram (SFB)]]
-  - [[#same-finger-skipgram-sfs][Same Finger Skipgram (SFS)]]
-  - [[#disjointed-same-finger-bigram-dsfb][Disjointed Same Finger Bigram (DSFB)]]
-  - [[#roll][Roll]]
-  - [[#alternation][Alternation]]
-  - [[#redirect][Redirect]]
-- [[#keyboards][Keyboards]]
-  - [[#row-stagger][Row stagger]]
-  - [[#ortholinear][Ortholinear]]
-  - [[#columnar-stagger][Columnar stagger]]
-  - [[#split][Split]]
 
 * Ngrams
   These are standard words that don't have anything to do with layouts
@@ -55,9 +36,8 @@ them. Here I explain some of these words. Enjoy.
    RI, there is a large jump that needs to be made; at high typing
    speeds, this is very noticeable.
 ** Disjointed Same Finger Bigram (DSFB)
-   Equivalent to [[#same-finger-skipgram-sfs][Same Finger Skipgram (SFS)]]. I don't recommend using
-   this term, as "skipgram" is already a standard term for this sort of
-   thing.
+   Equivalent to [[*Same Finger Skipgram (SFS)][SFS]]. I don't recommend using this term, as "skipgram"
+   is already a standard term for this sort of thing.
 ** Roll
 ** Alternation
 ** Redirect
