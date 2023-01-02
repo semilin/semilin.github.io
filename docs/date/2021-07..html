@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>semi&#039;s site</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen"> <link href="/css/custom.css" rel="stylesheet" media="screen"> <link rel="alternate" href="/rss.xml" type="application/rss+xml" />  </head> <body> <div class="container-fluid"> <div class="row-fluid"> <div class="offset2 span8"> <div class="row-fluid"> <div class="navbar navbar-inverse"> <div class="navbar-inner"> <a class="brand" href="">semi&#039;s site</a> <ul class="nav"> <li> <a href="http://semilin.github.com/">Home</a> </li><li> <a href="http://github.com/semilin">Code</a> </li> </ul> </div> </div> </div> <div class="row-fluid"> <h1 class="page-header">Content from 2021-07</h1> <div class="row-fluid"> <h1><a href="/posts/Semimak.\.html">Semimak</a></h1> <p class="date-posted">posted on 2021-07-01 22:59:40</p> <!-- **** your post here (remove this line) **** -->
+
+<!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
+
+<p>The Semimak layout is designed to have low finger movement rate -
+decreasing the overall speed at which your fingers must travel to type
+on average. This doesn’t only mean to optimize for reducing
+same-finger bigrams (e.g <code>ed</code> on QWERTY), but disjointeds as well
+(e.g the <code>m_y</code> in <code>may</code> on QWERTY). Semimak was the pioneer of DSFB
+and weighted finger dexterity.</p>
+
+<h1>Development</h1>
+
+<p>I created my own analyzer,
+<a href="https://github.com/semilin/genkey" >genkey</a>, to put my ideas into
+effect. At the time, it was only made for myself, and was difficult to
+use. However, many people have used it since then, creating their own
+layouts with it, and it has been massively improved since its
+creation. If you're interested in analyzing layouts, or creating your
+own, give it a shot!</p>
+
+<h2>Finger Speed</h2>
+
+<p>Most layout analyzers at the moment report an SFB percentage - how
+many times you use the same finger to hit two keys in a row. But I
+found this somewhat superficial - not all SFBs are equally bad. They
+can be heavily influenced by what finger is being used and how much
+distance is traveled in the SFB. In addition, the statistic can be
+generalized more. Why do the two keys in the bigram need to be
+concurrent to be significant?</p>
+
+<h2>Skipgrams</h2>
+
+<p>Instead of only punishing same-finger bigrams weighted by finger
+and distance, I had the idea to also punish same-finger
+skipgrams. I weighted this exponentially - separated by 0 keys
+(normal bigram) is a weight of 1, separated by 1 is half as bad,
+separated by 2 is a quarter, and so on. These weights are
+arbitrary, but they were inspired both by the experiences of both
+myself and typists much faster than me.</p>
+
+<h2>Distance weighting</h2>
+
+<p>I weighted the distance between keys exponentially, as I think a
+distance of 2 units is much worse than a distance of 1
+unit. Layouts like Workman and Colemak DH have shown the discomfort
+that can be cause with lateral index movement - because of this,
+lateral movement was treated worse in my analyzer.</p>
+
+<h2>Finger weighting</h2>
+
+<p>I used a basic script that <a href="https://github.com/notgate" >NotGate</a> wrote
+to test how quickly I can move each of my fingers. For example, to see
+how dexterous my middle finger is, I would type eded over and over on
+QWERTY, and see how fast my keys per second was. This data was then
+used to weight how bad fast distance is on each finger.</p>
+
+<h2>Scoring</h2>
+
+<p>The layout was scored by genkey largely with the weighted finger
+movement speed metric. There was also some reward for rolling, and
+penalty for redirects.</p>
+
+<p>However, what the generator created had an extremely high redirect
+rate, and so I swapped the columns around at the end to increase
+alternation. Though I am no alternation lover, the redirect rate
+would have really been <em>way</em> too much.</p>
+
+<h1>Download</h1>
+
+<p>Downloads for Windows native and EPKL, MacOS and Linux are available
+in <a href="https://github.com/semilin/semimak/releases" >the Github Release page</a>!</p>
+ </div> <div id="relative-nav"> <ul class="pager">   </ul> </div> <div class="row-fluid"> <p>This blog covers <a href="/tag/layouts.\.html">layouts</a>, <a href="/tag/typing.\.html">typing</a> </p> </div> <div class="row-fluid"> <p>View content from <a href="/date/2022-07.\.html">2022-07</a>, <a href="/date/2021-10.\.html">2021-10</a>, <a href="/date/2021-07.\.html">2021-07</a> </p> </div> </div>  <div class="row-fluid"> <hr> <p class="fineprint">Unless otherwise credited all material <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"> <img alt="Creative Commons License" style="border-width:0" src="/img/cc-by-sa.png" /> </a> by semi <a id="coleslaw-logo" href="https://github.com/redline6561/coleslaw"> <img src="/img/logo_small.jpg" alt="Coleslaw logo" /></p> </a> </div> </div> </div> </div> <script src="/js/bootstrap.min.js"></script> </body> </html>

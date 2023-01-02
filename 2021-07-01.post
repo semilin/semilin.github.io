@@ -1,0 +1,71 @@
+;;;;;
+title: Semimak
+tags: layouts
+date: 2021-07-01 22:59:40
+format: md
+;;;;;
+
+<!-- **** your post here (remove this line) **** -->
+<!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
+
+The Semimak layout is designed to have low finger movement rate -
+decreasing the overall speed at which your fingers must travel to type
+on average. This doesn’t only mean to optimize for reducing
+same-finger bigrams (e.g `ed` on QWERTY), but disjointeds as well
+(e.g the `m_y` in `may` on QWERTY). Semimak was the pioneer of DSFB
+and weighted finger dexterity.
+
+# Development
+I created my own analyzer,
+[genkey](https://github.com/semilin/genkey), to put my ideas into
+effect. At the time, it was only made for myself, and was difficult to
+use. However, many people have used it since then, creating their own
+layouts with it, and it has been massively improved since its
+creation. If you're interested in analyzing layouts, or creating your
+own, give it a shot!
+
+## Finger Speed
+Most layout analyzers at the moment report an SFB percentage - how
+many times you use the same finger to hit two keys in a row. But I
+found this somewhat superficial - not all SFBs are equally bad. They
+can be heavily influenced by what finger is being used and how much
+distance is traveled in the SFB. In addition, the statistic can be
+generalized more. Why do the two keys in the bigram need to be
+concurrent to be significant?
+  
+## Skipgrams
+Instead of only punishing same-finger bigrams weighted by finger
+and distance, I had the idea to also punish same-finger
+skipgrams. I weighted this exponentially - separated by 0 keys
+(normal bigram) is a weight of 1, separated by 1 is half as bad,
+separated by 2 is a quarter, and so on. These weights are
+arbitrary, but they were inspired both by the experiences of both
+myself and typists much faster than me.
+
+## Distance weighting
+I weighted the distance between keys exponentially, as I think a
+distance of 2 units is much worse than a distance of 1
+unit. Layouts like Workman and Colemak DH have shown the discomfort
+that can be cause with lateral index movement - because of this,
+lateral movement was treated worse in my analyzer.
+
+## Finger weighting
+I used a basic script that [NotGate](https://github.com/notgate) wrote
+to test how quickly I can move each of my fingers. For example, to see
+how dexterous my middle finger is, I would type eded over and over on
+QWERTY, and see how fast my keys per second was. This data was then
+used to weight how bad fast distance is on each finger.
+
+## Scoring
+The layout was scored by genkey largely with the weighted finger
+movement speed metric. There was also some reward for rolling, and
+penalty for redirects.
+
+However, what the generator created had an extremely high redirect
+rate, and so I swapped the columns around at the end to increase
+alternation. Though I am no alternation lover, the redirect rate
+would have really been _way_ too much.
+
+# Download
+Downloads for Windows native and EPKL, MacOS and Linux are available
+in [the Github Release page](https://github.com/semilin/semimak/releases)!
