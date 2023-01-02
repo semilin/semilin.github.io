@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> <channel> <title>semi&#039;s site</title> <link></link> <atom:link href="/rss.xml" rel="self" type="application/rss+xml" /> <language>en-us</language> <pubDate>Sun, 01 Jan 2023 23:32:46 -0800</pubDate> <item> <title>200 wpm - final reflection on Semimak</title> <link>/posts/200-wpm---final-reflection-on-Semimak.\.html</link> <pubDate>2022-07-17 22:17:55</pubDate> <author>semi</author> <guid isPermaLink="true">/posts/200-wpm---final-reflection-on-Semimak.\.html</guid> <category><![CDATA[ layouts ]]></category><category><![CDATA[ typing ]]></category> <description><![CDATA[ <!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> <channel> <title>semi&#039;s site</title> <link></link> <atom:link href="/rss.xml" rel="self" type="application/rss+xml" /> <language>en-us</language> <pubDate>Sun, 01 Jan 2023 23:57:10 -0800</pubDate> <item> <title>200 wpm - final reflection on Semimak</title> <link>/posts/200-wpm---final-reflection-on-Semimak.\.html</link> <pubDate>2022-07-17 22:17:55</pubDate> <author>semi</author> <guid isPermaLink="true">/posts/200-wpm---final-reflection-on-Semimak.\.html</guid> <category><![CDATA[ layouts ]]></category><category><![CDATA[ typing ]]></category> <description><![CDATA[ <!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
 
-<p><img src="../media/200wpm.png" alt="" /></p>
+<p><img src="../static/200wpm.png" alt="" /></p>
 
 <p>In less than a year of using Semimak, I hit 200 words per minute on it.
 On my previous layouts the highest I had gotten was 160 wpm, so this is

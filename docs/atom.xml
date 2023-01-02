@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom"> <title>semi&#039;s site</title> <link href=""/> <link type="application/atom+xml" rel="self" href="/atom.xml"/> <updated>Sun, 01 Jan 2023 23:32:46 -0800</updated> <author> <name>semi</name> </author> <entry> <link type="text/html" rel="alternate" href="/posts/200-wpm---final-reflection-on-Semimak.\.html"/> <title>200 wpm - final reflection on Semimak</title> <published>2022-07-17 22:17:55</published> <updated>2022-07-17 22:17:55</updated> <author> <name>semi</name> <uri></uri> </author> <content type="html">&lt;!-- format: could be &#039;html&#039; (for raw html) or &#039;md&#039; (for markdown).  --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"> <title>semi&#039;s site</title> <link href=""/> <link type="application/atom+xml" rel="self" href="/atom.xml"/> <updated>Sun, 01 Jan 2023 23:57:10 -0800</updated> <author> <name>semi</name> </author> <entry> <link type="text/html" rel="alternate" href="/posts/200-wpm---final-reflection-on-Semimak.\.html"/> <title>200 wpm - final reflection on Semimak</title> <published>2022-07-17 22:17:55</published> <updated>2022-07-17 22:17:55</updated> <author> <name>semi</name> <uri></uri> </author> <content type="html">&lt;!-- format: could be &#039;html&#039; (for raw html) or &#039;md&#039; (for markdown).  --&gt;
 
-&lt;p&gt;&lt;img src=&quot;../media/200wpm.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../static/200wpm.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In less than a year of using Semimak, I hit 200 words per minute on it.
 On my previous layouts the highest I had gotten was 160 wpm, so this is
