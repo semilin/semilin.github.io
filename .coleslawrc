@@ -4,12 +4,12 @@
  :deploy-dir "docs/"                ;; for Coleslaw's generated HTML to go in
  :domain ""                           ;; to generate absolute links to the site content. Note: with :cname option of gh-pages, this requires a url scheme, e.g. https://fake.org 
  :routing ((:post           "posts/~a.html") ;; to determine the URL scheme of content on the site
-					(:tag-index      "tag/~a")
-					(:month-index    "date/~a")
-					(:numeric-index  "~d")
-					(:feed           "~a.xml")
-					(:tag-feed       "tag/~a.xml")
-					(:sitemap        "~a.xml"))
+					     (:tag-index      "tag/~a.html")
+					     (:month-index    "date/~a.html")
+					     (:numeric-index  "~d.html")
+					     (:feed           "~a.xml")
+					     (:tag-feed       "tag/~a.xml")
+					     (:sitemap        "~a.xml"))
  :title "semi's site" ;; a site title
  :theme "readable"                        ;; to select one of the themes in "coleslaw/themes/"
  
