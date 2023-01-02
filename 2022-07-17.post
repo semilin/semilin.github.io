@@ -1,0 +1,76 @@
+;;;;;
+title: 200 wpm - final reflection on Semimak
+tags: layouts, typing
+date: 2022-07-17 22:17:55
+format: md
+;;;;;
+
+<!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
+
+![](../media/200wpm.png)
+
+In less than a year of using Semimak, I hit 200 words per minute on it.
+On my previous layouts the highest I had gotten was 160 wpm, so this is
+a big achievement for me. It also means that I'm the first and only
+person to have achieved 200 wpm on their own layout![^1] Given this
+milestone, I thought I should write a little bit about my experience
+getting here and my final thoughts on the layout.
+
+Semimak is a great layout... well, for me at least! This definitely
+makes sense, given it was designed around problems that I identified
+with *my experience* in other layouts, and it was closely modeled around
+my personal finger dexterity. If there is anything we should be able to
+agree on in keyboard layouts, it's that what is "good" is entirely
+subjective. People have different hands. They have different ideas of
+what is comfortable, and different physical limits. My ring and pinky
+fingers are more capable than many, while my middle fingers can be
+considered pretty slow. Therefore, it's likely that my layout won't be
+the best experience for a lot of people, despite being great for me!
+
+This idea probably could have been communicated better given that in
+August of 2020, we held a month-long tournament with an $850 prize pool
+to see who could learn the layout the fastest.[^2] This likely gave many
+people the impression that Semimak was the "best layout", despite such
+a thing, of course, not existing. **Be skeptical of anyone who claims
+their layout to be "objectively" better than other layouts.** I will
+not name names, but if someone claims that their layout has 130% higher
+"efficiency" than another layout, they probably don't know what
+they're talking about. And it's not a meaningful metric that you
+should pay attention to.
+
+To me, Semimak is the best example in proving that layout quality is
+subjective. I love the layout, and truly think that no other layout
+currently in existence is better for me. There are several other people
+who still use and like the layout too - notably, Fenno has over 210 wpm
+on the layout![^3] However, there were many people during the tournament
+who did not like the layout. It was uncomfortable for them, unintuitive,
+or physically the layout was just too much from them.
+
+"But the [analyzer](https://semilin.github.io/genkey) said it was
+better than every other layout!" Yeah, of course it did. If you make an
+analyzer optimize a layout for certain metrics, it's going to do better
+than other layouts in those metrics. **What matters is not how well the
+layout fits the metrics, it's how well the metrics fit you.**
+
+The point of Semimak was to be novel. Based off my own experience, I saw
+a hole in what kinds of things people and analyzers were looking for in
+layouts. I wanted to add another way to think about layouts, and I
+succeeded in doing that by making Semimak. I feel satisfied seeing
+people talk about dSFB, or same-finger skipgrams so frequently when
+analyzing layouts these days. My work has definitely had some impact in the community, and I'm happy
+about that.
+
+Semimak, ultimately, is a proof of concept. It also happens to be a
+pretty good layout, for the right kind of person.
+
+If you take away anything from this post, it's that Dvorak is the most
+perfect layout ever created and everybody should switch to it right n
+
+# Footnotes
+
+[^1]: 1 [Heres a video of me typing almost 200 wpm on Semimak.](https://www.youtube.com/watch?v=uOgNOs-vSXw)
+
+[^2]: 2 [Check out Jashe's video documenting the tournament!](https://www.youtube.com/watch?v=86ubAuceZSI)
+
+[^3]: 3 [Check out Fenno's 200 wpm handcam!](https://www.youtube.com/watch?v=R3bV5TksUXA)
+
