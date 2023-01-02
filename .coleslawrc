@@ -30,7 +30,7 @@
            ;; default deploy method is rsync
            (rsync "-avz" "--delete" "--exclude" ".git/" "--exclude" ".gitignore" "--copy-links")
 	   )
- :sitenav ((:url "http://semilin.github.com/" :name "Home")
+ :sitenav ((:url "http://semilin.github.io/" :name "Home")
            (:url "http://github.com/semilin" :name "Code"))
  :staging-dir "/tmp/coleslaw/"  ;; for Coleslaw to do intermediate work, default: "/tmp/coleslaw"
  )
