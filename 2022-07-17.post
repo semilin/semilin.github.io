@@ -7,7 +7,7 @@ format: md
 
 <!-- format: could be 'html' (for raw html) or 'md' (for markdown).  -->
 
-![](../media/200wpm.png)
+![](../static/200wpm.png)
 
 In less than a year of using Semimak, I hit 200 words per minute on it.
 On my previous layouts the highest I had gotten was 160 wpm, so this is
