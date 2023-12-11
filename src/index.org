@@ -8,8 +8,8 @@ too much time thinking about keyboard layouts.
 * projects
 ** Keymeow
 Keymeow is a Rust library for layout analysis using the low-level
-[[https:github.com/semilin/keycat][keycat]] library. It supports shift keys, combos, and layers, all
-through extremely flexible metric definition. [[https:github.com/semilin/keymui][Keymui]] is the GUI
+[[https://github.com/semilin/keycat][keycat]] library. It supports shift keys, combos, and layers, all
+through extremely flexible metric definition. [[https://github.com/semilin/keymui][Keymui]] is the GUI
 frontend for Keymeow.
 ** [[file:genkey/index.org][genkey]]
 genkey is a keyboard layout analyzer I wrote to make Semimak. It
