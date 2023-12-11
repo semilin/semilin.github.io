@@ -1,6 +1,5 @@
 #+TITLE: semi's site
 #+options: toc:nil
-* semi's site
 Hi, I'm semi. I write mediocre code in Common Lisp and Rust, and spend
 too much time thinking about keyboard layouts.
 * contact
