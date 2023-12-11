@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css">
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav>
+  <a href="/">home</a>
+  <a href="/blog/">blog</a>
+</nav>
+<h1></h1>
+<p></p>
+</div>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#basic-usage">Basic Usage</a></li>
+<li><a href="#layouts">Layouts</a>
+<ul>
+<li><a href="#generate">generate</a></li>
+</ul>
+</li>
+<li><a href="#weighting">Weighting</a>
+<ul>
+<li><a href="#distance">Distance</a></li>
+<li><a href="#finger-speed">Finger Speed</a></li>
+<li><a href="#index-balance">Index Balance</a></li>
+<li><a href="#lsb">LSB</a></li>
+<li><a href="#trigrams">Trigrams</a>
+<ul>
+<li><a href="#rolls">Rolls</a></li>
+<li><a href="#alternation">Alternation</a></li>
+<li><a href="#redirects">Redirects</a></li>
+<li><a href="#onehands">Onehands</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#commands">Commands</a>
+<ul>
+<li><a href="#load">Load</a></li>
+<li><a href="#rank">Rank</a></li>
+<li><a href="#analyze">Analyze</a></li>
+<li><a href="#generate-1">Generate</a></li>
+<li><a href="#improve">Improve</a></li>
+<li><a href="#interactive">Interactive</a>
+<ul>
+<li><a href="#swap">Swap</a></li>
+<li><a href="#column-swap">Column Swap</a></li>
+<li><a href="#suggest">Suggest</a></li>
+<li><a href="#save">Save</a></li>
+<li><a href="#quit">Quit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-basic-usage" class="outline-2">
+<h2 id="basic-usage">Basic Usage</h2>
+<div class="outline-text-2" id="text-basic-usage">
+<p>
+Genkey is a command line tool. This means that you perform actions by
+running the binary through the terminal.
+</p>
+
+<p>
+The binary is called <code>genkey.exe</code> on Windows, or simply <code>genkey</code> on
+Linux or MacOS. From now on, the binary will just be referred to as
+<code>genkey</code>, so if you're using Windows, make sure to correct it. Also note
+that you can autocomplete with TAB, in the likely case that you don't
+want to type out the full name every time.
+</p>
+
+<p>
+The general format of commands looks like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">./genkey COMMAND ARGUMENT
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-layouts" class="outline-2">
+<h2 id="layouts">Layouts</h2>
+<div class="outline-text-2" id="text-layouts">
+<p>
+Layouts are stored as basic text files in the <code>layouts</code> subdirectory.
+Here is an example of its format, using the unholy layout as reference.
+</p>
+
+<pre class="example" id="orgf598a79">
+QWERTY
+q w e r t y u i o p [ ] 
+a s d f g h j k l ; '
+z x c v b n m , . /
+0 1 2 3 3 4 4 5 6 7 7 7 7
+0 1 2 3 3 4 4 5 6 7 7
+0 1 2 3 3 4 4 5 6 7 
+</pre>
+
+<p>
+The first line is used as the name of the layout - the name of the file
+is <b>not</b> used by the program. Note that if two files have the same
+layout name, only one will show up; the program will output no error if
+this happens, so make sure that you rename it!
+</p>
+
+<p>
+The next block of lines is the layout itself. This is pretty much
+self-explanatory. However, at the moment genkey only supports 3 rows,
+adding more will confuse it.
+</p>
+
+<p>
+The final block defines what finger is used to hit each key. Each
+finger, not including thumbs, is a digit from 0 to 7. Left pinky is 0,
+right pinky is 7, and everything in between follows the order you would
+expect. Thumb keys are not supported in genkey, but
+<a href="https://github.com/apsu/genkey">Apsu's fork</a> does add experimental
+support.
+</p>
+</div>
+
+<div id="outline-container-generate" class="outline-3">
+<h3 id="generate">generate</h3>
+<div class="outline-text-3" id="text-generate">
+<p>
+The <code>_generate</code> layout file is used to define the fingermap for layouts
+created with the generate function. In addition, the main key block can
+be used to pin keys for the improve function. Free keys are labeled with
+<code>*</code>, and pinned keys are labeled with <code>X</code>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-weighting" class="outline-2">
+<h2 id="weighting">Weighting</h2>
+<div class="outline-text-2" id="text-weighting">
+<p>
+The weights that determine how layouts are scored is configured in
+<code>weights.hjson</code>. Though the base weights are made to be an okay starting
+point, you are intended to experiment with them and shape them to your
+liking.
+</p>
+
+<p>
+The "score" is a very arbitrary number that should not be considered an
+actual indicator of a layout's "objective" quality. The score is
+calculated from the user's approximations of their personal preferences.
+Anything that comes from personal preference can't be objective, so do
+not treat it as such. Beating some layout's score is great, but that
+doesn't mean it's actually better.
+</p>
+
+<p>
+Note: higher score is worse, lower score is better.
+</p>
+</div>
+
+<div id="outline-container-distance" class="outline-3">
+<h3 id="distance">Distance</h3>
+<div class="outline-text-3" id="text-distance">
+<p>
+This is the way to calculate distance between any two given keys on a
+layout.
+</p>
+
+<p>
+Where l is the lateral movement multiplier, the expression for weighted
+distance is as follows:
+</p>
+
+<p>
+\[ (l \times \Delta{x}^2) + (\Delta{y}^2) \]
+</p>
+
+<p>
+This is the formula for distance, except not square rooted as to treat
+distance exponentially.
+</p>
+</div>
+</div>
+
+<div id="outline-container-finger-speed" class="outline-3">
+<h3 id="finger-speed">Finger Speed</h3>
+<div class="outline-text-3" id="text-finger-speed">
+<p>
+At a high level, finger speed is basically just looking at bigrams and
+skipgrams with an adaptation of the rate equation:
+</p>
+
+<p>
+\[ r=\frac{d}{n} \]
+</p>
+
+<p>
+d is the distance between the two keys. n is the 'length' of the
+skip-gram, or how the distance between characters in the sequence. For a
+bigram, n is 1. For a skip-1-gram, (e.g. <code>t_e</code> in <code>the</code>) n is 2.
+</p>
+
+<p>
+This equation effectively results in a time required to move a finger
+from one key to another. Finger speed as a metric is the average of all
+these times.
+</p>
+
+<p>
+However, in reality there are more factors that affect this time.
+Namely, different fingers differ greatly in how fast they can be moved.
+Because of this, genkey has a KPS array, which defines how dexterous
+each finger is. KPS stands for "keys per second", which is what the
+numbers were originally based on.
+</p>
+
+<p>
+In addition, though it would theoretically work out that a skip-1-gram
+has exactly twice the time to travel as a bigram, some people care about
+skipgrams less than others. Because of this, genkey allows you to weight
+it.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
+</p>
+
+<p>
+Also, a KeyTravel weight is provided, which can help avoid the problem
+of double letters (e.g. <code>oo</code>) having 0 distance, and thus not being
+counted at all. It's used as a baseline value for distance.
+</p>
+
+<p>
+Considering these factors, the equation for a pair of keys ends up more
+like the following (where k is key travel, F is the finger's dexterity,
+and c is the count of how many times the pair appears):
+</p>
+
+<p>
+\[ r=c \times \frac{(d+k)\times F}{n} \]
+</p>
+
+<p>
+Genkey then gets the average time all of these same-finger pairs. The
+lower that this metric is, the better. Though the original idea for this
+was to be able to calculate how fast your fingers need to move to
+maintain a given wpm, (hence the name) it is in reality much more
+complicated than this. It's still a very useful metric, but take it with
+a grain of salt.
+</p>
+</div>
+</div>
+
+<div id="outline-container-index-balance" class="outline-3">
+<h3 id="index-balance">Index Balance</h3>
+<div class="outline-text-3" id="text-index-balance">
+<p>
+This is a very simple metric that punishes one index finger being used
+much more than the other. It's just the expression \[ |l-r| \] where l
+and r are left and right index usage respectively. Increasing the weight
+increases its addition to the score.
+</p>
+</div>
+</div>
+
+<div id="outline-container-lsb" class="outline-3">
+<h3 id="lsb">LSB</h3>
+<div class="outline-text-3" id="text-lsb">
+<p>
+LSB stands for Lateral Stretch Bigram. It refers to any adjacent finger
+bigram where \[ \Delta x \ge 2 \]. This typically is used to mean
+bigrams between index and middle fingers, but genkey also includes pinky
+and ring in this calculation. More is worse, so increasing the weight
+value increases how much it affects the score.
+</p>
+</div>
+</div>
+
+<div id="outline-container-trigrams" class="outline-3">
+<h3 id="trigrams">Trigrams</h3>
+<div class="outline-text-3" id="text-trigrams">
+<p>
+Genkey uses trigrams to calculate rolls, alternation, redirects, and
+onehand rolls.
+</p>
+
+<p>
+The TrigramPrecision value determines how many of the most common
+trigrams are used for this calculation. Since there are far more
+trigrams than SFBs, the calculation slows down generation a lot, so you
+probably don't want to use all of them. However, if you do, you can set
+the value to 0. Otherwise, setting the value to -1 disables the
+calculation.
+</p>
+</div>
+
+<div id="outline-container-rolls" class="outline-4">
+<h4 id="rolls">Rolls</h4>
+<div class="outline-text-4" id="text-rolls">
+<p>
+Rolls are defined as 2 (not-same-finger) keys typed on one hand,
+following or preceding 1 key pressed on the other. An inward roll is
+where the direction of the 2 keys on the same hand approaches the index,
+whereas an outward roll approaches the pinky. Since rolls are generally
+desired, they subtract from the score.
+</p>
+</div>
+</div>
+
+<div id="outline-container-alternation" class="outline-4">
+<h4 id="alternation">Alternation</h4>
+<div class="outline-text-4" id="text-alternation">
+<p>
+Alternates are defined as trigrams where each key in the sequence
+switches hands. Since alternation is generally desired, it subtracts
+from the score.
+</p>
+</div>
+</div>
+
+<div id="outline-container-redirects" class="outline-4">
+<h4 id="redirects">Redirects</h4>
+<div class="outline-text-4" id="text-redirects">
+<p>
+Redirects are defined as trigrams where all keys are on the same hand,
+but they do not all follow the same direction. For example, <code>sfd</code> would
+be a redirect on QWERTY, because the direction of <code>sf</code> is inward, but
+the direction of <code>fd</code> is outward. Since redirects are generally
+undesired, they add to the score.
+</p>
+</div>
+</div>
+
+<div id="outline-container-onehands" class="outline-4">
+<h4 id="onehands">Onehands</h4>
+<div class="outline-text-4" id="text-onehands">
+<p>
+Onehand rolls are defined as trigrams where all keys are on the same,
+and they all follow the same direction. For example, <code>sdf</code> on QWERTY
+would be a onehand roll. Since onehands are generally desired, they
+subtract from the score.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-commands" class="outline-2">
+<h2 id="commands">Commands</h2>
+<div class="outline-text-2" id="text-commands">
+</div>
+<div id="outline-container-load" class="outline-3">
+<h3 id="load">Load</h3>
+<div class="outline-text-3" id="text-load">
+<p>
+Usage: <code>./genkey load FILEPATH</code>
+</p>
+
+<p>
+This takes in a text file path, processes it as a corpus, and updates
+<code>data.json</code> according to the text data that it collects. This bigram and
+trigram frequency data is used for all other functions of the program.
+</p>
+</div>
+</div>
+
+<div id="outline-container-rank" class="outline-3">
+<h3 id="rank">Rank</h3>
+<div class="outline-text-3" id="text-rank">
+<p>
+Usage: <code>./genkey r</code>
+</p>
+
+<p>
+Outputs a ranked list of layouts next to their scores.
+</p>
+</div>
+</div>
+
+<div id="outline-container-analyze" class="outline-3">
+<h3 id="analyze">Analyze</h3>
+<div class="outline-text-3" id="text-analyze">
+<p>
+Usage: <code>./genkey a LAYOUT</code>
+</p>
+
+<p>
+Outputs detailed analysis of a layout.
+</p>
+</div>
+</div>
+
+<div id="outline-container-generate-1" class="outline-3">
+<h3 id="generate-1">Generate</h3>
+<div class="outline-text-3" id="text-generate-1">
+<p>
+Usage: <code>./genkey g</code>
+</p>
+
+<p>
+Generate simply creates a new layout, and tries to minimize score. How
+long this takes varies, but calculating trigrams significantly increases
+the time. Otherwise, how long it takes is probably most dependent on
+your CPU's multicore efficiency.
+</p>
+</div>
+</div>
+
+<div id="outline-container-improve" class="outline-3">
+<h3 id="improve">Improve</h3>
+<div class="outline-text-3" id="text-improve">
+<p>
+Usage: <code>./genkey improve LAYOUT</code>
+</p>
+
+<p>
+Attempts to optimize the score of the given layout, without moving the
+pinned keys (see <b>*<sub>generate</sub></b>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-interactive" class="outline-3">
+<h3 id="interactive">Interactive</h3>
+<div class="outline-text-3" id="text-interactive">
+<p>
+Usage: <code>./genkey i LAYOUT</code>
+</p>
+
+<p>
+The interactive mode is one of the more powerful parts of genkey. It
+gives you tools to easily modify a layout and see the effects in
+real-time. It's a fast and dynamic way to approach layout creation.
+</p>
+</div>
+
+<div id="outline-container-swap" class="outline-4">
+<h4 id="swap">Swap</h4>
+<div class="outline-text-4" id="text-swap">
+<p>
+Usage: <code>s key1 key2</code>
+</p>
+
+<p>
+Swaps two letters with each other.
+</p>
+
+<p>
+Example: <code>s a b</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-column-swap" class="outline-4">
+<h4 id="column-swap">Column Swap</h4>
+<div class="outline-text-4" id="text-column-swap">
+<p>
+Usage: <code>cs key1 key2</code> or <code>cs col1 col2</code>
+</p>
+
+<p>
+Swaps two columns with each other. If you provide a key, then it targets
+the column where that key is located. If you provide a number, it
+targets the column corresponding to that number.
+</p>
+
+<p>
+Examples:
+</p>
+
+<ul class="org-ul">
+<li><code>cs a b</code></li>
+<li><code>cs 0 1</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-suggest" class="outline-4">
+<h4 id="suggest">Suggest</h4>
+<div class="outline-text-4" id="text-suggest">
+<p>
+Usage: <code>g</code>
+</p>
+
+<p>
+Provides a suggestion of what two keys to swap. It does this with a
+superficial neighbor search. It reports what score it will immediately
+result in, and what score it can lead to.
+</p>
+</div>
+</div>
+
+<div id="outline-container-save" class="outline-4">
+<h4 id="save">Save</h4>
+<div class="outline-text-4" id="text-save">
+<p>
+Usage: <code>save</code>
+</p>
+
+<p>
+Asks you for a layout name, and writes the file. If the name is already
+taken, you'll be asked if you want to overwrite it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-quit" class="outline-4">
+<h4 id="quit">Quit</h4>
+<div class="outline-text-4" id="text-quit">
+<p>
+Usage: <code>q</code>
+</p>
+
+<p>
+Is an explanation for this necessary
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+When semi came up with the finger speed concept, they coined the
+term "disjointed bigram". Though a fancy sounding name,
+skipgram is an already existing term that fits better. Despite
+this, DSFB ("disjointed same-finger bigram") is still used
+relatively frequently, which is why it's called that in genkey.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.9)</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Semimak</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<nav>
+  <a href="/">home</a>
+  <a href="/blog/">blog</a>
+</nav>
+<h1>Semimak</h1>
+<p>2021-07-01 Thu 00:00</p>
+</div>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgf0877d8">Development</a>
+<ul>
+<li><a href="#org8d94fe0">Finger Speed</a></li>
+<li><a href="#org27b77d4">Skipgrams</a></li>
+<li><a href="#org0b2021d">Distance weighting</a></li>
+<li><a href="#orgc644f93">Finger weighting</a></li>
+<li><a href="#orgceeaf3a">Scoring</a></li>
+</ul>
+</li>
+<li><a href="#org1d1bd6b">Download</a></li>
+</ul>
+</div>
+</div>
+
+<div id="org5042197" class="figure">
+<p><img src="https://semilin.github.io/static/semimak.png" alt="semimak.png" />
+</p>
+</div>
+
+<p>
+The Semimak layout is designed to have low finger movement rate -
+decreasing the overall speed at which your fingers must travel to type
+on average. This doesn’t only mean to optimize for reducing
+same-finger bigrams (e.g <kbd>ed</kbd> on QWERTY),
+but disjointeds as well (e.g the <kbd>m y</kbd> in
+<kbd>may</kbd> on QWERTY). Semimak was the pioneer of
+DSFB and weighted finger dexterity.
+</p>
+
+<div id="outline-container-orgf0877d8" class="outline-2">
+<h2 id="orgf0877d8">Development</h2>
+<div class="outline-text-2" id="text-orgf0877d8">
+<p>
+I created my own analyzer, <a href="https:github.com/semilin/genkey">genkey</a>, to put my ideas into
+effect. At the time, it was only made for myself, and was difficult to
+use. However, many people have used it since then, creating their own
+layouts with it, and it has been massively improved since its
+creation. If you're interested in analyzing layouts, or creating your
+own, give it a shot!
+</p>
+</div>
+
+<div id="outline-container-org8d94fe0" class="outline-3">
+<h3 id="org8d94fe0">Finger Speed</h3>
+<div class="outline-text-3" id="text-org8d94fe0">
+<p>
+Most layout analyzers at the moment report an SFB percentage - how
+many times you use the same finger to hit two keys in a row. But I
+found this somewhat superficial - not all SFBs are equally bad. They
+can be heavily influenced by what finger is being used and how much
+distance is traveled in the SFB. In addition, the statistic can be
+generalized more. Why do the two keys in the bigram need to be
+concurrent to be significant?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org27b77d4" class="outline-3">
+<h3 id="org27b77d4">Skipgrams</h3>
+<div class="outline-text-3" id="text-org27b77d4">
+<p>
+Instead of only punishing same-finger bigrams weighted by finger
+and distance, I had the idea to also punish same-finger
+skipgrams. I weighted this exponentially - separated by 0 keys
+(normal bigram) is a weight of 1, separated by 1 is half as bad,
+separated by 2 is a quarter, and so on. These weights are
+arbitrary, but they were inspired both by the experiences of both
+myself and typists much faster than me.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0b2021d" class="outline-3">
+<h3 id="org0b2021d">Distance weighting</h3>
+<div class="outline-text-3" id="text-org0b2021d">
+<p>
+I weighted the distance between keys exponentially, as I think a
+distance of 2 units is much worse than a distance of 1
+unit. Layouts like Workman and Colemak DH have shown the discomfort
+that can be cause with lateral index movement - because of this,
+lateral movement was treated worse in my analyzer.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc644f93" class="outline-3">
+<h3 id="orgc644f93">Finger weighting</h3>
+<div class="outline-text-3" id="text-orgc644f93">
+<p>
+I used a basic script that <a href="https://github.com/notgate">NotGate</a> wrote to test how quickly I can
+move each of my fingers. For example, to see how dexterous my middle
+finger is, I would type eded over and over on QWERTY, and see how fast
+my keys per second was. This data was then used to weight how bad fast
+distance is on each finger.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgceeaf3a" class="outline-3">
+<h3 id="orgceeaf3a">Scoring</h3>
+<div class="outline-text-3" id="text-orgceeaf3a">
+<p>
+The layout was scored by genkey largely with the weighted finger
+movement speed metric. There was also some reward for rolling, and
+penalty for redirects.
+</p>
+
+<p>
+However, what the generator created had an extremely high redirect
+rate, and so I swapped the columns around at the end to increase
+alternation. Though I am no alternation lover, the redirect rate
+would have really been <span class="underline">way</span> too much.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1d1bd6b" class="outline-2">
+<h2 id="org1d1bd6b">Download</h2>
+<div class="outline-text-2" id="text-org1d1bd6b">
+<p>
+Downloads for Windows native and EPKL, MacOS and Linux are available
+in <a href="https:github.com/semilin/semimak/releases">the Github Release page</a>!
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-07-01 Thu 00:00</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.9)</p>
+</div>
+</body>
+</html>

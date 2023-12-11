@@ -1,0 +1,7 @@
+#+options: toc:nil
+** 2023
+** 2022
+- [[file:2022/final_reflection_on_semimak.org][200 WPM - Final Reflection on Semimak]] (07-17)
+** 2021
+- [[./2021/reflection_on_semimak.org][Reflecting on Semimak, 3 months later]] (10-14)
+- [[./2021/semimak.org][Introducing Semimak]] (07-01)

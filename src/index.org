@@ -1,0 +1,16 @@
+#+options: toc:nil
+* semi's site
+Hi, I'm semi. I write mediocre code in Common Lisp and Rust, and spend
+too much time thinking about keyboard layouts.
+* contact
+- email [[mailto:semilin@disroot.org][semilin@disroot.org]]
+- discord ~semilin~
+* projects
+** Keymeow
+Keymeow is a Rust library for layout analysis using the low-level
+[[https:github.com/semilin/keycat][keycat]] library. It supports shift keys, combos, and layers, all
+through extremely flexible metric definition. [[https:github.com/semilin/keymui][Keymui]] is the GUI
+frontend for Keymeow.
+** [[file:genkey/index.org][genkey]]
+genkey is a keyboard layout analyzer I wrote to make Semimak. It
+pioneered analysis of same-finger skipgrams.
