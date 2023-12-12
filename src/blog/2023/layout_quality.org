@@ -50,7 +50,7 @@ Almost everybody agrees that SFBs are uncomfortable. They are also
 objectively slower than other bigrams at peak speeds. Because of this,
 layouts focus most of their optimization on reducing SFBs. While
 QWERTY has a total of 6.1% SFBs, [[https://colemak.com][Colemak]] has only 1.7%, and even more
-SFB-optimized layouts like Graphite have under 1.0%[fn:1].
+SFB-optimized layouts like [[https://github.com/rdavison/graphite-layout][Graphite]] have under 1.0%[fn:1].
 
 Finally, I want to briefly mention overall finger movement. While SFB
 is a great metric, it is a little oversimplified. It does not include
