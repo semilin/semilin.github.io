@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What makes a keyboard layout good?</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<nav>
+  <a href="/">home</a>
+  <a href="/blog/">blog</a>
+</nav>
+<h1>What makes a keyboard layout good?</h1>
+<p>2023-12-11 Mon 00:00</p>
+</div>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4a18e73">What's the point of layouts anyway?</a></li>
+<li><a href="#orgfbd3149">Individual finger usage (frequency, SFBs, movement)</a></li>
+<li><a href="#org1bca6bf">Finger relations (alternation, rolls, redirects)</a></li>
+<li><a href="#orgaaf7053">Lateral movement</a></li>
+<li><a href="#org1a6ccda">Case study: Dvorak vs Colemak</a></li>
+<li><a href="#orgf8932c4">Conclusion</a></li>
+<li><a href="#org10026fd">Further information and contact</a></li>
+</ul>
+</div>
+</div>
+<p>
+This question gets asked very often by newcomers to alternative
+keyboard layouts, and for good reason. Most popular coverage of
+layouts is over-simplified at best, and at worst completely wrong.
+Annoyingly, even layout creators themselves can be misleading with how
+they present the quality of their layouts. This post intends to give a
+brief, clear, and correct introduction to layout metrics.
+</p>
+
+<div id="outline-container-org4a18e73" class="outline-2">
+<h2 id="org4a18e73">What's the point of layouts anyway?</h2>
+<div class="outline-text-2" id="text-org4a18e73">
+<p>
+To understand what makes a layout good, we need to first understand
+the point of alt layouts.
+</p>
+
+<p>
+An extremely common misconception is that alt layouts exist to make
+typing faster. While the question of speed improvement from alt
+layouts is debatable, the short answer is: do not switch layouts if
+all you want is to be faster at typing. You are far better off just
+improving your speed on your current layout.
+</p>
+
+<p>
+What layouts <i>do</i> improve upon is typing comfort. For those with or at
+risk of hand injuries such as RSI, alt layouts can make a huge
+difference. Although my hands are perfectly healthy, I have found alt
+layouts to be so much more comfortable to type with - which has made
+typing <i>fun</i> for me. QWERTY, by comparison, just feels awkward and
+uncomfortable.
+</p>
+
+<p>
+So, the point is to improve comfort. Let's talk about how specifically
+layouts optimize for this.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfbd3149" class="outline-2">
+<h2 id="orgfbd3149">Individual finger usage (frequency, SFBs, movement)</h2>
+<div class="outline-text-2" id="text-orgfbd3149">
+<p>
+The most basic metric that layouts optimize for is the usage of
+individual fingers. I'll split this into roughly three perspectives:
+basic key frequency, same-finger bigrams, and overall finger movement.
+</p>
+
+<p>
+Finger frequency is an extremely superficial metric, and you shouldn't
+be impressed much by it. It is simply how many keys each finger types
+on average compared to other fingers. This metric is important for
+balancing the workload across fingers. Generally, most people prefer
+a distribution of least work on pinkies to most work on indexes. The
+exact amounts each finger uses are mostly preference.
+</p>
+
+<p>
+Next is one of the most important metrics in layout analysis.
+Same-finger bigrams, commonly known as SFBs, are instances of pressing
+two keys in a row with the same finger. For instance, most people type
+qwerty <code>ed</code> with only the left middle finger - this is the most common
+SFB in QWERTY.
+</p>
+
+<p>
+Almost everybody agrees that SFBs are uncomfortable. They are also
+objectively slower than other bigrams at peak speeds. Because of this,
+layouts focus most of their optimization on reducing SFBs. While
+QWERTY has a total of 6.1% SFBs, <a href="https://colemak.com">Colemak</a> has only 1.7%, and even more
+SFB-optimized layouts like Graphite have under 1.0%<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>.
+</p>
+
+<p>
+Finally, I want to briefly mention overall finger movement. While SFB
+is a great metric, it is a little oversimplified. It does not include
+the distance between keys, and it only accounts for same-finger pairs
+which occur right next to each other. Some analyzers can measure
+weighted finger movement, such as Oxey's <a href="https://github.com/o-x-e-y/oxeylyzer">Oxeylyzer</a>. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1bca6bf" class="outline-2">
+<h2 id="org1bca6bf">Finger relations (alternation, rolls, redirects)</h2>
+<div class="outline-text-2" id="text-org1bca6bf">
+<p>
+While individual fingers are important, comfort is also greatly
+affected by the <i>relations</i> between fingers. This is more than just
+the left/right hand balance. There are many metrics that exist, but
+I'll go over the biggest three you'll hear people talk about.
+</p>
+
+<p>
+Alternation refers to how much you switch hands during typing. You
+want this to be pretty high, as long sequences on one hand are
+uncomfortable. However, too much alternation (switching hands nearly
+every key stroke) can be uncomfortable. Because of this, many layouts
+try to balance alternation with rolls.
+</p>
+
+<p>
+Rolls are motions where multiple keys are hit in a "rolling" motion on
+one hand, like <code>er</code> on QWERTY. Many people find this motion very
+comfortable. There is also a distinction between inward and outward
+rolls. Inward goes from pinky to index, like <code>er</code>, while outward goes
+from index to pinky, like <code>no</code>. Some find inward more comfortable than
+outward, but this is completely preference.
+</p>
+
+<p>
+Redirects are three-key motions that change between inward and outward
+directions. For example, the most common redirect on QWERTY is <code>you</code> -
+it starts outward with <code>yo</code>, but changes to inward with <code>ou</code>. Many
+people find this general pattern very undesirable, so layouts often
+minimize redirects.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaaf7053" class="outline-2">
+<h2 id="orgaaf7053">Lateral movement</h2>
+<div class="outline-text-2" id="text-orgaaf7053">
+<p>
+This is a relatively minor metric, but it's a big deal to some.
+The index fingers are required to work more than the other fingers
+because they have 6 keys each instead of the normal 3. Unlike other
+fingers, this means they can move laterally instead of just up and
+down. Some people find this uncomfortable, especially when a reach
+with the index finger inwards is paired with an adjacent middle finger
+keypress. This is known as a Lateral Stretch Bigram, or LSB.
+</p>
+
+<p>
+Some older layouts have made the mistake of putting common keys on the
+inner homerow (QWERTY <code>g</code> and <code>h</code> positions), as if they are the same
+as the other home positions. This is wrong, and causes higher LSBs.
+<a href="https://colemakmods.github.io/mod-dh/">Colemak DH</a> is a mod that exists to fix this issue.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1a6ccda" class="outline-2">
+<h2 id="org1a6ccda">Case study: Dvorak vs Colemak</h2>
+<div class="outline-text-2" id="text-org1a6ccda">
+<p>
+Dvorak and Colemak are two of the most used alt layouts. Let's compare
+them together! I'll be using Oxey's <a href="https://oxey.dev/playground/">Layout Playground</a> online.
+</p>
+
+<p>
+Let's start with Colemak.
+<img src="https://semilin.github.io/static/layout_playground_colemak.png" alt="layout_playground_colemak.png" />
+</p>
+
+<p>
+Colemak's finger distribution is heavily index oriented, being nearly
+20% per index finger. The middles, rings, and pinkies all share the
+rest of the load fairly even. This is a pretty typical distribution
+from a layout made before 2020, and a lot of people like it a lot.
+However, some (like me) find it too much index usage and prefer more
+balanced fingers.
+</p>
+
+<p>
+Colemak has less than 1.4% SFB - this is pretty good! It's not
+spectacular compared to some more modern layouts, but it's
+respectable.
+</p>
+
+<p>
+Colemak's rolls are still pretty high for modern standards, and it's
+inward focused, which many people like. 
+</p>
+
+<p>
+However, it has very high redirects - 9% is nearly as bad as QWERTY.
+The trigrams "you" and "ion" are common annoyances for Colemak users.
+</p>
+
+<p>
+And of course, because of <code>d</code> and <code>h</code> being in the center columns
+leads to a somewhat high LSB count.
+</p>
+
+<p>
+Overall, Colemak is a great layout with a few minor flaws (again, the
+LSBs are addressed by the DH mod).
+</p>
+
+<p>
+Now, let's compare Colemak to Dvorak.
+<img src="https://semilin.github.io/static/layout_playground_dvorak.png" alt="layout_playground_dvorak.png" />
+</p>
+
+<p>
+Right away, you should notice something strange in the keymap - <code>i</code> is
+in the center column, lower priority than the far less common <code>u</code>.
+This is bizarre and I don't have any idea why it's there. What I do
+know is that this causes too much lateral stretching, and I found it
+rather annoying when I tried Dvorak.
+</p>
+
+<p>
+Dvorak also has very high pinky and ring usage on the right hand.
+<code>rnv</code> all on the same finger will lead to quite a lot of movement -
+consider a word like "curving". Overall, there's a pretty big
+movement imbalance between the heavy right hand and stagnant left.
+</p>
+
+<p>
+Additionally, SFBs are way higher than Colemak - 2x the rate! This is
+ridiculous; there is absolutely no reason for a layout to have above
+2% SFB. <code>ct</code>, <code>gh</code>, and <code>ls</code> are among the most frequent and noticeable.
+</p>
+
+<p>
+Alternation is quite high, which makes sense for a layout designed for
+mechanical typewriters. As a consequence, redirects and rolls are
+lower than Colemak.
+</p>
+
+<p>
+Overall, Dvorak isn't terrible, but it definitely shows signs of its
+age. It really doesn't win anything over Colemak besides lower
+redirects, but there are far better modern options if you want that.
+</p>
+
+<p>
+I don't blame August Dvorak - his research was largely the first of
+its kind, he was optimizing for a completely different device, and he
+didn't have computers to help him like we do now. Nevertheless, we can
+conclude pretty confidently from this example analysis that Colemak is
+overall better than Dvorak.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf8932c4" class="outline-2">
+<h2 id="orgf8932c4">Conclusion</h2>
+<div class="outline-text-2" id="text-orgf8932c4">
+<p>
+This covers the very basics of keyboard layout analysis according to
+what I consider modern layout theory. This is unapologetically from my
+perspective as a layout creator and someone involved in this field for
+over three years now. Many of my opinions are shared with those in the
+AKL Discord (see the next section). There are people in different
+communities who disagree with me on several things - I think they are
+wrong. I'm happy to have friendly arguments with anyone! We both lose
+by default anyway for being nerdy enough to argue about keyboard
+layouts of all things.
+</p>
+
+<p>
+I intend to write many more posts in the future to make what I've
+been researching and discussing for years more accessible knowledge.
+If there's any particular thing you want to see me write about, please
+suggest it!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org10026fd" class="outline-2">
+<h2 id="org10026fd">Further information and contact</h2>
+<div class="outline-text-2" id="text-org10026fd">
+<ul class="org-ul">
+<li>If you're looking for an extremely thorough document with copious
+amounts of information on layout design and theory, look no further
+than ec0vid's excellent <a href="https://docs.google.com/document/d/1_a5Nzbkwyk1o0bvTctZrtgsee9jSP-6I0q3A0_9Mzm0/edit">Layout Doc</a>.</li>
+<li>If you want to talk to others about layouts, you can find me and
+many other cool people on the <a href="https://discord.gg/7gnJqskyvZ">Alt Keyboard Layouts Discord</a>!</li>
+<li>Or, if you want to talk to me directly, feel free to send me an
+email at <a href="mailto:semilin@disroot.org">semilin@disroot.org</a>.</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Data from <a href="https://oxey.dev/playground/">Oxey's Layout Playground</a> using the Tr Quotes corpus.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Date: 2023-12-11 Mon 00:00</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.1 (<a href="https://orgmode.org">Org</a> mode 9.6.9)</p>
+</div>
+</body>
+</html>

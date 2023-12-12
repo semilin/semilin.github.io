@@ -1,6 +1,7 @@
 #+TITLE: semi's blog
 #+options: toc:nil
 ** 2023
+- [[file:2023/layout_quality.org][What makes a keyboard layout good?]] (12-11)
 ** 2022
 - [[file:2022/final_reflection_on_semimak.org][200 WPM - Final Reflection on Semimak]] (07-17)
 ** 2021

@@ -23,21 +23,21 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgcc14ca9">Development</a>
+<li><a href="#org1353eed">Development</a>
 <ul>
-<li><a href="#org6116236">Finger Speed</a></li>
-<li><a href="#orgfcd4c44">Skipgrams</a></li>
-<li><a href="#org7dd31fd">Distance weighting</a></li>
-<li><a href="#org2ea560c">Finger weighting</a></li>
-<li><a href="#orgddda7b1">Scoring</a></li>
+<li><a href="#org734e290">Finger Speed</a></li>
+<li><a href="#org7b8459b">Skipgrams</a></li>
+<li><a href="#orge9081c7">Distance weighting</a></li>
+<li><a href="#org46436c5">Finger weighting</a></li>
+<li><a href="#orgb57007c">Scoring</a></li>
 </ul>
 </li>
-<li><a href="#orge97dc87">Download</a></li>
+<li><a href="#org49cf95f">Download</a></li>
 </ul>
 </div>
 </div>
 
-<div id="orgda1c111" class="figure">
+<div id="org9df956d" class="figure">
 <p><img src="https://semilin.github.io/static/semimak.png" alt="semimak.png" />
 </p>
 </div>
@@ -52,9 +52,9 @@ but disjointeds as well (e.g the <kbd>m y</kbd> in
 DSFB and weighted finger dexterity.
 </p>
 
-<div id="outline-container-orgcc14ca9" class="outline-2">
-<h2 id="orgcc14ca9">Development</h2>
-<div class="outline-text-2" id="text-orgcc14ca9">
+<div id="outline-container-org1353eed" class="outline-2">
+<h2 id="org1353eed">Development</h2>
+<div class="outline-text-2" id="text-org1353eed">
 <p>
 I created my own analyzer, <a href="https:github.com/semilin/genkey">genkey</a>, to put my ideas into
 effect. At the time, it was only made for myself, and was difficult to
@@ -65,9 +65,9 @@ own, give it a shot!
 </p>
 </div>
 
-<div id="outline-container-org6116236" class="outline-3">
-<h3 id="org6116236">Finger Speed</h3>
-<div class="outline-text-3" id="text-org6116236">
+<div id="outline-container-org734e290" class="outline-3">
+<h3 id="org734e290">Finger Speed</h3>
+<div class="outline-text-3" id="text-org734e290">
 <p>
 Most layout analyzers at the moment report an SFB percentage - how
 many times you use the same finger to hit two keys in a row. But I
@@ -80,9 +80,9 @@ concurrent to be significant?
 </div>
 </div>
 
-<div id="outline-container-orgfcd4c44" class="outline-3">
-<h3 id="orgfcd4c44">Skipgrams</h3>
-<div class="outline-text-3" id="text-orgfcd4c44">
+<div id="outline-container-org7b8459b" class="outline-3">
+<h3 id="org7b8459b">Skipgrams</h3>
+<div class="outline-text-3" id="text-org7b8459b">
 <p>
 Instead of only punishing same-finger bigrams weighted by finger
 and distance, I had the idea to also punish same-finger
@@ -95,9 +95,9 @@ myself and typists much faster than me.
 </div>
 </div>
 
-<div id="outline-container-org7dd31fd" class="outline-3">
-<h3 id="org7dd31fd">Distance weighting</h3>
-<div class="outline-text-3" id="text-org7dd31fd">
+<div id="outline-container-orge9081c7" class="outline-3">
+<h3 id="orge9081c7">Distance weighting</h3>
+<div class="outline-text-3" id="text-orge9081c7">
 <p>
 I weighted the distance between keys exponentially, as I think a
 distance of 2 units is much worse than a distance of 1
@@ -108,9 +108,9 @@ lateral movement was treated worse in my analyzer.
 </div>
 </div>
 
-<div id="outline-container-org2ea560c" class="outline-3">
-<h3 id="org2ea560c">Finger weighting</h3>
-<div class="outline-text-3" id="text-org2ea560c">
+<div id="outline-container-org46436c5" class="outline-3">
+<h3 id="org46436c5">Finger weighting</h3>
+<div class="outline-text-3" id="text-org46436c5">
 <p>
 I used a basic script that <a href="https://github.com/notgate">NotGate</a> wrote to test how quickly I can
 move each of my fingers. For example, to see how dexterous my middle
@@ -121,9 +121,9 @@ distance is on each finger.
 </div>
 </div>
 
-<div id="outline-container-orgddda7b1" class="outline-3">
-<h3 id="orgddda7b1">Scoring</h3>
-<div class="outline-text-3" id="text-orgddda7b1">
+<div id="outline-container-orgb57007c" class="outline-3">
+<h3 id="orgb57007c">Scoring</h3>
+<div class="outline-text-3" id="text-orgb57007c">
 <p>
 The layout was scored by genkey largely with the weighted finger
 movement speed metric. There was also some reward for rolling, and
@@ -140,9 +140,9 @@ would have really been <span class="underline">way</span> too much.
 </div>
 </div>
 
-<div id="outline-container-orge97dc87" class="outline-2">
-<h2 id="orge97dc87">Download</h2>
-<div class="outline-text-2" id="text-orge97dc87">
+<div id="outline-container-org49cf95f" class="outline-2">
+<h2 id="org49cf95f">Download</h2>
+<div class="outline-text-2" id="text-org49cf95f">
 <p>
 Downloads for Windows native and EPKL, MacOS and Linux are available
 in <a href="https:github.com/semilin/semimak/releases">the Github Release page</a>!
