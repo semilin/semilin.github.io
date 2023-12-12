@@ -12,6 +12,9 @@ but disjointeds as well (e.g the @@html:<kbd>@@m y@@html:</kbd>@@ in
 DSFB and weighted finger dexterity.
 
 * Development
+:PROPERTIES:
+:CUSTOM_ID: h:5154f78d-f8b8-4b2c-8dee-0d111f2a3837
+:END:
 I created my own analyzer, [[https:github.com/semilin/genkey][genkey]], to put my ideas into
 effect. At the time, it was only made for myself, and was difficult to
 use. However, many people have used it since then, creating their own
@@ -20,6 +23,9 @@ creation. If you're interested in analyzing layouts, or creating your
 own, give it a shot!
 
 ** Finger Speed
+:PROPERTIES:
+:CUSTOM_ID: h:7d133025-b248-40b5-a5e7-de98852ecda6
+:END:
 Most layout analyzers at the moment report an SFB percentage - how
 many times you use the same finger to hit two keys in a row. But I
 found this somewhat superficial - not all SFBs are equally bad. They
@@ -29,6 +35,9 @@ generalized more. Why do the two keys in the bigram need to be
 concurrent to be significant?
   
 ** Skipgrams
+:PROPERTIES:
+:CUSTOM_ID: h:a1734dfe-d5f6-45e2-9f27-2f18aab6ef7f
+:END:
 Instead of only punishing same-finger bigrams weighted by finger
 and distance, I had the idea to also punish same-finger
 skipgrams. I weighted this exponentially - separated by 0 keys
@@ -38,6 +47,9 @@ arbitrary, but they were inspired both by the experiences of both
 myself and typists much faster than me.
 
 ** Distance weighting
+:PROPERTIES:
+:CUSTOM_ID: h:64de1790-17a3-4aa4-a213-3b8e43d0b5d0
+:END:
 I weighted the distance between keys exponentially, as I think a
 distance of 2 units is much worse than a distance of 1
 unit. Layouts like Workman and Colemak DH have shown the discomfort
@@ -45,6 +57,9 @@ that can be cause with lateral index movement - because of this,
 lateral movement was treated worse in my analyzer.
 
 ** Finger weighting
+:PROPERTIES:
+:CUSTOM_ID: h:bd12af67-b168-4a7d-ab25-7fef65dcda8c
+:END:
 I used a basic script that [[https://github.com/notgate][NotGate]] wrote to test how quickly I can
 move each of my fingers. For example, to see how dexterous my middle
 finger is, I would type eded over and over on QWERTY, and see how fast
@@ -52,6 +67,9 @@ my keys per second was. This data was then used to weight how bad fast
 distance is on each finger.
 
 ** Scoring
+:PROPERTIES:
+:CUSTOM_ID: h:4f6e6395-bdeb-4114-87c7-4f4c4813f312
+:END:
 The layout was scored by genkey largely with the weighted finger
 movement speed metric. There was also some reward for rolling, and
 penalty for redirects.
@@ -62,5 +80,8 @@ alternation. Though I am no alternation lover, the redirect rate
 would have really been _way_ too much.
 
 * Download
+:PROPERTIES:
+:CUSTOM_ID: h:68ba124a-74e1-4e28-8214-b8f23c812e88
+:END:
 Downloads for Windows native and EPKL, MacOS and Linux are available
 in [[https:github.com/semilin/semimak/releases][the Github Release page]]!

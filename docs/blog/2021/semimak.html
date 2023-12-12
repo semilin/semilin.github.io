@@ -23,21 +23,21 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org1a2b5f3">Development</a>
+<li><a href="#h:5154f78d-f8b8-4b2c-8dee-0d111f2a3837">Development</a>
 <ul>
-<li><a href="#org1e4bfff">Finger Speed</a></li>
-<li><a href="#org4cfd7ba">Skipgrams</a></li>
-<li><a href="#org9c63472">Distance weighting</a></li>
-<li><a href="#org1f19053">Finger weighting</a></li>
-<li><a href="#org0ae8bf0">Scoring</a></li>
+<li><a href="#h:7d133025-b248-40b5-a5e7-de98852ecda6">Finger Speed</a></li>
+<li><a href="#h:a1734dfe-d5f6-45e2-9f27-2f18aab6ef7f">Skipgrams</a></li>
+<li><a href="#h:64de1790-17a3-4aa4-a213-3b8e43d0b5d0">Distance weighting</a></li>
+<li><a href="#h:bd12af67-b168-4a7d-ab25-7fef65dcda8c">Finger weighting</a></li>
+<li><a href="#h:4f6e6395-bdeb-4114-87c7-4f4c4813f312">Scoring</a></li>
 </ul>
 </li>
-<li><a href="#org1eea523">Download</a></li>
+<li><a href="#h:68ba124a-74e1-4e28-8214-b8f23c812e88">Download</a></li>
 </ul>
 </div>
 </div>
 
-<div id="org413ffc2" class="figure">
+<div id="org54e0c85" class="figure">
 <p><img src="https://semilin.github.io/static/semimak.png" alt="semimak.png" />
 </p>
 </div>
@@ -52,9 +52,9 @@ but disjointeds as well (e.g the <kbd>m y</kbd> in
 DSFB and weighted finger dexterity.
 </p>
 
-<div id="outline-container-org1a2b5f3" class="outline-2">
-<h2 id="org1a2b5f3">Development</h2>
-<div class="outline-text-2" id="text-org1a2b5f3">
+<div id="outline-container-h:5154f78d-f8b8-4b2c-8dee-0d111f2a3837" class="outline-2">
+<h2 id="h:5154f78d-f8b8-4b2c-8dee-0d111f2a3837">Development</h2>
+<div class="outline-text-2" id="text-h:5154f78d-f8b8-4b2c-8dee-0d111f2a3837">
 <p>
 I created my own analyzer, <a href="https:github.com/semilin/genkey">genkey</a>, to put my ideas into
 effect. At the time, it was only made for myself, and was difficult to
@@ -65,9 +65,9 @@ own, give it a shot!
 </p>
 </div>
 
-<div id="outline-container-org1e4bfff" class="outline-3">
-<h3 id="org1e4bfff">Finger Speed</h3>
-<div class="outline-text-3" id="text-org1e4bfff">
+<div id="outline-container-h:7d133025-b248-40b5-a5e7-de98852ecda6" class="outline-3">
+<h3 id="h:7d133025-b248-40b5-a5e7-de98852ecda6">Finger Speed</h3>
+<div class="outline-text-3" id="text-h:7d133025-b248-40b5-a5e7-de98852ecda6">
 <p>
 Most layout analyzers at the moment report an SFB percentage - how
 many times you use the same finger to hit two keys in a row. But I
@@ -80,9 +80,9 @@ concurrent to be significant?
 </div>
 </div>
 
-<div id="outline-container-org4cfd7ba" class="outline-3">
-<h3 id="org4cfd7ba">Skipgrams</h3>
-<div class="outline-text-3" id="text-org4cfd7ba">
+<div id="outline-container-h:a1734dfe-d5f6-45e2-9f27-2f18aab6ef7f" class="outline-3">
+<h3 id="h:a1734dfe-d5f6-45e2-9f27-2f18aab6ef7f">Skipgrams</h3>
+<div class="outline-text-3" id="text-h:a1734dfe-d5f6-45e2-9f27-2f18aab6ef7f">
 <p>
 Instead of only punishing same-finger bigrams weighted by finger
 and distance, I had the idea to also punish same-finger
@@ -95,9 +95,9 @@ myself and typists much faster than me.
 </div>
 </div>
 
-<div id="outline-container-org9c63472" class="outline-3">
-<h3 id="org9c63472">Distance weighting</h3>
-<div class="outline-text-3" id="text-org9c63472">
+<div id="outline-container-h:64de1790-17a3-4aa4-a213-3b8e43d0b5d0" class="outline-3">
+<h3 id="h:64de1790-17a3-4aa4-a213-3b8e43d0b5d0">Distance weighting</h3>
+<div class="outline-text-3" id="text-h:64de1790-17a3-4aa4-a213-3b8e43d0b5d0">
 <p>
 I weighted the distance between keys exponentially, as I think a
 distance of 2 units is much worse than a distance of 1
@@ -108,9 +108,9 @@ lateral movement was treated worse in my analyzer.
 </div>
 </div>
 
-<div id="outline-container-org1f19053" class="outline-3">
-<h3 id="org1f19053">Finger weighting</h3>
-<div class="outline-text-3" id="text-org1f19053">
+<div id="outline-container-h:bd12af67-b168-4a7d-ab25-7fef65dcda8c" class="outline-3">
+<h3 id="h:bd12af67-b168-4a7d-ab25-7fef65dcda8c">Finger weighting</h3>
+<div class="outline-text-3" id="text-h:bd12af67-b168-4a7d-ab25-7fef65dcda8c">
 <p>
 I used a basic script that <a href="https://github.com/notgate">NotGate</a> wrote to test how quickly I can
 move each of my fingers. For example, to see how dexterous my middle
@@ -121,9 +121,9 @@ distance is on each finger.
 </div>
 </div>
 
-<div id="outline-container-org0ae8bf0" class="outline-3">
-<h3 id="org0ae8bf0">Scoring</h3>
-<div class="outline-text-3" id="text-org0ae8bf0">
+<div id="outline-container-h:4f6e6395-bdeb-4114-87c7-4f4c4813f312" class="outline-3">
+<h3 id="h:4f6e6395-bdeb-4114-87c7-4f4c4813f312">Scoring</h3>
+<div class="outline-text-3" id="text-h:4f6e6395-bdeb-4114-87c7-4f4c4813f312">
 <p>
 The layout was scored by genkey largely with the weighted finger
 movement speed metric. There was also some reward for rolling, and
@@ -140,9 +140,9 @@ would have really been <span class="underline">way</span> too much.
 </div>
 </div>
 
-<div id="outline-container-org1eea523" class="outline-2">
-<h2 id="org1eea523">Download</h2>
-<div class="outline-text-2" id="text-org1eea523">
+<div id="outline-container-h:68ba124a-74e1-4e28-8214-b8f23c812e88" class="outline-2">
+<h2 id="h:68ba124a-74e1-4e28-8214-b8f23c812e88">Download</h2>
+<div class="outline-text-2" id="text-h:68ba124a-74e1-4e28-8214-b8f23c812e88">
 <p>
 Downloads for Windows native and EPKL, MacOS and Linux are available
 in <a href="https:github.com/semilin/semimak/releases">the Github Release page</a>!
