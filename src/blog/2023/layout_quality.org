@@ -9,6 +9,9 @@ they present the quality of their layouts. This post intends to give a
 brief, clear, and correct introduction to layout metrics.
 
 * What's the point of layouts anyway?
+:PROPERTIES:
+:CUSTOM_ID: h:80fe1c65-70db-4aa4-bbfa-f72ba931aefc
+:END:
 To understand what makes a layout good, we need to first understand
 the point of alt layouts.
 
@@ -29,6 +32,9 @@ So, the point is to improve comfort. Let's talk about how specifically
 layouts optimize for this.
 
 * Individual finger usage (frequency, SFBs, movement)
+:PROPERTIES:
+:CUSTOM_ID: h:e46323dd-62d8-4361-a0f9-039b31efe7aa
+:END:
 The most basic metric that layouts optimize for is the usage of
 individual fingers. I'll split this into roughly three perspectives:
 basic key frequency, same-finger bigrams, and overall finger movement.
@@ -56,9 +62,12 @@ Finally, I want to briefly mention overall finger movement. While SFB
 is a great metric, it is a little oversimplified. It does not include
 the distance between keys, and it only accounts for same-finger pairs
 which occur right next to each other. Some analyzers can measure
-weighted finger movement, such as Oxey's [[https://github.com/o-x-e-y/oxeylyzer][Oxeylyzer]]. 
+weighted finger movement, such as Oxey's [[https://github.com/o-x-e-y/oxeylyzer][Oxeylyzer]].
 
 * Finger relations (alternation, rolls, redirects)
+:PROPERTIES:
+:CUSTOM_ID: h:674ffbe6-d421-4b7b-814c-84aa8924cc15
+:END:
 While individual fingers are important, comfort is also greatly
 affected by the /relations/ between fingers. This is more than just
 the left/right hand balance. There are many metrics that exist, but
@@ -84,6 +93,9 @@ people find this general pattern very undesirable, so layouts often
 minimize redirects.
 
 * Lateral movement
+:PROPERTIES:
+:CUSTOM_ID: h:5274b12c-724c-4238-9361-fb30779343cb
+:END:
 This is a relatively minor metric, but it's a big deal to some.
 The index fingers are required to work more than the other fingers
 because they have 6 keys each instead of the normal 3. Unlike other
@@ -98,6 +110,9 @@ as the other home positions. This is wrong, and causes higher LSBs.
 [[https://colemakmods.github.io/mod-dh/][Colemak DH]] is a mod that exists to fix this issue.
 
 * Case study: Dvorak vs Colemak
+:PROPERTIES:
+:CUSTOM_ID: h:5138255b-1d98-43a9-ad4b-1c13c8f30c68
+:END:
 Dvorak and Colemak are two of the most used alt layouts. Let's compare
 them together! I'll be using Oxey's [[https://oxey.dev/playground/][Layout Playground]] online.
 
@@ -121,8 +136,8 @@ inward focused, which many people like.
 However, it has very high redirects - 9% is nearly as bad as QWERTY.
 The trigrams "you" and "ion" are common annoyances for Colemak users.
 
-And of course, because of =d= and =h= being in the center columns
-leads to a somewhat high LSB count.
+And of course, =d= and =h= being in the center columns leads to a
+somewhat high LSB count.
 
 Overall, Colemak is a great layout with a few minor flaws (again, the
 LSBs are addressed by the DH mod).
@@ -160,6 +175,9 @@ conclude pretty confidently from this example analysis that Colemak is
 overall better than Dvorak.
 
 * Conclusion
+:PROPERTIES:
+:CUSTOM_ID: h:5427d449-78fb-41f1-8fb7-b36e94fda8b9
+:END:
 This covers the very basics of keyboard layout analysis according to
 what I consider modern layout theory. This is unapologetically from my
 perspective as a layout creator and someone involved in this field for
@@ -176,6 +194,9 @@ If there's any particular thing you want to see me write about, please
 suggest it!
 
 * Further information and contact
+:PROPERTIES:
+:CUSTOM_ID: h:7b1865a1-57ba-4e88-89eb-52876cdb946e
+:END:
 - If you're looking for an extremely thorough document with copious
   amounts of information on layout design and theory, look no further
   than ec0vid's excellent [[https://docs.google.com/document/d/1_a5Nzbkwyk1o0bvTctZrtgsee9jSP-6I0q3A0_9Mzm0/edit][Layout Doc]].
@@ -185,5 +206,8 @@ suggest it!
   email at [[mailto:semilin@disroot.org][semilin@disroot.org]].
 
 * Footnotes
+:PROPERTIES:
+:CUSTOM_ID: h:1bb7de1d-8779-44b1-b5b6-a8c835405d3e
+:END:
 
 [fn:1] Data from [[https://oxey.dev/playground/][Oxey's Layout Playground]] using the Tr Quotes corpus.
