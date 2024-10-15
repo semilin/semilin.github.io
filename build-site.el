@@ -6,9 +6,10 @@
       org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css\">"
       org-html-preamble t
       org-html-preamble-format '(("en"
-				  "<nav>
+				                          "<nav>
   <a href=\"/\">home</a>
   <a href=\"/blog/\">blog</a>
+  <a href=\"https://github.com/semilin\">code</a>
 </nav>
 <h1>%t</h1>
 <p>%d</p>")))
@@ -21,15 +22,15 @@
              :base-directory "./src"
              :publishing-directory "./docs"
              :publishing-function 'org-html-publish-to-html
-	     :with-author nil
-	     :with-title nil
-	     :with-creator t
-	     :with-toc t
-	     :with-date t
-	     :section-numbers nil
-	     :time-stamp-file nil
-	     :auto-preamble t
-	     )))
+	           :with-author nil
+	           :with-title nil
+	           :with-creator t
+	           :with-toc t
+	           :with-date t
+	           :section-numbers nil
+	           :time-stamp-file nil
+	           :auto-preamble t
+	           )))
 
 (require 'org-id)
 (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
