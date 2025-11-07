@@ -1,0 +1,7 @@
+#+TITLE: semi's journal
+#+NICK: semi
+#+DESCRIPTION: Keyboard layouts, linguistics, philosophy, programming, etc. nerd.
+#+LINK: https://semilin.github.io
+#+FOLLOW: https://andros.dev/static/social.org
+
+* Posts
