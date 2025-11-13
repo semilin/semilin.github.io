@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Genkey Docs</title>
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css">
+<link rel="stylesheet" href="/style.css">
 <script>
   window.MathJax = {
     tex: {
@@ -125,7 +125,6 @@ The general format of commands looks like this:
 </div>
 </div>
 </div>
-
 <div id="outline-container-layouts" class="outline-2">
 <h2 id="layouts">Layouts</h2>
 <div class="outline-text-2" id="text-layouts">
@@ -134,7 +133,7 @@ Layouts are stored as basic text files in the <code>layouts</code> subdirectory.
 Here is an example of its format, using the unholy layout as reference.
 </p>
 
-<pre class="example" id="org59c571b">
+<pre class="example" id="orgf8581fc">
 QWERTY
 q w e r t y u i o p [ ] 
 a s d f g h j k l ; '
@@ -166,7 +165,6 @@ expect. Thumb keys are not supported in genkey, but
 support.
 </p>
 </div>
-
 <div id="outline-container-generate" class="outline-3">
 <h3 id="generate">generate</h3>
 <div class="outline-text-3" id="text-generate">
@@ -179,7 +177,6 @@ be used to pin keys for the improve function. Free keys are labeled with
 </div>
 </div>
 </div>
-
 <div id="outline-container-weighting" class="outline-2">
 <h2 id="weighting">Weighting</h2>
 <div class="outline-text-2" id="text-weighting">
@@ -203,7 +200,6 @@ doesn't mean it's actually better.
 Note: higher score is worse, lower score is better.
 </p>
 </div>
-
 <div id="outline-container-distance" class="outline-3">
 <h3 id="distance">Distance</h3>
 <div class="outline-text-3" id="text-distance">
@@ -227,7 +223,6 @@ distance exponentially.
 </p>
 </div>
 </div>
-
 <div id="outline-container-finger-speed" class="outline-3">
 <h3 id="finger-speed">Finger Speed</h3>
 <div class="outline-text-3" id="text-finger-speed">
@@ -293,7 +288,6 @@ a grain of salt.
 </p>
 </div>
 </div>
-
 <div id="outline-container-index-balance" class="outline-3">
 <h3 id="index-balance">Index Balance</h3>
 <div class="outline-text-3" id="text-index-balance">
@@ -305,7 +299,6 @@ increases its addition to the score.
 </p>
 </div>
 </div>
-
 <div id="outline-container-lsb" class="outline-3">
 <h3 id="lsb">LSB</h3>
 <div class="outline-text-3" id="text-lsb">
@@ -318,7 +311,6 @@ value increases how much it affects the score.
 </p>
 </div>
 </div>
-
 <div id="outline-container-trigrams" class="outline-3">
 <h3 id="trigrams">Trigrams</h3>
 <div class="outline-text-3" id="text-trigrams">
@@ -336,7 +328,6 @@ the value to 0. Otherwise, setting the value to -1 disables the
 calculation.
 </p>
 </div>
-
 <div id="outline-container-rolls" class="outline-4">
 <h4 id="rolls">Rolls</h4>
 <div class="outline-text-4" id="text-rolls">
@@ -349,7 +340,6 @@ desired, they subtract from the score.
 </p>
 </div>
 </div>
-
 <div id="outline-container-alternation" class="outline-4">
 <h4 id="alternation">Alternation</h4>
 <div class="outline-text-4" id="text-alternation">
@@ -360,7 +350,6 @@ from the score.
 </p>
 </div>
 </div>
-
 <div id="outline-container-redirects" class="outline-4">
 <h4 id="redirects">Redirects</h4>
 <div class="outline-text-4" id="text-redirects">
@@ -373,7 +362,6 @@ undesired, they add to the score.
 </p>
 </div>
 </div>
-
 <div id="outline-container-onehands" class="outline-4">
 <h4 id="onehands">Onehands</h4>
 <div class="outline-text-4" id="text-onehands">
@@ -387,7 +375,6 @@ subtract from the score.
 </div>
 </div>
 </div>
-
 <div id="outline-container-commands" class="outline-2">
 <h2 id="commands">Commands</h2>
 <div class="outline-text-2" id="text-commands">
@@ -406,7 +393,6 @@ trigram frequency data is used for all other functions of the program.
 </p>
 </div>
 </div>
-
 <div id="outline-container-rank" class="outline-3">
 <h3 id="rank">Rank</h3>
 <div class="outline-text-3" id="text-rank">
@@ -419,7 +405,6 @@ Outputs a ranked list of layouts next to their scores.
 </p>
 </div>
 </div>
-
 <div id="outline-container-analyze" class="outline-3">
 <h3 id="analyze">Analyze</h3>
 <div class="outline-text-3" id="text-analyze">
@@ -432,7 +417,6 @@ Outputs detailed analysis of a layout.
 </p>
 </div>
 </div>
-
 <div id="outline-container-generate-1" class="outline-3">
 <h3 id="generate-1">Generate</h3>
 <div class="outline-text-3" id="text-generate-1">
@@ -448,7 +432,6 @@ your CPU's multicore efficiency.
 </p>
 </div>
 </div>
-
 <div id="outline-container-improve" class="outline-3">
 <h3 id="improve">Improve</h3>
 <div class="outline-text-3" id="text-improve">
@@ -462,7 +445,6 @@ pinned keys (see <b>*<sub>generate</sub></b>).
 </p>
 </div>
 </div>
-
 <div id="outline-container-interactive" class="outline-3">
 <h3 id="interactive">Interactive</h3>
 <div class="outline-text-3" id="text-interactive">
@@ -476,7 +458,6 @@ gives you tools to easily modify a layout and see the effects in
 real-time. It's a fast and dynamic way to approach layout creation.
 </p>
 </div>
-
 <div id="outline-container-swap" class="outline-4">
 <h4 id="swap">Swap</h4>
 <div class="outline-text-4" id="text-swap">
@@ -493,7 +474,6 @@ Example: <code>s a b</code>
 </p>
 </div>
 </div>
-
 <div id="outline-container-column-swap" class="outline-4">
 <h4 id="column-swap">Column Swap</h4>
 <div class="outline-text-4" id="text-column-swap">
@@ -517,7 +497,6 @@ Examples:
 </ul>
 </div>
 </div>
-
 <div id="outline-container-suggest" class="outline-4">
 <h4 id="suggest">Suggest</h4>
 <div class="outline-text-4" id="text-suggest">
@@ -532,7 +511,6 @@ result in, and what score it can lead to.
 </p>
 </div>
 </div>
-
 <div id="outline-container-save" class="outline-4">
 <h4 id="save">Save</h4>
 <div class="outline-text-4" id="text-save">
@@ -546,7 +524,6 @@ taken, you'll be asked if you want to overwrite it.
 </p>
 </div>
 </div>
-
 <div id="outline-container-quit" class="outline-4">
 <h4 id="quit">Quit</h4>
 <div class="outline-text-4" id="text-quit">
@@ -577,7 +554,7 @@ relatively frequently, which is why it's called that in genkey.
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</p>
 </div>
 </body>
 </html>

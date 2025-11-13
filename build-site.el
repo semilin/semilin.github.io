@@ -3,7 +3,7 @@
 (setq org-html-validation-link nil	;; Don't show validation link
       org-html-head-include-scripts nil	;; Use our own scripts
       org-html-head-include-default-style nil ;; Use our own styles
-      org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css\">"
+      org-html-head "<link rel=\"stylesheet\" href=\"/style.css\">"
       org-html-preamble t
       org-html-preamble-format '(("en"
 				                          "<nav>

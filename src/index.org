@@ -1,9 +1,14 @@
 #+TITLE: semi's site
 #+options: toc:nil
-Hi, I'm semi. I write mediocre code in Common Lisp and Rust, and spend
-too much time thinking about keyboard layouts.
+* about
+I'm a programmer who likes Rust and Common Lisp a lot. I've done a lot
+of work on keyboard layouts -- you might know me as the 'semi' in
+'semimak.' Corollarily, I'm also into linguistics, especially with
+respect to ancient languages (quōque latīnē loquī; καὶ Ἑλληνιστὶ
+λέγω). This site will thus feature writings on those subjects among
+others.
 * contact
-- email [[mailto:semilin@disroot.org][semilin@disroot.org]]
+- email [[mailto:semi@semilin.dev][semi@semilin.dev]]
 - discord ~semilin~
 * projects
 ** Keymeow
@@ -14,3 +19,7 @@ frontend for Keymeow.
 ** [[file:genkey/index.org][genkey]]
 genkey is a keyboard layout analyzer I wrote to make Semimak. It
 pioneered analysis of same-finger skipgrams.
+
+# Local Variables:
+# jinx-languages: "en_US la grc_GR"
+# End:
