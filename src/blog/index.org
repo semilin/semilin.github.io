@@ -1,4 +1,4 @@
-#+TITLE: semi's blog
+#+TITLE: (blog semi)
 #+options: toc:nil
 - (2023-12-11) [[file:layout_quality.org][What makes a keyboard layout good?]]
 - (2022-07-17) [[file:final_reflection_on_semimak.org][200 WPM - Final Reflection on Semimak]] 

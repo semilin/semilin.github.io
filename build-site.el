@@ -6,7 +6,7 @@
       org-html-head "<link rel=\"stylesheet\" href=\"/style.css\">"
       org-html-preamble t
       org-html-preamble-format '(("en"
-				                          "<nav>
+				                          "<nav>semi
   <a href=\"/\">home</a>
   <a href=\"/blog/\">blog</a>
   <a href=\"https://github.com/semilin\">code</a>

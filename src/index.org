@@ -1,4 +1,4 @@
-#+TITLE: semi's site
+#+TITLE: (site semi)
 #+options: toc:nil
 * about
 I'm a programmer who likes Rust and Common Lisp a lot. I've done a lot
