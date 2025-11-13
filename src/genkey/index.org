@@ -9,7 +9,7 @@ weighting, individual layout improvement, heatmap output, interactive
 analysis, and much more!
 
 - [[https://github.com/semilin/genkey][Source]]
-- [[https://semilin.github.io/pages/genkey_docs.html][Documentation]]
+- [[./docs.org][Documentation]]
 
 [[./analysis.png]] [[./interactive.png]] [[./suggestions.png]] [[./generate.png]]
 
