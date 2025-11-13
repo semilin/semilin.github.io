@@ -1,8 +1,8 @@
 #+TITLE: (site semi)
 #+options: toc:nil
 * about
-I'm a programmer who likes Rust and Common Lisp a lot. I've done a lot
-of work on keyboard layouts -- you might know me as the 'semi' in
+I'm a programmer who likes Rust and Common Lisp. I've done a lot of
+work on keyboard layouts -- you might know me as the 'semi' in
 'semimak.' Corollarily, I'm also into linguistics, especially with
 respect to ancient languages (quōque latīnē loquī; καὶ Ἑλληνιστὶ
 λέγω). This site will thus feature writings on those subjects among
