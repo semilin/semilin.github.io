@@ -30,6 +30,9 @@
 	           :section-numbers nil
 	           :time-stamp-file nil
 	           :auto-preamble t
+             :auto-sitemap t
+             :sitemap-filename "sitemap.org"
+             :sitemap-title "Sitemap"
 	           )))
 
 (require 'org-id)
