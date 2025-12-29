@@ -1,4 +1,5 @@
 #+TITLE: (site semi)
+#+DESCRIPTION: Homepage for semi, the creator of Semimak.
 #+options: toc:nil
 * about
 I'm a programmer who likes Rust and Common Lisp. I've done a lot of

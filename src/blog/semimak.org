@@ -1,6 +1,6 @@
 #+TITLE: Semimak
 #+DATE: <2021-07-01 Thu>
-
+#+DESCRIPTION: A blog post introducing the Semimak keyboard layout.
 [[https://semilin.github.io/static/semimak.avif]]
 
 The Semimak layout is designed to have low finger movement rate -
@@ -8,8 +8,8 @@ decreasing the overall speed at which your fingers must travel to type
 on average. This doesn’t only mean to optimize for reducing
 same-finger bigrams (e.g @@html:<kbd>@@ed@@html:</kbd>@@ on QWERTY),
 but disjointeds as well (e.g the @@html:<kbd>@@m y@@html:</kbd>@@ in
-@@html:<kbd>@@may@@html:</kbd>@@ on QWERTY). Semimak was the pioneer of
-DSFB and weighted finger dexterity.
+@@html:<kbd>@@may@@html:</kbd>@@ on QWERTY). Semimak was the pioneer
+of DSFB and weighted finger dexterity.
 
 * Development
 :PROPERTIES:

@@ -1,5 +1,6 @@
 #+TITLE: Reflection on Semimak, 3 months later
 #+DATE: <2021-10-14 Thu>
+#+DESCRIPTION: A reflection on Semimak's reception in regards to its advantages and drawbacks.
 #+options: title:nil
 
 On July 1st 2021, 12:00 P.M PDT, Semimak was released.

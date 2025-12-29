@@ -1,5 +1,6 @@
 #+TITLE: What makes a keyboard layout good?
 #+DATE: <2023-12-11 Mon>
+#+DESCRIPTION: A beginner-focused exploration of keyboard layout quality and how to assess it.
 
 This question gets asked very often by newcomers to alternative
 keyboard layouts, and for good reason. Most popular coverage of
