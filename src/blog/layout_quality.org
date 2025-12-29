@@ -117,7 +117,7 @@ Dvorak and Colemak are two of the most used alt layouts. Let's compare
 them together! I'll be using Oxey's [[https://oxey.dev/playground/][Layout Playground]] online.
 
 Let's start with Colemak.
-[[https://semilin.github.io/static/layout_playground_colemak.png]]
+[[../static/layout_playground_colemak.avif]]
 
 Colemak's finger distribution is heavily index oriented, being nearly
 20% per index finger. The middles, rings, and pinkies all share the
@@ -143,7 +143,7 @@ Overall, Colemak is a great layout with a few minor flaws (again, the
 LSBs are addressed by the DH mod).
 
 Now, let's compare Colemak to Dvorak.
-[[https://semilin.github.io/static/layout_playground_dvorak.png]]
+[[../static/layout_playground_dvorak.avif]]
 
 Right away, you should notice something strange in the keymap - =i= is
 in the center column, lower priority than the far less common =u=.

@@ -11,7 +11,7 @@ others.
 I've made a number of free and open source projects. Here is a list of
 some of the more important ones.
 ** Keymui
-[[./static/keymui.png]]
+[[./static/keymui.avif]]
 
 [[https://github.com/semilin/keymui][Keymui]] is an extensible and fast layout analyzer. Notable features:
 - user-defined metrics and keyboards
