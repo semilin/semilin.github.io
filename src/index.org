@@ -7,19 +7,27 @@ work on keyboard layouts -- you might know me as the 'semi' in
 respect to ancient languages (quōque latīnē loquī; καὶ Ἑλληνιστὶ
 λέγω). This site will thus feature writings on those subjects among
 others.
-* contact
-- email [[mailto:semi@semilin.dev][semi@semilin.dev]]
-- discord ~semilin~
 * projects
-** Keymeow
-Keymeow is a Rust library for layout analysis using the low-level
-[[https://github.com/semilin/keycat][keycat]] library. It supports shift keys, combos, and layers, all
-through extremely flexible metric definition. [[https://github.com/semilin/keymui][Keymui]] is the GUI
-frontend for Keymeow.
+I've made a number of free and open source projects. Here is a list of
+some of the more important ones.
+** Keymui
+[[./static/keymui.png]]
+
+[[https://github.com/semilin/keymui][Keymui]] is an extensible and fast layout analyzer. Notable features:
+- user-defined metrics and keyboards
+- combo analysis (e.g., for Taipo and Crescent)
+- interactive swapping with instant metric updates
+- metric heatmaps
+- GUI for Windows, MacOS, and Linux written in [[https://github.com/iced-rs/iced][Iced]]
+
+Under the hood, Keymui is powered by my high-performance Rust libraries [[https://github.com/semilin/keymeow][keymeow]] and [[https://github.com/semilin/keycat][keycat]], which you can use to make your own layout analyzers.
 ** [[file:genkey/index.org][genkey]]
 genkey is a keyboard layout analyzer I wrote to make Semimak. It
 pioneered analysis of same-finger skipgrams.
 
+* contact
+- email [[mailto:semi@semilin.dev][semi@semilin.dev]]
+- discord ~semilin~
 # Local Variables:
 # jinx-languages: "en_US la grc_GR"
 # End:
