@@ -14,6 +14,8 @@ of DSFB and weighted finger dexterity.
 * Development
 :PROPERTIES:
 :CUSTOM_ID: h:5154f78d-f8b8-4b2c-8dee-0d111f2a3837
+:ID:       96388590-5c05-4771-ac2e-ae13f5ae1161
+:PUBDATE:  2025-12-28 Sun 20:20
 :END:
 I created my own analyzer, [[https:github.com/semilin/genkey][genkey]], to put my ideas into
 effect. At the time, it was only made for myself, and was difficult to
@@ -25,6 +27,7 @@ own, give it a shot!
 ** Finger Speed
 :PROPERTIES:
 :CUSTOM_ID: h:7d133025-b248-40b5-a5e7-de98852ecda6
+:ID:       570ce284-9b29-42ff-be6a-3f8fb05e60d9
 :END:
 Most layout analyzers at the moment report an SFB percentage - how
 many times you use the same finger to hit two keys in a row. But I
@@ -37,6 +40,7 @@ concurrent to be significant?
 ** Skipgrams
 :PROPERTIES:
 :CUSTOM_ID: h:a1734dfe-d5f6-45e2-9f27-2f18aab6ef7f
+:ID:       8e673daf-cfd4-4bf0-97af-efc597118e29
 :END:
 Instead of only punishing same-finger bigrams weighted by finger
 and distance, I had the idea to also punish same-finger
@@ -49,6 +53,7 @@ myself and typists much faster than me.
 ** Distance weighting
 :PROPERTIES:
 :CUSTOM_ID: h:64de1790-17a3-4aa4-a213-3b8e43d0b5d0
+:ID:       85a90a9c-61ca-42f2-9600-9428b98012c9
 :END:
 I weighted the distance between keys exponentially, as I think a
 distance of 2 units is much worse than a distance of 1
@@ -59,6 +64,7 @@ lateral movement was treated worse in my analyzer.
 ** Finger weighting
 :PROPERTIES:
 :CUSTOM_ID: h:bd12af67-b168-4a7d-ab25-7fef65dcda8c
+:ID:       2bfeb1b0-e766-4305-a958-e6ea97b63573
 :END:
 I used a basic script that [[https://github.com/notgate][NotGate]] wrote to test how quickly I can
 move each of my fingers. For example, to see how dexterous my middle
@@ -69,6 +75,7 @@ distance is on each finger.
 ** Scoring
 :PROPERTIES:
 :CUSTOM_ID: h:4f6e6395-bdeb-4114-87c7-4f4c4813f312
+:ID:       73116757-3c22-4fcb-ab38-a0c18423be18
 :END:
 The layout was scored by genkey largely with the weighted finger
 movement speed metric. There was also some reward for rolling, and
@@ -82,6 +89,8 @@ would have really been _way_ too much.
 * Download
 :PROPERTIES:
 :CUSTOM_ID: h:68ba124a-74e1-4e28-8214-b8f23c812e88
+:ID:       f163f1ab-4547-48ec-88ac-57611b15512b
+:PUBDATE:  2025-12-28 Sun 20:20
 :END:
 Downloads for Windows native and EPKL, MacOS and Linux are available
 in [[https:github.com/semilin/semimak/releases][the Github Release page]]!
