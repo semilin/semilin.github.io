@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+ <title>(blog semi)</title>
+ <link>https://semilin.dev/blog/</link>
+ <description>Blog Feed</description>
+ <item>
+  <title>What makes a keyboard layout good?</title>
+  <link>https://semilin.dev/blog/layout_quality.html</link>
+  <guid>https://semilin.dev/blog/layout_quality.html</guid>
+  <pubDate>Mon, 11 Dec 2023 00:00:00 -0000</pubDate>
+  <description><![CDATA[
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#h:80fe1c65-70db-4aa4-bbfa-f72ba931aefc">What's the point of layouts anyway?</a></li>
+<li><a href="#h:e46323dd-62d8-4361-a0f9-039b31efe7aa">Individual finger usage (frequency, SFBs, movement)</a></li>
+<li><a href="#h:674ffbe6-d421-4b7b-814c-84aa8924cc15">Finger relations (alternation, rolls, redirects)</a></li>
+<li><a href="#h:5274b12c-724c-4238-9361-fb30779343cb">Lateral movement</a></li>
+<li><a href="#h:5138255b-1d98-43a9-ad4b-1c13c8f30c68">Case study: Dvorak vs Colemak</a></li>
+<li><a href="#h:5427d449-78fb-41f1-8fb7-b36e94fda8b9">Conclusion</a></li>
+<li><a href="#h:7b1865a1-57ba-4e88-89eb-52876cdb946e">Further information and contact</a></li>
+</ul>
+</div>
+</div>
+<p>
+This question gets asked very often by newcomers to alternative
+keyboard layouts, and for good reason. Most popular coverage of
+layouts is over-simplified at best, and at worst completely wrong.
+Annoyingly, even layout creators themselves can be misleading with how
+they present the quality of their layouts. This post intends to give a
+brief, clear, and correct introduction to layout metrics.
+</p>
+<div id="outline-container-h:80fe1c65-70db-4aa4-bbfa-f72ba931aefc" class="outline-2">
+<h2 id="h:80fe1c65-70db-4aa4-bbfa-f72ba931aefc">What's the point of layouts anyway?</h2>
+<div class="outline-text-2" id="text-h:80fe1c65-70db-4aa4-bbfa-f72ba931aefc">
+<p>
+To understand what makes a layout good, we need to first understand
+the point of alt layouts.
+</p>
+
+<p>
+An extremely common misconception is that alt layouts exist to make
+typing faster. While the question of speed improvement from alt
+layouts is debatable, the short answer is: do not switch layouts if
+all you want is to be faster at typing. You are far better off just
+improving your speed on your current layout.
+</p>
+
+<p>
+What layouts <i>do</i> improve upon is typing comfort. For those with or at
+risk of hand injuries such as RSI, alt layouts can make a huge
+difference. Although my hands are perfectly healthy, I have found alt
+layouts to be so much more comfortable to type with - which has made
+typing <i>fun</i> for me. QWERTY, by comparison, just feels awkward and
+uncomfortable.
+</p>
+
+<p>
+So, the point is to improve comfort. Let's talk about how specifically
+layouts optimize for this.
+</p>
+</div>
+</div>
+<div id="outline-container-h:e46323dd-62d8-4361-a0f9-039b31efe7aa" class="outline-2">
+<h2 id="h:e46323dd-62d8-4361-a0f9-039b31efe7aa">Individual finger usage (frequency, SFBs, movement)</h2>
+<div class="outline-text-2" id="text-h:e46323dd-62d8-4361-a0f9-039b31efe7aa">
+<p>
+The most basic metric that layouts optimize for is the usage of
+individual fingers. I'll split this into roughly three perspectives:
+basic key frequency, same-finger bigrams, and overall finger movement.
+</p>
+
+<p>
+Finger frequency is an extremely superficial metric, and you shouldn't
+be impressed much by it. It is simply how many keys each finger types
+on average compared to other fingers. This metric is important for
+balancing the workload across fingers. Generally, most people prefer
+a distribution of least work on pinkies to most work on indexes. The
+exact amounts each finger uses are mostly preference.
+</p>
+
+<p>
+Next is one of the most important metrics in layout analysis.
+Same-finger bigrams, commonly known as SFBs, are instances of pressing
+two keys in a row with the same finger. For instance, most people type
+qwerty <code>ed</code> with only the left middle finger - this is the most common
+SFB in QWERTY.
+</p>
+
+<p>
+Almost everybody agrees that SFBs are uncomfortable. They are also
+objectively slower than other bigrams at peak speeds. Because of this,
+layouts focus most of their optimization on reducing SFBs. While
+QWERTY has a total of 6.1% SFBs, <a href="https://colemak.com">Colemak</a> has only 1.7%, and even more
+SFB-optimized layouts like <a href="https://github.com/rdavison/graphite-layout">Graphite</a> have under 1.0%<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>.
+</p>
+
+<p>
+Finally, I want to briefly mention overall finger movement. While SFB
+is a great metric, it is a little oversimplified. It does not include
+the distance between keys, and it only accounts for same-finger pairs
+which occur right next to each other. Some analyzers can measure
+weighted finger movement, such as Oxey's <a href="https://github.com/o-x-e-y/oxeylyzer">Oxeylyzer</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-h:674ffbe6-d421-4b7b-814c-84aa8924cc15" class="outline-2">
+<h2 id="h:674ffbe6-d421-4b7b-814c-84aa8924cc15">Finger relations (alternation, rolls, redirects)</h2>
+<div class="outline-text-2" id="text-h:674ffbe6-d421-4b7b-814c-84aa8924cc15">
+<p>
+While individual fingers are important, comfort is also greatly
+affected by the <i>relations</i> between fingers. This is more than just
+the left/right hand balance. There are many metrics that exist, but
+I'll go over the biggest three you'll hear people talk about.
+</p>
+
+<p>
+Alternation refers to how much you switch hands during typing. You
+want this to be pretty high, as long sequences on one hand are
+uncomfortable. However, too much alternation (switching hands nearly
+every key stroke) can be uncomfortable. Because of this, many layouts
+try to balance alternation with rolls.
+</p>
+
+<p>
+Rolls are motions where multiple keys are hit in a "rolling" motion on
+one hand, like <code>er</code> on QWERTY. Many people find this motion very
+comfortable. There is also a distinction between inward and outward
+rolls. Inward goes from pinky to index, like <code>er</code>, while outward goes
+from index to pinky, like <code>no</code>. Some find inward more comfortable than
+outward, but this is completely preference.
+</p>
+
+<p>
+Redirects are three-key motions that change between inward and outward
+directions. For example, the most common redirect on QWERTY is <code>you</code> -
+it starts outward with <code>yo</code>, but changes to inward with <code>ou</code>. Many
+people find this general pattern very undesirable, so layouts often
+minimize redirects.
+</p>
+</div>
+</div>
+<div id="outline-container-h:5274b12c-724c-4238-9361-fb30779343cb" class="outline-2">
+<h2 id="h:5274b12c-724c-4238-9361-fb30779343cb">Lateral movement</h2>
+<div class="outline-text-2" id="text-h:5274b12c-724c-4238-9361-fb30779343cb">
+<p>
+This is a relatively minor metric, but it's a big deal to some.
+The index fingers are required to work more than the other fingers
+because they have 6 keys each instead of the normal 3. Unlike other
+fingers, this means they can move laterally instead of just up and
+down. Some people find this uncomfortable, especially when a reach
+with the index finger inwards is paired with an adjacent middle finger
+keypress. This is known as a Lateral Stretch Bigram, or LSB.
+</p>
+
+<p>
+Some older layouts have made the mistake of putting common keys on the
+inner homerow (QWERTY <code>g</code> and <code>h</code> positions), as if they are the same
+as the other home positions. This is wrong, and causes higher LSBs.
+<a href="https://colemakmods.github.io/mod-dh/">Colemak DH</a> is a mod that exists to fix this issue.
+</p>
+</div>
+</div>
+<div id="outline-container-h:5138255b-1d98-43a9-ad4b-1c13c8f30c68" class="outline-2">
+<h2 id="h:5138255b-1d98-43a9-ad4b-1c13c8f30c68">Case study: Dvorak vs Colemak</h2>
+<div class="outline-text-2" id="text-h:5138255b-1d98-43a9-ad4b-1c13c8f30c68">
+<p>
+Dvorak and Colemak are two of the most used alt layouts. Let's compare
+them together! I'll be using Oxey's <a href="https://oxey.dev/playground/">Layout Playground</a> online.
+</p>
+
+<p>
+Let's start with Colemak.
+<img src="../static/layout_playground_colemak.avif" alt="layout_playground_colemak.avif" />
+</p>
+
+<p>
+Colemak's finger distribution is heavily index oriented, being nearly
+20% per index finger. The middles, rings, and pinkies all share the
+rest of the load fairly even. This is a pretty typical distribution
+from a layout made before 2020, and a lot of people like it a lot.
+However, some (like me) find it too much index usage and prefer more
+balanced fingers.
+</p>
+
+<p>
+Colemak has less than 1.4% SFB - this is pretty good! It's not
+spectacular compared to some more modern layouts, but it's
+respectable.
+</p>
+
+<p>
+Colemak's rolls are still pretty high for modern standards, and it's
+inward focused, which many people like. 
+</p>
+
+<p>
+However, it has very high redirects - 9% is nearly as bad as QWERTY.
+The trigrams "you" and "ion" are common annoyances for Colemak users.
+</p>
+
+<p>
+And of course, <code>d</code> and <code>h</code> being in the center columns leads to a
+somewhat high LSB count.
+</p>
+
+<p>
+Overall, Colemak is a great layout with a few minor flaws (again, the
+LSBs are addressed by the DH mod).
+</p>
+
+<p>
+Now, let's compare Colemak to Dvorak.
+<img src="../static/layout_playground_dvorak.avif" alt="layout_playground_dvorak.avif" />
+</p>
+
+<p>
+Right away, you should notice something strange in the keymap - <code>i</code> is
+in the center column, lower priority than the far less common <code>u</code>.
+This is bizarre and I don't have any idea why it's there. What I do
+know is that this causes too much lateral stretching, and I found it
+rather annoying when I tried Dvorak.
+</p>
+
+<p>
+Dvorak also has very high pinky and ring usage on the right hand.
+<code>rnv</code> all on the same finger will lead to quite a lot of movement -
+consider a word like "curving". Overall, there's a pretty big
+movement imbalance between the heavy right hand and stagnant left.
+</p>
+
+<p>
+Additionally, SFBs are way higher than Colemak - 2x the rate! This is
+ridiculous; there is absolutely no reason for a layout to have above
+2% SFB. <code>ct</code>, <code>gh</code>, and <code>ls</code> are among the most frequent and noticeable.
+</p>
+
+<p>
+Alternation is quite high, which makes sense for a layout designed for
+mechanical typewriters. As a consequence, redirects and rolls are
+lower than Colemak.
+</p>
+
+<p>
+Overall, Dvorak isn't terrible, but it definitely shows signs of its
+age. It really doesn't win anything over Colemak besides lower
+redirects, but there are far better modern options if you want that.
+</p>
+
+<p>
+I don't blame August Dvorak - his research was largely the first of
+its kind, he was optimizing for a completely different device, and he
+didn't have computers to help him like we do now. Nevertheless, we can
+conclude pretty confidently from this example analysis that Colemak is
+overall better than Dvorak.
+</p>
+</div>
+</div>
+<div id="outline-container-h:5427d449-78fb-41f1-8fb7-b36e94fda8b9" class="outline-2">
+<h2 id="h:5427d449-78fb-41f1-8fb7-b36e94fda8b9">Conclusion</h2>
+<div class="outline-text-2" id="text-h:5427d449-78fb-41f1-8fb7-b36e94fda8b9">
+<p>
+This covers the very basics of keyboard layout analysis according to
+what I consider modern layout theory. This is unapologetically from my
+perspective as a layout creator and someone involved in this field for
+over three years now. Many of my opinions are shared with those in the
+AKL Discord (see the next section). There are people in different
+communities who disagree with me on several things - I think they are
+wrong. I'm happy to have friendly arguments with anyone! We both lose
+by default anyway for being nerdy enough to argue about keyboard
+layouts of all things.
+</p>
+
+<p>
+I intend to write many more posts in the future to make what I've
+been researching and discussing for years more accessible knowledge.
+If there's any particular thing you want to see me write about, please
+suggest it!
+</p>
+</div>
+</div>
+<div id="outline-container-h:7b1865a1-57ba-4e88-89eb-52876cdb946e" class="outline-2">
+<h2 id="h:7b1865a1-57ba-4e88-89eb-52876cdb946e">Further information and contact</h2>
+<div class="outline-text-2" id="text-h:7b1865a1-57ba-4e88-89eb-52876cdb946e">
+<ul class="org-ul">
+<li>If you're looking for an extremely thorough document with copious
+amounts of information on layout design and theory, look no further
+than ec0vid's excellent <a href="https://docs.google.com/document/d/1_a5Nzbkwyk1o0bvTctZrtgsee9jSP-6I0q3A0_9Mzm0/edit">Layout Doc</a>.</li>
+<li>If you want to talk to others about layouts, you can find me and
+many other cool people on the <a href="https://discord.gg/7gnJqskyvZ">Alt Keyboard Layouts Discord</a>!</li>
+<li>Or, if you want to talk to me directly, feel free to send me an
+email at <a href="mailto:semilin@disroot.org">semilin@disroot.org</a>.</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Data from <a href="https://oxey.dev/playground/">Oxey's Layout Playground</a> using the Tr Quotes corpus.
+</p></div></div>
+
+
+</div>
+</div>]]></description>
+ </item>
+ <item>
+  <title>200 WPM - Final Reflection on Semimak</title>
+  <link>https://semilin.dev/blog/final_reflection_on_semimak.html</link>
+  <guid>https://semilin.dev/blog/final_reflection_on_semimak.html</guid>
+  <pubDate>Sun, 17 Jul 2022 00:00:00 -0000</pubDate>
+  <description><![CDATA[
+
+<div id="org601b45f" class="figure">
+<p><img src="./static/200wpm.avif" alt="200wpm.avif" />
+</p>
+</div>
+
+<p>
+In less than a year of using Semimak, I hit 200 words per minute on
+it. On my previous layouts the highest I had gotten was 160 wpm, so
+this is a big achievement for me. It also means that I'm the first and
+only person to have achieved 200 wpm on their own layout!<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> Given
+this milestone, I thought I should write a little bit about my
+experience getting here and my final thoughts on the layout.
+</p>
+
+<p>
+Semimak is a great layout&#x2026; well, for me at least! This definitely
+makes sense, given it was designed around problems that I identified
+with <i>my experience</i> in other layouts, and it was closely modeled
+around my personal finger dexterity. If there is anything we should be
+able to agree on in keyboard layouts, it's that what is "good" is
+entirely subjective. People have different hands. They have different
+ideas of what is comfortable, and different physical limits. My ring
+and pinky fingers are more capable than many, while my middle fingers
+can be considered pretty slow. Therefore, it's likely that my layout
+won't be the best experience for a lot of people, despite being great
+for me!
+</p>
+
+<p>
+This idea probably could have been communicated better given that in
+August of 2020, we held a month-long tournament with an $850 prize
+pool to see who could learn the layout the fastest.<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup> This likely
+gave many people the impression that Semimak was the "best layout",
+despite such a thing, of course, not existing. <b>Be skeptical of anyone
+who claims their layout to be "objectively" better than other
+layouts.</b> I will not name names, but if someone claims that their
+layout has 130% higher "efficiency" than another layout, they probably
+don't know what they're talking about. And it's not a meaningful
+metric that you should pay attention to.
+</p>
+
+<p>
+To me, Semimak is the best example in proving that layout quality is
+subjective. I love the layout, and truly think that no other layout
+currently in existence is better for me. There are several other
+people who still use and like the layout too - notably, Fenno has over
+240 wpm on the layout!<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup> However, there were many people during the
+tournament who did not like the layout. It was uncomfortable for them,
+unintuitive, or physically the layout was just too much from them.
+</p>
+
+<p>
+"But the <a href="https://semilin.github.io/genkey">analyzer</a> said it was better than every other layout!" Yeah,
+of course it did. If you make an analyzer optimize a layout for
+certain metrics, it's going to do better than other layouts in those
+metrics. <b>What matters is not how well the layout fits the metrics,
+it's how well the metrics fit you.</b>
+</p>
+
+<p>
+The point of Semimak was to be novel. Based off my own experience, I
+saw a hole in what kinds of things people and analyzers were looking
+for in layouts. I wanted to add another way to think about layouts,
+and I succeeded in doing that by making Semimak. I feel satisfied
+seeing people talk about dSFB, or same-finger skipgrams so frequently
+when analyzing layouts these days. My work has definitely had some
+impact in the community, and I'm happy about that.
+</p>
+
+<p>
+Semimak, ultimately, is a proof of concept. It also happens to be a
+pretty good layout, for the right kind of person.
+</p>
+
+<p>
+If you take away anything from this post, it's that Dvorak is the most
+perfect layout ever created and everybody should switch to it right n
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://www.youtube.com/watch?v=uOgNOs-vSXw">Heres a video of me
+typing almost 200 wpm on Semimak.</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://www.youtube.com/watch?v=86ubAuceZSI">Check out Jashe's
+video documenting the tournament!</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://www.youtube.com/watch?v=-8F-xIah79w">Check out Fenno's
+238 wpm handcam!</a>
+</p></div></div>
+
+
+</div>
+</div>]]></description>
+ </item>
+ <item>
+  <title>Reflecting on Semimak, 3 months later</title>
+  <link>https://semilin.dev/blog/reflection_on_semimak.html</link>
+  <guid>https://semilin.dev/blog/reflection_on_semimak.html</guid>
+  <pubDate>Thu, 14 Oct 2021 00:00:00 -0000</pubDate>
+  <description><![CDATA[
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#problems">Problems</a>
+<ul>
+<li><a href="#h:07793965-ec56-407c-80b4-bdbbab699c0e">Right Index Finger</a></li>
+<li><a href="#h:6d89011a-bad2-4fb7-a6ad-7f4f8cddf286">Ring Finger Movements</a></li>
+<li><a href="#h:83c402b9-35dc-46ed-9b74-61b50d15d4d0"><code>'r</code> and <code>'ll</code></a></li>
+</ul>
+</li>
+<li><a href="#successses">Successes</a></li>
+<li><a href="#takeaways">Takeaways</a></li>
+</ul>
+</div>
+</div>
+<p>
+On July 1st 2021, 12:00 P.M PDT, Semimak was released.
+<a href="https://github.com/notgate">NotGate</a> and I held a tournament with an
+$850 prize pool, and over 200 people participated in it (including me,
+just for fun). I got a lot of feedback from this!
+</p>
+<div id="outline-container-problems" class="outline-2">
+<h2 id="problems">Problems</h2>
+<div class="outline-text-2" id="text-problems">
+</div>
+<div id="outline-container-h:07793965-ec56-407c-80b4-bdbbab699c0e" class="outline-3">
+<h3 id="h:07793965-ec56-407c-80b4-bdbbab699c0e">Right Index Finger</h3>
+<div class="outline-text-3" id="text-h:07793965-ec56-407c-80b4-bdbbab699c0e">
+<p>
+Despite the relatively low usage of the right index finger, some people
+had difficulty with it. It is the finger with the highest unweighted
+movement, but that's difficult to avoid, considering the index fingers
+have double the responsibility of a normal finger.
+</p>
+</div>
+</div>
+<div id="outline-container-h:6d89011a-bad2-4fb7-a6ad-7f4f8cddf286" class="outline-3">
+<h3 id="h:6d89011a-bad2-4fb7-a6ad-7f4f8cddf286">Ring Finger Movements</h3>
+<div class="outline-text-3" id="text-h:6d89011a-bad2-4fb7-a6ad-7f4f8cddf286">
+<p>
+This seemed to be the biggest issue people had with the layout overall.
+<code>lr'</code> and <code>oa.</code> columns will cause a lot of movement, and the ring
+fingers are either the slowest or second slowest fingers for people.
+</p>
+
+<p>
+This highlights a very interesting effect of relative dexterity. I
+personally never had any issue with it, which is unsurprising
+considering I made the layout adapted to my own finger speed. I believed
+at the time that people could adapt to comfort with this, like I was
+able to with my pinkies. However, although almost everyone was able to
+adapt comfortably to the pinky movement, a not insignificant amount of
+people struggled with the ring fingers.
+</p>
+
+<p>
+I now believe that I am simply lucky to have more dexterous ring fingers
+than average. This would have been difficult for me to know at the time,
+since no layouts that I had known of at the time had really pushed the
+limits on the ring fingers. Regardless, this was my biggest oversight
+with Semimak.
+</p>
+</div>
+</div>
+<div id="outline-container-h:83c402b9-35dc-46ed-9b74-61b50d15d4d0" class="outline-3">
+<h3 id="h:83c402b9-35dc-46ed-9b74-61b50d15d4d0"><code>'r</code> and <code>'ll</code></h3>
+<div class="outline-text-3" id="text-h:83c402b9-35dc-46ed-9b74-61b50d15d4d0">
+<p>
+This is one of the more specific egregious problems with Semimak. Words
+like <code>you're</code>, <code>you'll</code>, and <code>I'll</code> are abyssmal on the layout because
+they include bad SFBs on the left ring finger. Though they can pretty
+easily be alt-fingered, I still found them quite problematic. Because of
+this, I created my own mod, Semimak JQ, about 2 months after its
+original release.
+</p>
+
+<pre class="example" id="orgd9b1f67">
+f l h v z  ' w u o y
+s r n t k  c d e a i
+x j b m q  p g , . /
+</pre>
+
+<p>
+It only makes two swaps, a 3 key cycle, so it is quite easy to learn
+from the original layout. After about a month of using it full-time, I
+can confidently say that it's pretty much objectively better than the
+reference layout, at least for me.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-successses" class="outline-2">
+<h2 id="successses">Successes</h2>
+<div class="outline-text-2" id="text-successses">
+<p>
+By the end of the one month tournament, over 5 people had gotten above
+100 wpm with the layout on a very difficult typing test - top 10k
+English words, random punctuation, and 2 minutes. This is really
+impressive!
+</p>
+
+<p>
+However, the more interesting thing is to watch their handcams (for
+example, <a href="https://youtu.be/Hu1whMOKR2M?t=34">Octahedron's</a>; the fingers look just as low movement as the
+layout set out to be. This is a great success, because it validates my
+theory of finger movement. This feels accurate for me as well, even at
+over 160 wpm on Semimak, my fingers feel like they are moving very
+slowly, especially when compared to other alt layouts.
+</p>
+
+<p>
+Today, there are still quite a few using Semimak, several of which can
+type over 160 wpm on a basic 60 second test. For the people who Semimak
+works for, it seems to work really well.
+</p>
+</div>
+</div>
+<div id="outline-container-takeaways" class="outline-2">
+<h2 id="takeaways">Takeaways</h2>
+<div class="outline-text-2" id="text-takeaways">
+<p>
+Overall, Semimak was a very novel layout. It was the first of its kind,
+and because of that was extremely different from most layouts at the
+time, and was overall a risky move.
+</p>
+
+<p>
+Semimak did have its shortcomings, and it isn't for everyone. But I
+think it's fair enough to say that it did spark a new paradigm for new
+layouts to be made in the style of. The design behind Semimak has been
+an inspiration for many new layouts created since.
+</p>
+
+<p>
+So, though I don't think that everyone should learn Semimak, it is 100%
+a great success to me. And I could not have done it without the
+wonderful, welcoming, and unfathomably nerdy layout community, who
+encouraged and inspired me immensely. Thank you all!
+</p>
+</div>
+</div>
+]]></description>
+ </item>
+ <item>
+  <title>Introducing Semimak</title>
+  <link>https://semilin.dev/blog/semimak.html</link>
+  <guid>https://semilin.dev/blog/semimak.html</guid>
+  <pubDate>Thu, 01 Jul 2021 00:00:00 -0000</pubDate>
+  <description><![CDATA[
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#h:5154f78d-f8b8-4b2c-8dee-0d111f2a3837">Development</a>
+<ul>
+<li><a href="#h:7d133025-b248-40b5-a5e7-de98852ecda6">Finger Speed</a></li>
+<li><a href="#h:a1734dfe-d5f6-45e2-9f27-2f18aab6ef7f">Skipgrams</a></li>
+<li><a href="#h:64de1790-17a3-4aa4-a213-3b8e43d0b5d0">Distance weighting</a></li>
+<li><a href="#h:bd12af67-b168-4a7d-ab25-7fef65dcda8c">Finger weighting</a></li>
+<li><a href="#h:4f6e6395-bdeb-4114-87c7-4f4c4813f312">Scoring</a></li>
+</ul>
+</li>
+<li><a href="#h:68ba124a-74e1-4e28-8214-b8f23c812e88">Download</a></li>
+</ul>
+</div>
+</div>
+
+<div id="orgc444243" class="figure">
+<p><img src="https://semilin.github.io/static/semimak.avif" alt="semimak.avif" />
+</p>
+</div>
+
+<p>
+The Semimak layout is designed to have low finger movement rate -
+decreasing the overall speed at which your fingers must travel to type
+on average. This doesn’t only mean to optimize for reducing
+same-finger bigrams (e.g <kbd>ed</kbd> on QWERTY),
+but disjointeds as well (e.g the <kbd>m y</kbd> in
+<kbd>may</kbd> on QWERTY). Semimak was the pioneer
+of DSFB and weighted finger dexterity.
+</p>
+<div id="outline-container-h:5154f78d-f8b8-4b2c-8dee-0d111f2a3837" class="outline-2">
+<h2 id="h:5154f78d-f8b8-4b2c-8dee-0d111f2a3837">Development</h2>
+<div class="outline-text-2" id="text-h:5154f78d-f8b8-4b2c-8dee-0d111f2a3837">
+<p>
+I created my own analyzer, <a href="https:github.com/semilin/genkey">genkey</a>, to put my ideas into
+effect. At the time, it was only made for myself, and was difficult to
+use. However, many people have used it since then, creating their own
+layouts with it, and it has been massively improved since its
+creation. If you're interested in analyzing layouts, or creating your
+own, give it a shot!
+</p>
+</div>
+<div id="outline-container-h:7d133025-b248-40b5-a5e7-de98852ecda6" class="outline-3">
+<h3 id="h:7d133025-b248-40b5-a5e7-de98852ecda6">Finger Speed</h3>
+<div class="outline-text-3" id="text-h:7d133025-b248-40b5-a5e7-de98852ecda6">
+<p>
+Most layout analyzers at the moment report an SFB percentage - how
+many times you use the same finger to hit two keys in a row. But I
+found this somewhat superficial - not all SFBs are equally bad. They
+can be heavily influenced by what finger is being used and how much
+distance is traveled in the SFB. In addition, the statistic can be
+generalized more. Why do the two keys in the bigram need to be
+concurrent to be significant?
+</p>
+</div>
+</div>
+<div id="outline-container-h:a1734dfe-d5f6-45e2-9f27-2f18aab6ef7f" class="outline-3">
+<h3 id="h:a1734dfe-d5f6-45e2-9f27-2f18aab6ef7f">Skipgrams</h3>
+<div class="outline-text-3" id="text-h:a1734dfe-d5f6-45e2-9f27-2f18aab6ef7f">
+<p>
+Instead of only punishing same-finger bigrams weighted by finger
+and distance, I had the idea to also punish same-finger
+skipgrams. I weighted this exponentially - separated by 0 keys
+(normal bigram) is a weight of 1, separated by 1 is half as bad,
+separated by 2 is a quarter, and so on. These weights are
+arbitrary, but they were inspired both by the experiences of both
+myself and typists much faster than me.
+</p>
+</div>
+</div>
+<div id="outline-container-h:64de1790-17a3-4aa4-a213-3b8e43d0b5d0" class="outline-3">
+<h3 id="h:64de1790-17a3-4aa4-a213-3b8e43d0b5d0">Distance weighting</h3>
+<div class="outline-text-3" id="text-h:64de1790-17a3-4aa4-a213-3b8e43d0b5d0">
+<p>
+I weighted the distance between keys exponentially, as I think a
+distance of 2 units is much worse than a distance of 1
+unit. Layouts like Workman and Colemak DH have shown the discomfort
+that can be cause with lateral index movement - because of this,
+lateral movement was treated worse in my analyzer.
+</p>
+</div>
+</div>
+<div id="outline-container-h:bd12af67-b168-4a7d-ab25-7fef65dcda8c" class="outline-3">
+<h3 id="h:bd12af67-b168-4a7d-ab25-7fef65dcda8c">Finger weighting</h3>
+<div class="outline-text-3" id="text-h:bd12af67-b168-4a7d-ab25-7fef65dcda8c">
+<p>
+I used a basic script that <a href="https://github.com/notgate">NotGate</a> wrote to test how quickly I can
+move each of my fingers. For example, to see how dexterous my middle
+finger is, I would type eded over and over on QWERTY, and see how fast
+my keys per second was. This data was then used to weight how bad fast
+distance is on each finger.
+</p>
+</div>
+</div>
+<div id="outline-container-h:4f6e6395-bdeb-4114-87c7-4f4c4813f312" class="outline-3">
+<h3 id="h:4f6e6395-bdeb-4114-87c7-4f4c4813f312">Scoring</h3>
+<div class="outline-text-3" id="text-h:4f6e6395-bdeb-4114-87c7-4f4c4813f312">
+<p>
+The layout was scored by genkey largely with the weighted finger
+movement speed metric. There was also some reward for rolling, and
+penalty for redirects.
+</p>
+
+<p>
+However, what the generator created had an extremely high redirect
+rate, and so I swapped the columns around at the end to increase
+alternation. Though I am no alternation lover, the redirect rate
+would have really been <span class="underline">way</span> too much.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-h:68ba124a-74e1-4e28-8214-b8f23c812e88" class="outline-2">
+<h2 id="h:68ba124a-74e1-4e28-8214-b8f23c812e88">Download</h2>
+<div class="outline-text-2" id="text-h:68ba124a-74e1-4e28-8214-b8f23c812e88">
+<p>
+Downloads for Windows native and EPKL, MacOS and Linux are available
+in <a href="https:github.com/semilin/semimak/releases">the Github Release page</a>!
+</p>
+</div>
+</div>
+]]></description>
+ </item>
+</channel>
+</rss>
