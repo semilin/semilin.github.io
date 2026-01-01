@@ -24,7 +24,10 @@ def get_body(org_file):
         return match.group(1) if match else print('regex problem!!')
 
 if sys.argv[1] == "index":
-    org_lines = ["#+TITLE: (blog semi)", "#+options: toc:nil", ""]
+    org_lines = ["#+TITLE: (blog semi)",
+                 "#+options: toc:nil",
+                 "[[file:feed.xml][RSS Feed]]",
+                 ""]
     org_lines.extend([f"- ({d}) [[file:{f}][{t}]]" for d, f, t in POSTS])
     with open("./src/blog/index.org", "w") as f:
         f.write("\n".join(org_lines))
@@ -49,7 +52,7 @@ rss_template = f"""<?xml version="1.0" encoding="UTF-8" ?>
 <channel>
  <title>(blog semi)</title>
  <link>{BASE_URL}</link>
- <description>Blog Feed</description>
+ <description>(blog semi)</description>
 {"\n".join(rss_items)}
 </channel>
 </rss>"""

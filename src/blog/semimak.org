@@ -1,7 +1,7 @@
 #+TITLE: Semimak
 #+DATE: <2021-07-01 Thu>
 #+DESCRIPTION: A blog post introducing the Semimak keyboard layout.
-[[https://semilin.github.io/static/semimak.avif]]
+[[https://semilin.dev/static/semimak.avif]]
 
 The Semimak layout is designed to have low finger movement rate -
 decreasing the overall speed at which your fingers must travel to type

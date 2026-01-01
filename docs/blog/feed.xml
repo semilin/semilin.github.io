@@ -3,7 +3,7 @@
 <channel>
  <title>(blog semi)</title>
  <link>https://semilin.dev/blog/</link>
- <description>Blog Feed</description>
+ <description>(blog semi)</description>
  <item>
   <title>What makes a keyboard layout good?</title>
   <link>https://semilin.dev/blog/layout_quality.html</link>
@@ -314,8 +314,8 @@ Data from <a href="https://oxey.dev/playground/">Oxey's Layout Playground</a> us
   <pubDate>Sun, 17 Jul 2022 00:00:00 -0000</pubDate>
   <description><![CDATA[
 
-<div id="org601b45f" class="figure">
-<p><img src="./static/200wpm.avif" alt="200wpm.avif" />
+<div id="orgbcb8e0c" class="figure">
+<p><img src="../static/200wpm.avif" alt="200wpm.avif" />
 </p>
 </div>
 
@@ -498,7 +498,7 @@ this, I created my own mod, Semimak JQ, about 2 months after its
 original release.
 </p>
 
-<pre class="example" id="orgd9b1f67">
+<pre class="example" id="org57387e2">
 f l h v z  ' w u o y
 s r n t k  c d e a i
 x j b m q  p g , . /
@@ -589,8 +589,8 @@ encouraged and inspired me immensely. Thank you all!
 </div>
 </div>
 
-<div id="orgc444243" class="figure">
-<p><img src="https://semilin.github.io/static/semimak.avif" alt="semimak.avif" />
+<div id="org820cb7d" class="figure">
+<p><img src="https://semilin.dev/static/semimak.avif" alt="semimak.avif" />
 </p>
 </div>
 

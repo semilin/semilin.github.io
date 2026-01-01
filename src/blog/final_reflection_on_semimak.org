@@ -1,7 +1,7 @@
 #+TITLE: 200 WPM - Final Reflection on Semimak
 #+DATE:<2022-07-17 Sun>
 #+DESCRIPTION: A personal reflection on Semimak's quality after having hit 200 words per minute on it.
-[[./static/200wpm.avif]]
+[[../static/200wpm.avif]]
 
 In less than a year of using Semimak, I hit 200 words per minute on
 it. On my previous layouts the highest I had gotten was 160 wpm, so
