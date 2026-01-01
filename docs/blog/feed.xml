@@ -6,8 +6,8 @@
  <description>(blog semi)</description>
  <item>
   <title>What makes a keyboard layout good?</title>
-  <link>https://semilin.dev/blog/layout_quality.html</link>
-  <guid>https://semilin.dev/blog/layout_quality.html</guid>
+  <link>https://semilin.dev/blog/layout-quality.html</link>
+  <guid>https://semilin.dev/blog/layout-quality.html</guid>
   <pubDate>Mon, 11 Dec 2023 00:00:00 -0000</pubDate>
   <description><![CDATA[
 <div id="table-of-contents" role="doc-toc">
@@ -309,12 +309,12 @@ Data from <a href="https://oxey.dev/playground/">Oxey's Layout Playground</a> us
  </item>
  <item>
   <title>200 WPM - Final Reflection on Semimak</title>
-  <link>https://semilin.dev/blog/final_reflection_on_semimak.html</link>
-  <guid>https://semilin.dev/blog/final_reflection_on_semimak.html</guid>
+  <link>https://semilin.dev/blog/final-reflection-on-semimak.html</link>
+  <guid>https://semilin.dev/blog/final-reflection-on-semimak.html</guid>
   <pubDate>Sun, 17 Jul 2022 00:00:00 -0000</pubDate>
   <description><![CDATA[
 
-<div id="orgbcb8e0c" class="figure">
+<div id="orgbb945df" class="figure">
 <p><img src="../static/200wpm.avif" alt="200wpm.avif" />
 </p>
 </div>
@@ -417,8 +417,8 @@ video documenting the tournament!</a>
  </item>
  <item>
   <title>Reflecting on Semimak, 3 months later</title>
-  <link>https://semilin.dev/blog/reflection_on_semimak.html</link>
-  <guid>https://semilin.dev/blog/reflection_on_semimak.html</guid>
+  <link>https://semilin.dev/blog/reflection-on-semimak.html</link>
+  <guid>https://semilin.dev/blog/reflection-on-semimak.html</guid>
   <pubDate>Thu, 14 Oct 2021 00:00:00 -0000</pubDate>
   <description><![CDATA[
 <div id="table-of-contents" role="doc-toc">
@@ -498,7 +498,7 @@ this, I created my own mod, Semimak JQ, about 2 months after its
 original release.
 </p>
 
-<pre class="example" id="org57387e2">
+<pre class="example" id="org14fca62">
 f l h v z  ' w u o y
 s r n t k  c d e a i
 x j b m q  p g , . /
@@ -589,7 +589,7 @@ encouraged and inspired me immensely. Thank you all!
 </div>
 </div>
 
-<div id="org820cb7d" class="figure">
+<div id="orga54cc19" class="figure">
 <p><img src="https://semilin.dev/static/semimak.avif" alt="semimak.avif" />
 </p>
 </div>

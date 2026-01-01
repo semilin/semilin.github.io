@@ -2,11 +2,11 @@
 
 - [[file:index.org][(site semi)]]
 - blog
-  - [[file:blog/final_reflection_on_semimak.org][200 WPM - Final Reflection on Semimak]]
+  - [[file:blog/final-reflection-on-semimak.org][200 WPM - Final Reflection on Semimak]]
   - [[file:blog/index.org][(blog semi)]]
-  - [[file:blog/reflection_on_semimak.org][Reflection on Semimak, 3 months later]]
+  - [[file:blog/reflection-on-semimak.org][Reflection on Semimak, 3 months later]]
   - [[file:blog/semimak.org][Semimak]]
-  - [[file:blog/layout_quality.org][What makes a keyboard layout good?]]
+  - [[file:blog/layout-quality.org][What makes a keyboard layout good?]]
 - genkey
   - [[file:genkey/index.org][Genkey]]
   - [[file:genkey/docs.org][Genkey Docs]]

@@ -2,7 +2,7 @@
 #+options: toc:nil
 [[file:feed.xml][RSS Feed]]
 
-- (2023-12-11) [[file:layout_quality.org][What makes a keyboard layout good?]]
-- (2022-07-17) [[file:final_reflection_on_semimak.org][200 WPM - Final Reflection on Semimak]]
-- (2021-10-14) [[file:reflection_on_semimak.org][Reflecting on Semimak, 3 months later]]
+- (2023-12-11) [[file:layout-quality.org][What makes a keyboard layout good?]]
+- (2022-07-17) [[file:final-reflection-on-semimak.org][200 WPM - Final Reflection on Semimak]]
+- (2021-10-14) [[file:reflection-on-semimak.org][Reflecting on Semimak, 3 months later]]
 - (2021-07-01) [[file:semimak.org][Introducing Semimak]]

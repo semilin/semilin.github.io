@@ -7,9 +7,9 @@ from email.utils import format_datetime
 # --- CONFIG
 BASE_URL = "https://semilin.dev/blog/"
 POSTS = [
-    ("2023-12-11", "layout_quality.org", "What makes a keyboard layout good?"),
-    ("2022-07-17", "final_reflection_on_semimak.org", "200 WPM - Final Reflection on Semimak"),
-    ("2021-10-14", "reflection_on_semimak.org", "Reflecting on Semimak, 3 months later"),
+    ("2023-12-11", "layout-quality.org", "What makes a keyboard layout good?"),
+    ("2022-07-17", "final-reflection-on-semimak.org", "200 WPM - Final Reflection on Semimak"),
+    ("2021-10-14", "reflection-on-semimak.org", "Reflecting on Semimak, 3 months later"),
     ("2021-07-01", "semimak.org", "Introducing Semimak"),
 ]
 
