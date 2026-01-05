@@ -59,13 +59,14 @@ positional ranges of the original text:
 ]
 #+end_src
 
-Much better. Using those ranges, we can stitch our edited dialogue back into the files with the original code filled in between.
+Much better. Using those ranges, we can stitch our edited dialogue
+back into the files with the original code filled in between.
 
 As for the newlines, these are hardcoded for a funny reason. The
 textbox has a fixed length, so instead of implementing a line-wrapping
 algorithm, the game code opts for the simpler method of embedding them
 in the dialogue. This poses a minor problem for the LLM, but I
-decided--out of laziness and some curiosity--to simply include in the
+decided -- out of laziness and some curiosity -- to simply include in the
 prompt that lines must be kept under a certain length. Surprisingly,
 this worked! Well, for the most part.
 

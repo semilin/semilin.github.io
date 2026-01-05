@@ -11,7 +11,7 @@
   <pubDate>Sun, 04 Jan 2026 00:00:00 -0000</pubDate>
   <description><![CDATA[
 
-<div id="org9c7b811" class="figure">
+<div id="org585686f" class="figure">
 <p><img src="../static/doukutsu-translator/0.avif" alt="0.avif" />
 </p>
 </div>
@@ -81,7 +81,8 @@ positional ranges of the original text:
 </div>
 
 <p>
-Much better. Using those ranges, we can stitch our edited dialogue back into the files with the original code filled in between.
+Much better. Using those ranges, we can stitch our edited dialogue
+back into the files with the original code filled in between.
 </p>
 
 <p>
@@ -89,7 +90,7 @@ As for the newlines, these are hardcoded for a funny reason. The
 textbox has a fixed length, so instead of implementing a line-wrapping
 algorithm, the game code opts for the simpler method of embedding them
 in the dialogue. This poses a minor problem for the LLM, but I
-decided&#x2013;out of laziness and some curiosity&#x2013;to simply include in the
+decided &#x2013; out of laziness and some curiosity &#x2013; to simply include in the
 prompt that lines must be kept under a certain length. Surprisingly,
 this worked! Well, for the most part.
 </p>
@@ -130,7 +131,7 @@ accidentally. Oops!
 </p>
 
 
-<div id="org78699e1" class="figure">
+<div id="orgc2f17b9" class="figure">
 <p><img src="../static/doukutsu-translator/1.avif" alt="1.avif" />
 </p>
 </div>
@@ -192,7 +193,7 @@ satisfactory!
 </p>
 
 
-<div id="org73e7749" class="figure">
+<div id="org5e1f44f" class="figure">
 <p><img src="../static/doukutsu-translator/2.avif" alt="2.avif" />
 </p>
 </div>
@@ -203,7 +204,7 @@ a not unexpected weak point for an LLM.
 </p>
 
 
-<div id="org1116e85" class="figure">
+<div id="org6883a80" class="figure">
 <p><img src="../static/doukutsu-translator/3.avif" alt="3.avif" />
 </p>
 </div>
@@ -216,7 +217,7 @@ throughout the whole game, oddly.
 </p>
 
 
-<div id="org7733b32" class="figure">
+<div id="org32223eb" class="figure">
 <p><img src="../static/doukutsu-translator/5.avif" alt="5.avif" />
 </p>
 </div>
@@ -229,7 +230,7 @@ render the original insult.
 </p>
 
 
-<div id="org253437e" class="figure">
+<div id="orgf1042ad" class="figure">
 <p><img src="../static/doukutsu-translator/6.avif" alt="6.avif" />
 </p>
 </div>
@@ -246,7 +247,7 @@ argument for this being an informal style that drops the preposition.
 </p>
 
 
-<div id="orgc667bcb" class="figure">
+<div id="org43a988e" class="figure">
 <p><img src="../static/doukutsu-translator/7.avif" alt="7.avif" />
 </p>
 </div>
@@ -264,7 +265,7 @@ are some of the more egregious mistakes I came across.
 </p>
 
 
-<div id="orgc42e7d2" class="figure">
+<div id="org24a5d78" class="figure">
 <p><img src="../static/doukutsu-translator/8.avif" alt="8.avif" />
 </p>
 </div>
@@ -277,7 +278,7 @@ gibberish instead. Strange.
 </p>
 
 
-<div id="org4ea6f20" class="figure">
+<div id="org5f93b73" class="figure">
 <p><img src="../static/doukutsu-translator/9.avif" alt="9.avif" />
 </p>
 </div>
@@ -287,7 +288,7 @@ Sometimes odd Unicode errors like this happen.
 </p>
 
 
-<div id="orgbeea61c" class="figure">
+<div id="orgbdf3e33" class="figure">
 <p><img src="../static/doukutsu-translator/10.avif" alt="10.avif" />
 </p>
 </div>
@@ -303,7 +304,7 @@ LLM some slack for not having much context.
 </p>
 
 
-<div id="org29cc6b6" class="figure">
+<div id="org9f9afe8" class="figure">
 <p><img src="../static/doukutsu-translator/11.avif" alt="11.avif" />
 </p>
 </div>
@@ -677,7 +678,7 @@ Data from <a href="https://oxey.dev/playground/">Oxey's Layout Playground</a> us
   <pubDate>Sun, 17 Jul 2022 00:00:00 -0000</pubDate>
   <description><![CDATA[
 
-<div id="org54f3a08" class="figure">
+<div id="orgf5e9a62" class="figure">
 <p><img src="../static/200wpm.avif" alt="200wpm.avif" />
 </p>
 </div>
@@ -861,7 +862,7 @@ this, I created my own mod, Semimak JQ, about 2 months after its
 original release.
 </p>
 
-<pre class="example" id="orge57f726">
+<pre class="example" id="orgb7a8375">
 f l h v z  ' w u o y
 s r n t k  c d e a i
 x j b m q  p g , . /
@@ -952,7 +953,7 @@ encouraged and inspired me immensely. Thank you all!
 </div>
 </div>
 
-<div id="org147251a" class="figure">
+<div id="org23ed2fc" class="figure">
 <p><img src="https://semilin.dev/static/semimak.avif" alt="semimak.avif" />
 </p>
 </div>
