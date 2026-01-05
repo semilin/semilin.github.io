@@ -1,4 +1,18 @@
 (require 'ox-publish)
+(require 'font-lock)
+
+(setq font-lock-maximum-decoration t)
+(font-lock-ensure)
+(global-font-lock-mode 1)
+
+(require 'python-mode nil t)  ; nil t means don't error if not found
+(require 'js-mode nil t)
+(require 'emacs-lisp-mode nil t)
+
+(load-file "~/.config/emacs/elpaca/builds/htmlize/htmlize.el")
+
+(setq org-src-fontify-natively t)
+(setq org-html-htmlize-output-type 'inline-css)
 
 (setq org-html-validation-link nil	;; Don't show validation link
       org-html-head-include-scripts nil	;; Use our own scripts

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Translating Cave Story into Classical Latin with Gemini</title>
+<meta name="description" content="A blog post for doukutsu-translator, an open-source Rust/Python project that translates Cave Story into Latin using Gemini and OpenRouter." />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="/style.css">
+<link rel="alternate" type="application/rss+xml" title="Subscribe to (blog semi)" href="https://semilin.dev/blog/feed.xml" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav>semi
+  <a href="/">home</a>
+  <a href="/blog/">blog</a>
+  <a href="https://github.com/semilin">code</a>
+</nav>
+<h1>Translating Cave Story into Classical Latin with Gemini</h1>
+<p>2026-01-04 Sun 17:30</p>
+</div>
+<div id="content" class="content">
+
+<div id="org9c7b811" class="figure">
+<p><img src="../static/doukutsu-translator/0.avif" alt="0.avif" />
+</p>
+</div>
+
+<p>
+While musing about the potential efficacy of video games for language
+pedagogy, I was suggested the idea that current LLMs should probably
+be quite competent at the task of game translation. I figured this
+would be possible but that they probably would not produce results
+satisfactory for learning (especially for a language less trained on
+like Latin). Even so, it seemed like something worth experimenting
+with. Recently, I had found <a href="https://gitlab.com/lupa-Tokusu-Monokatali/musi-Tokusu-Monokatali/-/blob/main/README.en.md">jan Pawasi's Toki Pona translation of Cave
+Story</a> a nice way to gain some knowledge in that language, so I thought
+that the game might be a good test subject.
+</p>
+
+<p>
+Immediately, I ran into an interesting puzzle. The game's .tsc files
+store all the level data with dialogue interspersed between code. For
+example, a snippet from <code>frog.tsc</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-tsc">&lt;MSG&lt;FAC0015We meet again.&lt;NOD\r\nDo you remember me?&lt;NOD&lt;CLRIndeed, in the Mimiga\r\nvillage...&lt;NOD&lt;CLRI hadn't noticed before,\r\nbut...&lt;NOD&lt;CLRAren't you a soldier\r\nfrom the surface?&lt;NOD&lt;CLRI wasn't aware there\r\nwere any left.&lt;NOD&lt;FAC0000&lt;CLO\r\n
+</pre>
+</div>
+
+<p>
+Of course, we can't just throw these files into Gemini and expect it
+to translate them perfectly. Therefore I did some convoluted lexing to
+extract the dialogues into hierarchical structure, including the
+positional ranges of the original text:
+</p>
+<div class="org-src-container">
+<pre class="src src-js">[
+  {
+    <span style="font-style: italic;">"character"</span>: <span style="font-style: italic;">"NP"</span>,
+    <span style="font-style: italic;">"text"</span>: [
+      [
+        <span style="font-style: italic;">"We meet again."</span>,
+        { <span style="font-style: italic;">"start"</span>: 619, <span style="font-style: italic;">"end"</span>: 633 }
+      ],
+      [
+        <span style="font-style: italic;">"Do you remember me?"</span>,
+        { <span style="font-style: italic;">"start"</span>: 639, <span style="font-style: italic;">"end"</span>: 658 }
+      ],
+      [
+        <span style="font-style: italic;">"Indeed, in the Mimiga\r\nvillage..."</span>,
+        { <span style="font-style: italic;">"start"</span>: 666, <span style="font-style: italic;">"end"</span>: 699 }
+      ],
+      [
+        <span style="font-style: italic;">"I hadn't noticed before,\r\nbut..."</span>,
+        { <span style="font-style: italic;">"start"</span>: 707, <span style="font-style: italic;">"end"</span>: 739 }
+      ],
+      [
+        <span style="font-style: italic;">"Aren't you a soldier\r\nfrom the surface?"</span>,
+        { <span style="font-style: italic;">"start"</span>: 747, <span style="font-style: italic;">"end"</span>: 786 }
+      ],
+      [
+        <span style="font-style: italic;">"I wasn't aware there\r\nwere any left."</span>,
+        { <span style="font-style: italic;">"start"</span>: 794, <span style="font-style: italic;">"end"</span>: 830 }
+      ]
+    ]
+  }
+]
+</pre>
+</div>
+
+<p>
+Much better. Using those ranges, we can stitch our edited dialogue back into the files with the original code filled in between.
+</p>
+
+<p>
+As for the newlines, these are hardcoded for a funny reason. The
+textbox has a fixed length, so instead of implementing a line-wrapping
+algorithm, the game code opts for the simpler method of embedding them
+in the dialogue. This poses a minor problem for the LLM, but I
+decided&#x2013;out of laziness and some curiosity&#x2013;to simply include in the
+prompt that lines must be kept under a certain length. Surprisingly,
+this worked! Well, for the most part.
+</p>
+
+<p>
+For a basic localization strategy, I just feed the LLM the whole game
+text and ask it to generate a few things. The first, a key terms
+glossary, so that it always translates key terms consistently (e.g.,
+Sue &rarr; Susanna, red flowers &rarr; flores rubri). The second, a style guide
+for itself detailing how to handle orthography and such. The third, a
+short detail of each character's speaking style and a method for
+translating their dialogue.
+</p>
+
+<p>
+Each dialogue is then given to the LLM as JSON. Armed with the
+generated localization strategy in the prompt, plus its last few
+translated dialogues, it attempts to produce JSON in return. While I
+had intended to have it work entirely in one attempt, this proved
+fruitless when it got hopelessly stuck on particular dialogues. Thus I
+introduced a fallback maintenance step which simply attempts to
+correct the formatting of the translation to fit the constraints of
+the original format. This worked extremely reliably.
+</p>
+
+<p>
+I decided to use OpenRouter<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> and gemini-flash-3-preview. Though the
+overall experimentation cost more, a single complete translation of
+the entire game cost about $0.90. Not bad! Let's see how it turned
+out.
+</p>
+
+<p>
+Immediately, I noticed that some dialogues got missed and remained in
+English. I thought this might have been the LLM's fault, but it's
+actually due to my lexing logic somehow treating them as code
+accidentally. Oops!
+</p>
+
+
+<div id="org78699e1" class="figure">
+<p><img src="../static/doukutsu-translator/1.avif" alt="1.avif" />
+</p>
+</div>
+
+<p>
+Much of what was translated, though, was quite good! This text in the
+beginning is illustrative of pretty solid idiom.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">English</td>
+<td class="org-left">Latin</td>
+<td class="org-left">Literal Back-Translation</td>
+</tr>
+
+<tr>
+<td class="org-left">I'm so hungry&#x2026;</td>
+<td class="org-left">Adficior fame maxima&#x2026;</td>
+<td class="org-left">I'm afflicted by greatest hunger&#x2026;</td>
+</tr>
+
+<tr>
+<td class="org-left">There's nothing to eat</td>
+<td class="org-left">Nihil esculenti hic est.</td>
+<td class="org-left">There is nothing of [what is] edible here.</td>
+</tr>
+
+<tr>
+<td class="org-left">and I've been reduced to feeding on cockroaches.</td>
+<td class="org-left">Blattis vescor ut vivam.</td>
+<td class="org-left">I'm feeding on insects so that I might live.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+In this short text, Gemini rewrites English idiom into proper Latin
+phrases. It uses an ablative to express the condition (hunger) of
+<i>adficio</i>, a partitive genitive for the absence of food, and a
+non-accusative direct object for <i>vescor</i>. To communicate the
+desperation of the phrase "been reduced," it opts for a very
+reasonable purpose clause with a subjunctive "so that I might live."
+This has none of the characteristics of sloppy AI Latin that seemed
+common to me not long ago &#x2013; it looks authentic and idiomatic rather
+than transparent translation. Further, it even well expresses the
+character's light-hearted scientist talking style. Overall, more than
+satisfactory!
+</p>
+
+
+<div id="org73e7749" class="figure">
+<p><img src="../static/doukutsu-translator/2.avif" alt="2.avif" />
+</p>
+</div>
+
+<p>
+For more tricky formatting, it's, uh&#x2026; not perfect! Oh well. This is
+a not unexpected weak point for an LLM.
+</p>
+
+
+<div id="org1116e85" class="figure">
+<p><img src="../static/doukutsu-translator/3.avif" alt="3.avif" />
+</p>
+</div>
+
+<p>
+Funnily, it doesn't always adhere to its own (rather straightforward)
+style guide. Here it uses <code>u</code> to represent the consonantal use of the
+semi-vowel, rather than <code>v</code> as it should. It does this every so often
+throughout the whole game, oddly.
+</p>
+
+
+<div id="org7733b32" class="figure">
+<p><img src="../static/doukutsu-translator/5.avif" alt="5.avif" />
+</p>
+</div>
+
+<p>
+If you ever need a good Latin insult, this one's not bad: it
+translates "creep-eyed freak" as (literally) "monster with crooked
+eyes." This uses a typical ablative of description to idiomatically
+render the original insult.
+</p>
+
+
+<div id="org253437e" class="figure">
+<p><img src="../static/doukutsu-translator/6.avif" alt="6.avif" />
+</p>
+</div>
+
+<p>
+This translation of "Yup, I'm stuck&#x2026;" looks a little odd, at least
+to my correctly aligned eyes. This puts <i>haereo</i> ("I am stuck") with
+an accusative plural <i>haec</i> ("these things"), while I've mostly seen
+<i>haereo</i> used with prepositions or an ablative. Indeed, Lewis &amp; Short
+suggests that it is usually constructed "with <i>in</i>, the simple abl. or
+<i>absol.</i>, less freq. with dat., with <i>ad, sub, ex,</i> etc." Thus I'm
+tempted to say that this is an error, but there's potentially an
+argument for this being an informal style that drops the preposition.
+</p>
+
+
+<div id="orgc667bcb" class="figure">
+<p><img src="../static/doukutsu-translator/7.avif" alt="7.avif" />
+</p>
+</div>
+
+<p>
+"Santa" gets translated as <i>Nicolaus</i> (whence "St. Nicholas"), which I
+think is fun. Also, his dialogue here taught me that <i>michi</i> is a Late
+Latin form of <i>mihi</i>, which is cool! I'm guessing that this later form
+is used because of his name, which is actually a pretty funny detail.
+</p>
+
+<p>
+Unfortunately, the LLM flat-out hallucinates a noticeable amount. Here
+are some of the more egregious mistakes I came across.
+</p>
+
+
+<div id="orgc42e7d2" class="figure">
+<p><img src="../static/doukutsu-translator/8.avif" alt="8.avif" />
+</p>
+</div>
+
+<p>
+The LLM translates "poor girl" as <i>infelix fariola</i>, but the latter
+word is nonexistent. My best guess is that it was going for <i>filiola</i>
+("little daughter"), but for whatever reason it spat out this
+gibberish instead. Strange.
+</p>
+
+
+<div id="org4ea6f20" class="figure">
+<p><img src="../static/doukutsu-translator/9.avif" alt="9.avif" />
+</p>
+</div>
+
+<p>
+Sometimes odd Unicode errors like this happen.
+</p>
+
+
+<div id="orgbeea61c" class="figure">
+<p><img src="../static/doukutsu-translator/10.avif" alt="10.avif" />
+</p>
+</div>
+
+<p>
+This is a basic morphological error that even a beginner student could
+catch. The verb <i>sum</i> ("I am") takes a nominative subject, as is the
+typical case in most languages. However, the LLM somehow writes
+<i>salvos</i> ("safe") in the accusative, rather than the expected
+nominative <i>salvi</i>. Although in this case it should actually be a
+singular feminine <i>salva</i>, as he's only speaking to Sue, I'll cut the
+LLM some slack for not having much context.
+</p>
+
+
+<div id="org29cc6b6" class="figure">
+<p><img src="../static/doukutsu-translator/11.avif" alt="11.avif" />
+</p>
+</div>
+
+<p>
+This is actually quite funny &#x2013; Sue calls the player a <i>homunculus</i> as
+a translation for "little guy." Unfortunately, this sentence is a
+morphological and syntactic disaster. First of all, the accusative
+singular of that word is <i>homunculum</i>, not <i>homunculem</i>. The original
+sentence is "[c]an we take this little guy with us when we go?" but
+the Latin works out to something like "are you able to lead us away
+this little guy with us?" This is complete gibberish. I'm guessing it
+intended something like "possumusne nos," but for whatever reason
+tripped up the subject-verb agreement.
+</p>
+
+<p>
+Overall, the LLM displays totally adequate translation skills at
+times, but it's wildly inconsistent. The high points are quite high &#x2013;
+it can choose very apt idiom and its best translations are honestly
+pretty clever. However, its low points are nearly incomprehensible.
+Now, many of these problems would probably be minimized with
+additional revision passes and maybe the use of a heavier LLM. Even
+so, I feel mostly done with this project. I think there are some
+fundamental limitations with auto-localization of this sort that seem
+very hard to resolve &#x2013; such as the lack of context embedded in these
+dialogue files. As it stands, it's simpler to have a human editor for
+revisions.
+</p>
+
+<p>
+Thus I conclude that LLMs have not solved translation, but they seem
+very competent aids in the task. This project has already provided a
+decent foundation for revision that could yield a product quite useful
+for learners like me. I maintain that video games can be genuinely
+helpful pedagogical aids in language learning, but the difficulty of
+their translation combined with the relative lack of popularity of
+their intersection with classical languages makes this a difficult
+avenue to explore. Perhaps LLMs can be a way to make the barrier of
+entry a little lower and improve the state of language pedagogy for
+everyone.
+</p>
+
+<p>
+Thanks for reading. You can find the code for this project <a href="https://github.com/semilin/doukutsu-translator">on my
+Github.</a>
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+I would have probably used Google's API (whichever one it is this
+month) if not for their age verification shenanigans. Luckily,
+OpenRouter is quite convenient and probably better overall, so it's a
+good thing necessity drove me to it. Thanks for being being hard to
+use, Google!
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Date: 2026-01-04 Sun 17:30</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 31.0.50 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</p>
+</div>
+</body>
+</html>

@@ -6,6 +6,7 @@
   - [[file:blog/index.org][(blog semi)]]
   - [[file:blog/reflection-on-semimak.org][Reflection on Semimak, 3 months later]]
   - [[file:blog/semimak.org][Semimak]]
+  - [[file:blog/doukutsu-translator.org][Translating Cave Story into Classical Latin with Gemini]]
   - [[file:blog/layout-quality.org][What makes a keyboard layout good?]]
 - genkey
   - [[file:genkey/index.org][Genkey]]

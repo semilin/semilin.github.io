@@ -1,0 +1,226 @@
+#+TITLE:Translating Cave Story into Classical Latin with Gemini
+#+DATE: <2026-01-04 Wed 17:30>
+#+DESCRIPTION: A blog post for doukutsu-translator, an open-source Rust/Python project that translates Cave Story into Latin using Gemini and OpenRouter.
+[[../static/doukutsu-translator/0.avif]]
+
+While musing about the potential efficacy of video games for language
+pedagogy, I was suggested the idea that current LLMs should probably
+be quite competent at the task of game translation. I figured this
+would be possible but that they probably would not produce results
+satisfactory for learning (especially for a language less trained on
+like Latin). Even so, it seemed like something worth experimenting
+with. Recently, I had found [[https://gitlab.com/lupa-Tokusu-Monokatali/musi-Tokusu-Monokatali/-/blob/main/README.en.md][jan Pawasi's Toki Pona translation of Cave
+Story]] a nice way to gain some knowledge in that language, so I thought
+that the game might be a good test subject.
+
+Immediately, I ran into an interesting puzzle. The game's .tsc files
+store all the level data with dialogue interspersed between code. For
+example, a snippet from =frog.tsc=:
+
+#+begin_src tsc
+<MSG<FAC0015We meet again.<NOD\r\nDo you remember me?<NOD<CLRIndeed, in the Mimiga\r\nvillage...<NOD<CLRI hadn't noticed before,\r\nbut...<NOD<CLRAren't you a soldier\r\nfrom the surface?<NOD<CLRI wasn't aware there\r\nwere any left.<NOD<FAC0000<CLO\r\n
+#+end_src
+
+Of course, we can't just throw these files into Gemini and expect it
+to translate them perfectly. Therefore I did some convoluted lexing to
+extract the dialogues into hierarchical structure, including the
+positional ranges of the original text:
+#+begin_src js
+[
+  {
+    "character": "NP",
+    "text": [
+      [
+        "We meet again.",
+        { "start": 619, "end": 633 }
+      ],
+      [
+        "Do you remember me?",
+        { "start": 639, "end": 658 }
+      ],
+      [
+        "Indeed, in the Mimiga\r\nvillage...",
+        { "start": 666, "end": 699 }
+      ],
+      [
+        "I hadn't noticed before,\r\nbut...",
+        { "start": 707, "end": 739 }
+      ],
+      [
+        "Aren't you a soldier\r\nfrom the surface?",
+        { "start": 747, "end": 786 }
+      ],
+      [
+        "I wasn't aware there\r\nwere any left.",
+        { "start": 794, "end": 830 }
+      ]
+    ]
+  }
+]
+#+end_src
+
+Much better. Using those ranges, we can stitch our edited dialogue back into the files with the original code filled in between.
+
+As for the newlines, these are hardcoded for a funny reason. The
+textbox has a fixed length, so instead of implementing a line-wrapping
+algorithm, the game code opts for the simpler method of embedding them
+in the dialogue. This poses a minor problem for the LLM, but I
+decided--out of laziness and some curiosity--to simply include in the
+prompt that lines must be kept under a certain length. Surprisingly,
+this worked! Well, for the most part.
+
+For a basic localization strategy, I just feed the LLM the whole game
+text and ask it to generate a few things. The first, a key terms
+glossary, so that it always translates key terms consistently (e.g.,
+Sue \rarr Susanna, red flowers \rarr flores rubri). The second, a style guide
+for itself detailing how to handle orthography and such. The third, a
+short detail of each character's speaking style and a method for
+translating their dialogue.
+
+Each dialogue is then given to the LLM as JSON. Armed with the
+generated localization strategy in the prompt, plus its last few
+translated dialogues, it attempts to produce JSON in return. While I
+had intended to have it work entirely in one attempt, this proved
+fruitless when it got hopelessly stuck on particular dialogues. Thus I
+introduced a fallback maintenance step which simply attempts to
+correct the formatting of the translation to fit the constraints of
+the original format. This worked extremely reliably.
+
+I decided to use OpenRouter[fn:1] and gemini-flash-3-preview. Though the
+overall experimentation cost more, a single complete translation of
+the entire game cost about $0.90. Not bad! Let's see how it turned
+out.
+
+Immediately, I noticed that some dialogues got missed and remained in
+English. I thought this might have been the LLM's fault, but it's
+actually due to my lexing logic somehow treating them as code
+accidentally. Oops!
+
+[[../static/doukutsu-translator/1.avif]]
+
+Much of what was translated, though, was quite good! This text in the
+beginning is illustrative of pretty solid idiom.
+
+| English                                          | Latin                    | Literal Back-Translation                     |
+| I'm so hungry...                                 | Adficior fame maxima...  | I'm afflicted by greatest hunger...          |
+| There's nothing to eat                           | Nihil esculenti hic est. | There is nothing of [what is] edible here.   |
+| and I've been reduced to feeding on cockroaches. | Blattis vescor ut vivam. | I'm feeding on insects so that I might live. |
+
+In this short text, Gemini rewrites English idiom into proper Latin
+phrases. It uses an ablative to express the condition (hunger) of
+/adficio/, a partitive genitive for the absence of food, and a
+non-accusative direct object for /vescor/. To communicate the
+desperation of the phrase "been reduced," it opts for a very
+reasonable purpose clause with a subjunctive "so that I might live."
+This has none of the characteristics of sloppy AI Latin that seemed
+common to me not long ago -- it looks authentic and idiomatic rather
+than transparent translation. Further, it even well expresses the
+character's light-hearted scientist talking style. Overall, more than
+satisfactory!
+
+[[../static/doukutsu-translator/2.avif]]
+
+For more tricky formatting, it's, uh... not perfect! Oh well. This is
+a not unexpected weak point for an LLM.
+
+[[../static/doukutsu-translator/3.avif]]
+
+Funnily, it doesn't always adhere to its own (rather straightforward)
+style guide. Here it uses =u= to represent the consonantal use of the
+semi-vowel, rather than =v= as it should. It does this every so often
+throughout the whole game, oddly.
+
+[[../static/doukutsu-translator/5.avif]]
+
+If you ever need a good Latin insult, this one's not bad: it
+translates "creep-eyed freak" as (literally) "monster with crooked
+eyes." This uses a typical ablative of description to idiomatically
+render the original insult.
+
+[[../static/doukutsu-translator/6.avif]]
+
+This translation of "Yup, I'm stuck..." looks a little odd, at least
+to my correctly aligned eyes. This puts /haereo/ ("I am stuck") with
+an accusative plural /haec/ ("these things"), while I've mostly seen
+/haereo/ used with prepositions or an ablative. Indeed, Lewis & Short
+suggests that it is usually constructed "with /in/, the simple abl. or
+/absol./, less freq. with dat., with /ad, sub, ex,/ etc." Thus I'm
+tempted to say that this is an error, but there's potentially an
+argument for this being an informal style that drops the preposition.
+
+[[../static/doukutsu-translator/7.avif]]
+
+"Santa" gets translated as /Nicolaus/ (whence "St. Nicholas"), which I
+think is fun. Also, his dialogue here taught me that /michi/ is a Late
+Latin form of /mihi/, which is cool! I'm guessing that this later form
+is used because of his name, which is actually a pretty funny detail.
+
+Unfortunately, the LLM flat-out hallucinates a noticeable amount. Here
+are some of the more egregious mistakes I came across.
+
+[[../static/doukutsu-translator/8.avif]]
+
+The LLM translates "poor girl" as /infelix fariola/, but the latter
+word is nonexistent. My best guess is that it was going for /filiola/
+("little daughter"), but for whatever reason it spat out this
+gibberish instead. Strange.
+
+[[../static/doukutsu-translator/9.avif]]
+
+Sometimes odd Unicode errors like this happen.
+
+[[../static/doukutsu-translator/10.avif]]
+
+This is a basic morphological error that even a beginner student could
+catch. The verb /sum/ ("I am") takes a nominative subject, as is the
+typical case in most languages. However, the LLM somehow writes
+/salvos/ ("safe") in the accusative, rather than the expected
+nominative /salvi/. Although in this case it should actually be a
+singular feminine /salva/, as he's only speaking to Sue, I'll cut the
+LLM some slack for not having much context.
+
+[[../static/doukutsu-translator/11.avif]]
+
+This is actually quite funny -- Sue calls the player a /homunculus/ as
+a translation for "little guy." Unfortunately, this sentence is a
+morphological and syntactic disaster. First of all, the accusative
+singular of that word is /homunculum/, not /homunculem/. The original
+sentence is "[c]an we take this little guy with us when we go?" but
+the Latin works out to something like "are you able to lead us away
+this little guy with us?" This is complete gibberish. I'm guessing it
+intended something like "possumusne nos," but for whatever reason
+tripped up the subject-verb agreement.
+
+Overall, the LLM displays totally adequate translation skills at
+times, but it's wildly inconsistent. The high points are quite high --
+it can choose very apt idiom and its best translations are honestly
+pretty clever. However, its low points are nearly incomprehensible.
+Now, many of these problems would probably be minimized with
+additional revision passes and maybe the use of a heavier LLM. Even
+so, I feel mostly done with this project. I think there are some
+fundamental limitations with auto-localization of this sort that seem
+very hard to resolve -- such as the lack of context embedded in these
+dialogue files. As it stands, it's simpler to have a human editor for
+revisions.
+
+Thus I conclude that LLMs have not solved translation, but they seem
+very competent aids in the task. This project has already provided a
+decent foundation for revision that could yield a product quite useful
+for learners like me. I maintain that video games can be genuinely
+helpful pedagogical aids in language learning, but the difficulty of
+their translation combined with the relative lack of popularity of
+their intersection with classical languages makes this a difficult
+avenue to explore. Perhaps LLMs can be a way to make the barrier of
+entry a little lower and improve the state of language pedagogy for
+everyone.
+
+Thanks for reading. You can find the code for this project [[https://github.com/semilin/doukutsu-translator][on my
+Github.]]
+
+* Footnotes
+
+[fn:1] I would have probably used Google's API (whichever one it is this
+month) if not for their age verification shenanigans. Luckily,
+OpenRouter is quite convenient and probably better overall, so it's a
+good thing necessity drove me to it. Thanks for being being hard to
+use, Google!
